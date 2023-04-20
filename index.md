@@ -3,6 +3,40 @@
 > This is a quick reference repo of my favorite hacking resources that I use mostly.
 
 ---
+**Summary**  
+[Artificial Intelligence](#Artificial-Intelligence)  
+[Bug Bounty Hunting](#Bug-Bounty-Hunting)  
+[Cheatsheets](#Cheatsheets)  
+[Checklists](#Checklists)  
+[Cloud Security](#Cloud-Security)  
+[Cryptography and Encryption](#Cryptography-and-Encryption)  
+[CTF Challenges and Tools](#CTF-Challenges-and-Tools)  
+[Forensics](#Forensics)  
+[Fuzzing](#Fuzzing)  
+[IoT Security](#IoT-Security)  
+[Learning Resources](#Learning-Resources)  
+[Malware Analysis and Reverse Engineering](#Malware-Analysis-and-Reverse-Engineering)  
+[Mobile Application Security](#Mobile-Application-Security)  
+[Network Security](#Network-Security)  
+[Payloads](#Payloads)  
+[Penetration Testing General](#Penetration-Testing-General)  
+[Post Exploitation](#Post-Exploitation)  
+[Privilege Escalation](#Privilege-Escalation)  
+[OSINT and Reconnaissance](#OSINT-and-Reconnaissance)  
+[Red Team Operations](#Red-Team-Operations)  
+[Reporting and Documentation Tools](#Reporting-and-Documentation-Tools)  
+[Reverse Shells](#Reverse-Shells)  
+[Roadmaps](#Roadmaps)  
+[Social engineering and phishing](#Social-engineering-and-phishing)  
+[Threat Intelligence](#Threat-Intelligence)  
+[Other Utilities](#Other-Utilities)  
+[Virtualization and Container Security](#Virtualization-and-Container-Security)  
+[Vulnerability Scanning](#Vulnerability-Scanning)  
+[Web Application Security](#Web-Application-Security)  
+[Wireless Security](#Wireless-Security)  
+[Wordlists](#Wordlists)
+
+---
 
 ## <b style="color:red">Artificial Intelligence</b>
 
