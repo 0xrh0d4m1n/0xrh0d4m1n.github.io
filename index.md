@@ -4,36 +4,36 @@
 
 ---
 
-<a href="#Artificial-Intelligence">Artificial Intelligence</a>
-<a href="#Bug-Bounty-Hunting">Bug Bounty Hunting</a>
-<a href="#Cheatsheets">Cheatsheets</a>
-<a href="#Checklists">Checklists</a>
-<a href="#Cloud-Security">Cloud Security</a>
-<a href="#Cryptography-and-Encryption">Cryptography and Encryption</a>
-<a href="#CTF-Challenges-and-Tools">CTF Challenges and Tools</a>
-<a href="#Forensics">Forensics</a>
-<a href="#Fuzzing">Fuzzing</a>
-<a href="#IoT-Security">IoT Security</a>
-<a href="#Learning-Resources">Learning Resources</a>
-<a href="#Malware-Analysis-and-Reverse-Engineering">Malware Analysis and Reverse Engineering</a>
-<a href="#Mobile-Application-Security">Mobile Application Security</a>
-<a href="#Network-Security">Network Security</a>
-<a href="#Payloads">Payloads</a>
-<a href="#Penetration-Testing-General">Penetration Testing General</a>
-<a href="#Post-Exploitation">Post Exploitation</a>
-<a href="#Privilege-Escalation">Privilege Escalation</a>
-<a href="#OSINT-and-Reconnaissance">OSINT and Reconnaissance</a>
-<a href="#Red-Team-Operations">Red Team Operations</a>
-<a href="#Reporting-and-Documentation-Tools">Reporting and Documentation Tools</a>
-<a href="#Reverse-Shells">Reverse Shells</a>
-<a href="#Roadmaps">Roadmaps</a>
-<a href="#Social-engineering-and-phishing">Social engineering and phishing</a>
-<a href="#Threat-Intelligence">Threat Intelligence</a>
-<a href="#Other-Utilities">Other Utilities</a>
-<a href="#Virtualization-and-Container-Security">Virtualization and Container Security</a>
-<a href="#Vulnerability-Scanning">Vulnerability Scanning</a>
-<a href="#Web-Application-Security">Web Application Security</a>
-<a href="#Wireless-Security">Wireless Security</a>
+<a href="#Artificial-Intelligence">Artificial Intelligence</a>  
+<a href="#Bug-Bounty-Hunting">Bug Bounty Hunting</a>  
+<a href="#Cheatsheets">Cheatsheets</a>  
+<a href="#Checklists">Checklists</a>  
+<a href="#Cloud-Security">Cloud Security</a>  
+<a href="#Cryptography-and-Encryption">Cryptography and Encryption</a>  
+<a href="#CTF-Challenges-and-Tools">CTF Challenges and Tools</a>  
+<a href="#Forensics">Forensics</a>  
+<a href="#Fuzzing">Fuzzing</a>  
+<a href="#IoT-Security">IoT Security</a>  
+<a href="#Learning-Resources">Learning Resources</a>  
+<a href="#Malware-Analysis-and-Reverse-Engineering">Malware Analysis and Reverse Engineering</a>  
+<a href="#Mobile-Application-Security">Mobile Application Security</a>  
+<a href="#Network-Security">Network Security</a>  
+<a href="#Payloads">Payloads</a>  
+<a href="#Penetration-Testing-General">Penetration Testing General</a>  
+<a href="#Post-Exploitation">Post Exploitation</a>  
+<a href="#Privilege-Escalation">Privilege Escalation</a>  
+<a href="#OSINT-and-Reconnaissance">OSINT and Reconnaissance</a>  
+<a href="#Red-Team-Operations">Red Team Operations</a>  
+<a href="#Reporting-and-Documentation-Tools">Reporting and Documentation Tools</a>  
+<a href="#Reverse-Shells">Reverse Shells</a>  
+<a href="#Roadmaps">Roadmaps</a>  
+<a href="#Social-engineering-and-phishing">Social engineering and phishing</a>  
+<a href="#Threat-Intelligence">Threat Intelligence</a>  
+<a href="#Other-Utilities">Other Utilities</a>  
+<a href="#Virtualization-and-Container-Security">Virtualization and Container Security</a>  
+<a href="#Vulnerability-Scanning">Vulnerability Scanning</a>  
+<a href="#Web-Application-Security">Web Application Security</a>  
+<a href="#Wireless-Security">Wireless Security</a>  
 <a href="#Wordlists">Wordlists</a>
 
 ---
