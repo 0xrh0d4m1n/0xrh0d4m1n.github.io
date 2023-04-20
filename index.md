@@ -3,7 +3,8 @@
 > This is a quick reference repo of my favorite hacking resources that I use mostly.
 
 ---
-**Summary**  
+## **Summary**  
+
 [Artificial Intelligence](#Artificial-Intelligence)  
 [Bug Bounty Hunting](#Bug-Bounty-Hunting)  
 [Cheatsheets](#Cheatsheets)  
