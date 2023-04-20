@@ -1,6 +1,4 @@
-# **0xrh0d4m1n favs**
-
-> if outdated, roll-up to upper branches to get most recent commits...
+> if the fork is outdated, rollback to base repo to get most recent commits...
 
 ---
 
