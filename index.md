@@ -3,47 +3,46 @@
 > This is a quick reference repo of my favorite hacking resources that I use mostly.
 
 ---
-## **Summary**  
 
-[Artificial Intelligence](#Artificial-Intelligence)  
-[Bug Bounty Hunting](#Bug-Bounty-Hunting)  
-[Cheatsheets](#Cheatsheets)  
-[Checklists](#Checklists)  
-[Cloud Security](#Cloud-Security)  
-[Cryptography and Encryption](#Cryptography-and-Encryption)  
-[CTF Challenges and Tools](#CTF-Challenges-and-Tools)  
-[Forensics](#Forensics)  
-[Fuzzing](#Fuzzing)  
-[IoT Security](#IoT-Security)  
-[Learning Resources](#Learning-Resources)  
-[Malware Analysis and Reverse Engineering](#Malware-Analysis-and-Reverse-Engineering)  
-[Mobile Application Security](#Mobile-Application-Security)  
-[Network Security](#Network-Security)  
-[Payloads](#Payloads)  
-[Penetration Testing General](#Penetration-Testing-General)  
-[Post Exploitation](#Post-Exploitation)  
-[Privilege Escalation](#Privilege-Escalation)  
-[OSINT and Reconnaissance](#OSINT-and-Reconnaissance)  
-[Red Team Operations](#Red-Team-Operations)  
-[Reporting and Documentation Tools](#Reporting-and-Documentation-Tools)  
-[Reverse Shells](#Reverse-Shells)  
-[Roadmaps](#Roadmaps)  
-[Social engineering and phishing](#Social-engineering-and-phishing)  
-[Threat Intelligence](#Threat-Intelligence)  
-[Other Utilities](#Other-Utilities)  
-[Virtualization and Container Security](#Virtualization-and-Container-Security)  
-[Vulnerability Scanning](#Vulnerability-Scanning)  
-[Web Application Security](#Web-Application-Security)  
-[Wireless Security](#Wireless-Security)  
-[Wordlists](#Wordlists)
+<a href="#Artificial-Intelligence">Artificial Intelligence</a>
+<a href="#Bug-Bounty-Hunting">Bug Bounty Hunting</a>
+<a href="#Cheatsheets">Cheatsheets</a>
+<a href="#Checklists">Checklists</a>
+<a href="#Cloud-Security">Cloud Security</a>
+<a href="#Cryptography-and-Encryption">Cryptography and Encryption</a>
+<a href="#CTF-Challenges-and-Tools">CTF Challenges and Tools</a>
+<a href="#Forensics">Forensics</a>
+<a href="#Fuzzing">Fuzzing</a>
+<a href="#IoT-Security">IoT Security</a>
+<a href="#Learning-Resources">Learning Resources</a>
+<a href="#Malware-Analysis-and-Reverse-Engineering">Malware Analysis and Reverse Engineering</a>
+<a href="#Mobile-Application-Security">Mobile Application Security</a>
+<a href="#Network-Security">Network Security</a>
+<a href="#Payloads">Payloads</a>
+<a href="#Penetration-Testing-General">Penetration Testing General</a>
+<a href="#Post-Exploitation">Post Exploitation</a>
+<a href="#Privilege-Escalation">Privilege Escalation</a>
+<a href="#OSINT-and-Reconnaissance">OSINT and Reconnaissance</a>
+<a href="#Red-Team-Operations">Red Team Operations</a>
+<a href="#Reporting-and-Documentation-Tools">Reporting and Documentation Tools</a>
+<a href="#Reverse-Shells">Reverse Shells</a>
+<a href="#Roadmaps">Roadmaps</a>
+<a href="#Social-engineering-and-phishing">Social engineering and phishing</a>
+<a href="#Threat-Intelligence">Threat Intelligence</a>
+<a href="#Other-Utilities">Other Utilities</a>
+<a href="#Virtualization-and-Container-Security">Virtualization and Container Security</a>
+<a href="#Vulnerability-Scanning">Vulnerability Scanning</a>
+<a href="#Web-Application-Security">Web Application Security</a>
+<a href="#Wireless-Security">Wireless Security</a>
+<a href="#Wordlists">Wordlists</a>
 
 ---
 
-## <b style="color:red">Artificial Intelligence</b>
+<h2 id="Artificial-Intelligence" style="color:red">Artificial Intelligence</h2>
 
 - [Aix](https://github.com/projectdiscovery/aix)
 
-## <b style="color:red">Bug Bounty Hunting</b>
+<h2 id="Bug-Bounty-Hunting" style="color:red">Bug Bounty Hunting</h2>
 
 - [All About Bug Bounty](https://github.com/daffainfo/AllAboutBugBounty)
 - [Awesome Oneliner BugBounty](https://github.com/dwisiswant0/awesome-oneliner-bugbounty)
@@ -52,7 +51,7 @@
 - [Keyhacks](https://github.com/streaak/keyhacks)
 - [Resources for Beginner Bug Bounty Hunters](https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters)
 
-## <b style="color:red">Cheatsheets</b>
+<h2 id="Cheatsheets" style="color:red">Cheatsheets</h2>
 
 - [Active Directory Exploitation Cheatsheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
 - [BugBounty Cheatsheet](https://github.com/EdOverflow/bugbounty-cheatsheet)
@@ -67,17 +66,17 @@
 - [Vulnerable Code Snippets](https://github.com/snoopysecurity/Vulnerable-Code-Snippets)
 - [VulnHub Web Application Cheatsheet](https://github.com/Ignitetechnologies/Web-Application-Cheatsheet)
 
-## <b style="color:red">Checklists</b>
+<h2 id="Checklists" style="color:red">Checklists</h2>
 
 - [Galaxy Bugbounty Checklist](https://github.com/0xmaximus/Galaxy-Bugbounty-Checklist)
 - [OWASP Testing Checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
 - [OWASP Web Checklist](https://github.com/0xRadi/OWASP-Web-Checklist)
 
-## <b style="color:red">Cloud Security</b>
+<h2 id="Cloud-Security" style="color:red">Cloud Security</h2>
 
 - Soon...
 
-## <b style="color:red">Cryptography and Encryption</b>
+<h2 id="Cryptography-and-Encryption" style="color:red">Cryptography and Encryption</h2>
 
 - [hashid](https://github.com/psypanda/hashID)
 - [John The Ripper](https://github.com/openwall/john)
@@ -85,28 +84,28 @@
 - [RSA CRT Params](https://github.com/ius/rsatool)
 - [RsaCtfTool](https://github.com/RsaCtfTool/RsaCtfTool)
 
-## <b style="color:red">CTF Challenges and Tools</b>
+<h2 id="CTF-Challenges-and-Tools" style="color:red">CTF Challenges and Tools</h2>
 
 - [Hacker 101 CTF Writeups](https://github.com/testert1ng/hacker101-ctf)
 
-## <b style="color:red">Forensics</b>
+<h2 id="Forensics" style="color:red">Forensics</h2>
 
 - [Autopsy](https://github.com/sleuthkit/autopsy)
 - [Scalpel](https://github.com/sleuthkit/scalpel)
 - [Sleuthkit](https://github.com/sleuthkit/sleuthkit)
 
-## <b style="color:red">Fuzzing</b>
+<h2 id="Fuzzing" style="color:red">Fuzzing</h2>
 
 - [Ffuf](https://github.com/ffuf/ffuf)
 - [fuzzdb](https://github.com/fuzzdb-project/fuzzdb)
 - [Feroxbuster](https://github.com/epi052/feroxbuster)
 - [Wfuzz](https://github.com/xmendez/wfuzz)
 
-## <b style="color:red">IoT Security</b>
+<h2 id="IoT-Security" style="color:red">IoT Security</h2>
 
 - Soon...
 
-## <b style="color:red">Learning Resources</b>
+<h2 id="Learning-Resources" style="color:red">Learning Resources</h2>
 
 - [Be a Hacker](https://github.com/s0md3v/be-a-hacker)
 - [Bugcrowd University](https://github.com/bugcrowd/bugcrowd_university)
@@ -118,7 +117,7 @@
 - [Self Taught Computer Science](https://github.com/ossu/computer-science)
 - [Theoretical Algorithms Implementation](https://github.com/Robertboy18/Theoretical-Algorithms-Implementation)
 
-## <b style="color:red">Malware Analysis and Reverse Engineering</b>
+<h2 id="Malware-Analysis-and-Reverse-Engineering" style="color:red">Malware Analysis and Reverse Engineering</h2>
 
 - [Binwalk](https://github.com/ReFirmLabs/binwalk)
 - [dnschef](https://github.com/iphelix/dnschef)
@@ -131,11 +130,11 @@
 - [The MALWARE Repo](https://github.com/Da2dalus/The-MALWARE-Repo)
 - [x64dbg](https://github.com/x64dbg/x64dbg)
 
-## <b style="color:red">Mobile Application Security</b>
+<h2 id="Mobile-Application-Security" style="color:red">Mobile Application Security</h2>
 
 - Soon...
 
-## <b style="color:red">Network Security</b>
+<h2 id="Network-Security" style="color:red">Network Security</h2>
 
 - [Arp-scan](https://github.com/royhills/arp-scan)
 - [Arping](https://github.com/ThomasHabets/arping)
@@ -183,7 +182,7 @@
 - [udptunnel](https://github.com/astroza/udptunnel)
 - [Wireshark](https://github.com/wireshark/wireshark)
 
-## <b style="color:red">Payloads</b>
+<h2 id="Payloads" style="color:red">Payloads</h2>
 
 - [exe2hex](https://github.com/g0tmi1k/exe2hex)
 - [Bash Oneliner](https://github.com/onceupon/Bash-Oneliner)
@@ -191,12 +190,12 @@
 - [Payload Box](https://github.com/orgs/payloadbox/repositories)
 - [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
 
-## <b style="color:red">Penetration Testing General</b>
+<h2 id="Penetration-Testing-General" style="color:red">Penetration Testing General</h2>
 
 - [Metasploit Framework](https://github.com/rapid7/metasploit-framework)
 - [Public Pentesting Reports](https://github.com/juliocesarfort/public-pentesting-reports)
 
-## <b style="color:red">Post Exploitation</b>
+<h2 id="Post-Exploitation" style="color:red">Post Exploitation</h2>
 
 - [Chntpw](https://github.com/Tody-Guo/chntpw)
 - [EDRChecker](https://github.com/PwnDexter/Invoke-EDRChecker)
@@ -204,7 +203,7 @@
 - [Powershell Empire (BC-SECURITY)](https://github.com/BC-SECURITY/Empire)
 - [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
 
-## <b style="color:red">Privilege Escalation</b>
+<h2 id="Privilege-Escalation" style="color:red">Privilege Escalation</h2>
 
 - [Evil WinRM](https://github.com/Hackplayers/evil-winrm)
 - [GTFOBins](https://github.com/GTFOBins/GTFOBins.github.io)
@@ -219,7 +218,7 @@
 - [Rubeus](https://github.com/GhostPack/Rubeus)
 - [RustHound](https://github.com/OPENCYBER-FR/RustHound)
 
-## <b style="color:red">OSINT and Reconnaissance</b>
+<h2 id="OSINT-and-Reconnaissance" style="color:red">OSINT and Reconnaissance</h2>
 
 - [Alterx](https://github.com/projectdiscovery/alterx)
 - [Amass](https://github.com/OWASP/amass)
@@ -275,7 +274,7 @@
 - [Wafw00f](https://github.com/EnableSecurity/wafw00f)
 - [Waybackurls](https://github.com/tomnomnom/waybackurls)
 
-## <b style="color:red">Red Team Operations</b>
+<h2 id="Red-Team-Operations" style="color:red">Red Team Operations</h2>
 
 - [Adversary Emulation](https://github.com/center-for-threat-informed-defense/adversary_emulation_library)
 - [Awesome Red Teaming](https://github.com/0xMrNiko/Awesome-Red-Teaming)
@@ -284,32 +283,32 @@
 - [Powershell Empire](https://github.com/EmpireProject/Empire)
 - [Red Teaming Toolkit](https://github.com/infosecn1nja/Red-Teaming-Toolkit)
 
-## <b style="color:red">Reporting and Documentation Tools</b>
+<h2 id="Reporting-and-Documentation-Tools" style="color:red">Reporting and Documentation Tools</h2>
 
 - [Notify](https://github.com/projectdiscovery/notify)
 - [Pwndoc](https://github.com/pwndoc/pwndoc)
 
-## <b style="color:red">Reverse Shells</b>
+<h2 id="Reverse-Shells" style="color:red">Reverse Shells</h2>
 
 - [int0x33 nc.exe](https://github.com/int0x33/nc.exe)
 - [PHP Reverse Shell](https://github.com/pentestmonkey/php-reverse-shell)
 - [Weevely](https://github.com/epinna/weevely3)
 - [YAPS](https://github.com/Nickguitar/YAPS)
 
-## <b style="color:red">Roadmaps</b>
+<h2 id="Roadmaps" style="color:red">Roadmaps</h2>
 
 - [Hacker Roadmap](https://github.com/sundowndev/hacker-roadmap)
 
-## <b style="color:red">Social engineering and phishing</b>
+<h2 id="Social-engineering-and-phishing" style="color:red">Social engineering and phishing</h2>
 
 - [GoPhish](https://github.com/gophish/gophish)
 - [Social Engineering Toolkit (SET)](https://github.com/trustedsec/social-engineer-toolkit)
 
-## <b style="color:red">Threat Intelligence</b>
+<h2 id="Threat-Intelligence" style="color:red">Threat Intelligence</h2>
 
 - Soon...
 
-## <b style="color:red">Other Utilities</b>
+<h2 id="Other-Utilities" style="color:red">Other Utilities</h2>
 
 - [anew](https://github.com/tomnomnom/anew)
 - [Arsenal](https://github.com/Orange-Cyberdefense/arsenal)
@@ -333,11 +332,11 @@
 - [unfurl](https://github.com/tomnomnom/unfurl)
 - [Veil](https://github.com/Veil-Framework/Veil)
 
-## <b style="color:red">Virtualization and Container Security</b>
+<h2 id="Virtualization-and-Container-Security" style="color:red">Virtualization and Container Security</h2>
 
 - [Dockerlabs](https://github.com/collabnix/dockerlabs)
 
-## <b style="color:red">Vulnerability Scanning</b>
+<h2 id="Vulnerability-Scanning" style="color:red">Vulnerability Scanning</h2>
 
 - [interactsh-client](https://github.com/projectdiscovery/interactsh)
 - [Legion](http://github.com/GoVanguard/legion)
@@ -348,7 +347,7 @@
 - [Striker](https://github.com/s0md3v/striker)
 - [Wapiti](https://github.com/wapiti-scanner/wapiti)
 
-## <b style="color:red">Web Application Security</b>
+<h2 id="Web-Application-Security" style="color:red">Web Application Security</h2>
 
 - [Commix](https://github.com/commixproject/commix)
 - [Joomscan](https://github.com/OWASP/joomscan)
@@ -358,7 +357,7 @@
 - [Wpscan](https://github.com/wpscanteam/wpscan)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
 
-## <b style="color:red">Wireless Security</b>
+<h2 id="Wireless-Security" style="color:red">Wireless Security</h2>
 
 - [Aircrack-ng](https://github.com/aircrack-ng/aircrack-ng)
 - [Bully](https://github.com/aanarchyy/bully)
@@ -369,7 +368,7 @@
 - [Spooftooph](https://gitlab.com/kalilinux/packages/spooftooph)
 - [Wifite](https://github.com/derv82/wifite2)
 
-## <b style="color:red">Wordlists</b>
+<h2 id="Wordlists" style="color:red">Wordlists</h2>
 
 - [CeWL](https://github.com/digininja/CeWL)
 - [Crunch](https://github.com/crunchsec/crunch)
