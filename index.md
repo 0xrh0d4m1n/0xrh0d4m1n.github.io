@@ -1,6 +1,7 @@
 # Hacking Resources
 
-> if the fork is outdated, rollback to base repo to get most recent commits...
+> This is a quick reference repo of my favorite hacking resources that I use mostly.
+> If you find some outdated fork, rollback to original repo to get most recent version.
 
 ---
 
