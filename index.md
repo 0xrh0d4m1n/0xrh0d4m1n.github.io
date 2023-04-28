@@ -1,3 +1,4 @@
+<script src="https://tryhackme.com/badge/517522"></script>
 # Hacking Resources
 
 > This is a quick reference repo of my favorite hacking resources that I use mostly.
