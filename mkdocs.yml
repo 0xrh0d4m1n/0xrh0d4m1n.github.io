@@ -1,0 +1,195 @@
+####################################################################
+# General Configuration
+####################################################################
+site_name: 0xrh0d4m1n
+copyright: Copyright &copy; 2024 - 0xrh0d4m1n
+
+####################################################################
+# Theme
+####################################################################
+theme:
+    name: material
+    logo: assets/img/logos/logo.svg
+    favicon: assets/img/logos/logo.svg
+    features:
+        - search.suggest
+        - search.highlight
+        - navigation.top
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.instant
+        - navigation.instant.progress
+    palette:
+        - scheme: default
+          toggle:
+              icon: material/toggle-switch
+              name: Switch to Dark Theme
+          primary: black
+          accent: teal
+        - scheme: slate
+          toggle:
+              icon: material/toggle-switch-off-outline
+              name: Switch to Light Theme
+          primary: black
+          accent: teal
+
+####################################################################
+# Pages
+####################################################################
+nav:
+    - Home: index.md
+    - About: pages/about/index.md
+    - Writeups:
+          - pages/writeups/index.md
+          - HackTheBox: pages/writeups/htb/index.md
+          - TryHackMe: pages/writeups/thm/index.md
+          - Vulnhub: pages/writeups/vulnhub/index.md
+          - Portswigger: pages/writeups/portswigger/index.md
+    - Codex:
+          - pages/codex/index.md
+          - Systems:
+                - Linux:
+                      - Hardware and Sysconfig:
+                          - Linux Boot Process: pages/codex/systems/linux/hardware-and-sysconfig/boot-process.md
+                          - Kernel Module: pages/codex/systems/linux/hardware-and-sysconfig/kernel-module.md
+                          - Network Configuration: pages/codex/systems/linux/hardware-and-sysconfig/network-configuration.md
+                          - Storage Management: pages/codex/systems/linux/hardware-and-sysconfig/storage-management.md
+                          - Cloud and Virtualization: pages/codex/systems/linux/hardware-and-sysconfig/cloud-and-virtualization.md
+                          - Localization Options: pages/codex/systems/linux/hardware-and-sysconfig/localization-options.md
+                      - Operations and Maintenance:
+                          - Software Management: pages/codex/systems/linux/operations-and-maintenance/software-management.md
+                          - User and Group Management: pages/codex/systems/linux/operations-and-maintenance/user-and-group-management.md
+                          - File and Directory Management: pages/codex/systems/linux/operations-and-maintenance/file-and-directory-management.md
+                          - Service Management: pages/codex/systems/linux/operations-and-maintenance/service-management.md
+                          - Server Roles: pages/codex/systems/linux/operations-and-maintenance/server-roles.md
+                          - Job Scheduling and Automation: pages/codex/systems/linux/operations-and-maintenance/job-scheduling-and-automation.md
+                      - Security:
+                          - Permission, User Types, Privilege Escalation: pages/codex/systems/linux/linux-security/permissions-users-privileges.md
+                          - Access and Authentication: pages/codex/systems/linux/linux-security/access-authentication.md
+                          - Security Best Practices: pages/codex/systems/linux/linux-security/security-best-practices.md
+                          - Implementing Logging: pages/codex/systems/linux/linux-security/implementing-logging.md
+                          - Implementing and Configuring: pages/codex/systems/linux/linux-security/implementing-and-configuring.md
+                          - Backup Restore and Compression: pages/codex/systems/linux/linux-security/backup-restore-compression.md
+                      - Troubleshooting and Diagnostics:
+                          - System Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/System.md
+                          - Application Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/Application.md
+                          - Process Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/Process.md
+                          - User Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/User.md
+                          - Hardware Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/Hardware.md
+                - Windows: pages/codex/systems/windows/index.md
+          - Cyber Security:
+                - Infosec: pages/codex/cybersecurity/infosec/index.md
+                - Pentest: pages/codex/cybersecurity/pentest/index.md
+                - Red Team: pages/codex/cybersecurity/redteam/index.md
+                - Blue Team: pages/codex/cybersecurity/blueteam/index.md
+                - Threat Intel: pages/codex/cybersecurity/cti/index.md
+          - Programming:
+                - Assembly: pages/codex/programming/assembly/index.md
+                - ShellScript: pages/codex/programming/shellscript/index.md
+                - Python: pages/codex/programming/python/index.md
+                - JavaScript: pages/codex/programming/javascript/index.md
+                - Nim: pages/codex/programming/nim/index.md
+                - Go: pages/codex/programming/go/index.md
+                - Rust: pages/codex/programming/rust/index.md
+          - Network:
+                - Basics: pages/codex/network/basics/index.md
+                - Firewalls: pages/codex/network/firewalls/index.md
+                - DNS: pages/codex/network/dns/index.md
+          - DevOps:
+                - Terraform: pages/codex/devops/terraform/index.md
+                - Ansible: pages/codex/devops/ansible/index.md
+                - Docker: pages/codex/devops/docker/index.md
+                - Kubernetes: pages/codex/devops/kubernetes/index.md
+    - Blog: pages/blog/index.md
+    - Hire Me: pages/hireme/index.md
+    - Tracker: pages/tracker/index.md
+    - Tags: pages/tags/index.md
+
+####################################################################
+# Extra
+####################################################################
+extra:
+    generator: false
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/0xrh0d4m1n
+          name: Github
+        - icon: fontawesome/brands/x-twitter
+          link: https://twitter.com/0xrh0d4m1n
+          name: Twitter
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/in/0xrh0d4m1n/
+          name: Linkedin
+extra_css:
+    - 'stylesheets/extra.css'
+
+####################################################################
+# Plugins
+####################################################################
+plugins:
+    - search
+    - open-in-new-tab
+    - glightbox:
+        skip_classes:
+          - skip-lightbox
+    - blog:
+          blog_dir: pages/blog
+          blog_toc: true
+          categories_toc: true
+          draft: true
+          draft_on_serve: false
+          post_url_format: '{categories}/{slug}'
+          #      authors_profiles: true
+    - tags:
+          tags_file: pages/tags/index.md
+
+####################################################################
+# Extensions
+####################################################################
+markdown_extensions:
+    ####################
+    # Formatting
+    ####################
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    ####################
+    # Images
+    ####################
+    - attr_list
+    - md_in_html
+    ####################
+    # Code Blocks
+    ####################
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    ####################
+    # Lists
+    ####################
+    - def_list
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    ####################
+    # Notifications
+    ####################
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    ####################
+    # Icons & Emojis
+    ####################
+    - attr_list
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - toc:
+        toc_depth: 3
+        title: Topic Navigation

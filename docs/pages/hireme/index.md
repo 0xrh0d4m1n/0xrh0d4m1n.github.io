@@ -1,0 +1,499 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
+# Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
+
+## _Cybersecurity Specialist_
+
+### [:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/0xrh0d4m1n) [:fontawesome-brands-square-github: GitHub](https://github.com/0xrh0d4m1n)
+
+![](../../assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg){ .skip-lightbox }
+
+---
+
+## :compass: **Executive Summary**
+
+Passionate about cybersecurity, my fascination with hacking began in my youth and has remained a
+constant drive throughout my career. My journey started with an electrical engineering
+background, where I acquired a solid foundation in electronics and microcontrollers. Embracing
+the typical greatest IT minds path and following the path of many IT pioneers, I left academia
+to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had
+acquired. This led me to web development.
+
+Transitioning into web development, I rapidly evolved into a Full Stack Web Developer, a
+transformation made possible by the unwavering and invaluable support of great mentors around the
+world. My curiosity soon led me to the cutting-edge technology of blockchain and NFTs, where I
+was actively involved in innovative projects. However, it was the intricate and dynamic field of
+cybersecurity that truly captivated me, prompting a deep dive into cryptography and a range of
+security disciplines.
+
+I have completed top-tier courses on leading cybersecurity platforms, staying ahead of industry
+trends and mastering the most current practices. My education has been greatly enhanced by
+hands-on experience in advanced labs, where I've tackled real-world scenarios to hone my skills.
+Additionally, I have extensively practiced advanced bug bounty hunting techniques, participating
+in numerous platforms worldwide. This comprehensive, practical experience has not only broadened
+my technical expertise but also instilled a profound appreciation for the ever-evolving
+landscape of knowledge in cybersecurity. I am committed to continuing this exhilarating journey,
+always learning, always adapting, and always pushing the boundaries of what's possible in the
+digital world. Today, I stand with a profound understanding of cybersecurity, shaped by extensive
+practice and the humility gained from the [Dunning-Kruger effect](https://en.wikipedia.
+org/wiki/Dunning%E2%80%93Kruger_effect). I am eager to continue this journey, constantly
+expanding my knowledge and expertise.
+
+---
+
+## :toolbox: **Skills & Expertise**
+
+??? abstract "Technical Skills"
+
+    <div class="grid cards" markdown>
+
+      -   ### **Penetration Testing**
+
+        ![](../../assets/img/icons/pentesting.png){ .skip-lightbox }
+
+        ---
+
+        Simulating cyber attacks to identify and exploit security vulnerabilities.
+
+      - ### **Risk Assessment**
+
+        ![](../../assets/img/icons/risk-management.png){ .skip-lightbox }
+
+        ---
+
+        Evaluating and prioritizing potential risks to minimize the impact.
+
+      - ### **Vulnerability Assessment**
+
+        ![](../../assets/img/icons/vulnerability-assessment.png){ .skip-lightbox }
+
+        ---
+
+        Systematically identifying and quantifying security vulnerabilities in systems.
+
+      - ### **Security Operations**
+
+        ![](../../assets/img/icons/security-operations.png){ .skip-lightbox }
+
+        ---
+
+        Overseeing and maintaining a secure operational computing environment.
+
+      - ### **Incident Response**
+
+        ![](../../assets/img/icons/incident-response.png){ .skip-lightbox }
+
+        ---
+
+        Effectively managing and mitigating cyber incidents to minimize damage and recovery time.
+
+      - ### **Cyber Threat Intel**
+
+        ![](../../assets/img/icons/cyber-threat.png){ .skip-lightbox }
+
+        ---
+
+        Analyzing and interpreting information about potential cyber threats to prevent attacks.
+
+    </div>
+
+??? note "Programming Languages"
+
+    <div class="grid cards" markdown>
+
+      - ### **Nim**
+
+        ![](../../assets/img/icons/nim.png){ .skip-lightbox }
+
+        ---
+
+        I adeptly leverage Nim's efficiency and expressive syntax to craft secure, high-performance applications with a focus on cybersecurity tooling.
+
+      - ### **JavaScript**
+
+        ![](../../assets/img/icons/javascript.png){ .skip-lightbox }
+
+        ---
+
+        My JavaScript expertise make me possible to perform penetration testing on web applications, identifying and exploiting client-side vulnerabilities.
+
+      - ### **Python**
+
+        ![](../../assets/img/icons/python.png){ .skip-lightbox }
+
+        ---
+
+        My Python skills are honed for scripting powerful cybersecurity tools and automating complex security tasks.
+
+      - ### **Shell Script**
+
+        ![](../../assets/img/icons/shellscript.png){ .skip-lightbox }
+
+        ---
+
+        I employ ShellScript for automating security processes and orchestrating system-level tasks on Unix/Linux platforms.
+
+      - ### **C**
+
+        ![](../../assets/img/icons/c.png){ .skip-lightbox }
+
+        ---
+
+        With my proficiency in C, I delve into low-level programming to understand and tweak cybersecurity tools.
+
+      - ### **Assembly**
+
+        ![](../../assets/img/icons/assembly.png){ .skip-lightbox }
+
+        ---
+
+        My knowledge of Assembly allows me to perform meticulous analysis and reverse engineering of malware to strengthen defense mechanisms.
+
+    </div>
+
+??? tip "Tools & Technologies"
+
+    <div class="grid cards" markdown>
+
+      -   ### **Burp Suite**
+
+        ![](../../assets/img/icons/burpsuite.png){ .skip-lightbox }
+
+        ---
+
+        Skilled in utilizing Burp Suite for comprehensive web application security testing and uncovering critical vulnerabilities.
+
+      - ### **OWASP Zed Attack Proxy**
+
+        ![](../../assets/img/icons/owasp-zap.png){ .skip-lightbox }
+
+        ---
+
+        Proficient with OWASP ZAP for automated security scanning and targeted manual testing of web apps.
+
+      - ### **Greenbone OpenVAS**
+
+        ![](../../assets/img/icons/openvas.png){ .skip-lightbox }
+
+        ---
+
+        Experienced in deploying OpenVAS to scan and evaluate the security of network services and systems.
+
+      - ### **Tenable Nessus**
+
+        ![](../../assets/img/icons/nessus.png){ .skip-lightbox }
+
+        ---
+
+        Well-versed in using Nessus to identify a wide range of vulnerabilities and security issues within company infrastructure.
+
+      - ### **Qualys, Inc.**
+
+        ![](../../assets/img/icons/qualys.png){ .skip-lightbox }
+
+        ---
+
+        Adept at leveraging Qualys for vulnerability management and securing web applications and cloud environments.
+
+      - ### **Rapid7 Metasploit**
+
+        ![](../../assets/img/icons/metasploit.png){ .skip-lightbox }
+
+        ---
+
+        Knowledgeable in applying Metasploit for developing and executing exploit code to assess network defenses.
+
+      - ### **Nmap**
+
+        ![](../../assets/img/icons/nmap.png){ .skip-lightbox }
+
+        ---
+
+        Capable of conducting advanced network discovery and security auditing with Nmap to reveal potential vulnerabilities.
+
+      - ### **Wireshark**
+
+        ![](../../assets/img/icons/wireshark.png){ .skip-lightbox }
+
+        ---
+
+        Experienced in packet analysis with Wireshark, monitoring and diagnosing network traffic for security investigations.
+
+      - ### **Ghidra**
+
+        ![](../../assets/img/icons/ghidra.png){ .skip-lightbox }
+
+        ---
+
+        Utilize Ghidra for reverse engineering, dissecting malicious code to understand and mitigate attack vectors.
+
+    </div>
+
+---
+
+## :scroll: **Certifications**
+
+??? success "Cybrary"
+
+    <div class="grid cards" markdown>
+
+      - ## **Offensive Penetration Testing**
+
+        ---
+        ![](../../assets/img/certs/cybrary-offensive-pentest.png)
+
+      - ## **Advanced Penetration Testing**
+
+        ---
+        ![](../../assets/img/certs/cybrary-advanced-pentest.png)
+
+      - ## **Penetration Testing**
+
+        ---
+        ![](../../assets/img/certs/cybrary-become-pentester.png)
+
+      - ## **Penetration Testing & Ethical Hacking**
+
+        ---
+        ![](../../assets/img/certs/cybrary-pentest-ethical-hacking.png)
+
+      - ## **OWASP TOP 10**
+
+        ---
+        ![](../../assets/img/certs/cybrary-owasp-top10.png)
+
+      - ## **CompTIA Security+**
+
+        ---
+        ![](../../assets/img/certs/cybrary-comptia-security.png)
+
+      - ## **Cyber Kill Chain Framework**
+
+        ---
+        ![](../../assets/img/certs/cybrary-cyber-kill-chain.png)
+
+      - ## **MITRE ATT&CK Framework**
+
+        ---
+        ![](../../assets/img/certs/cybrary-mitre-framework.png)
+
+      - ## **Security Operations Analyst (SOC)**
+
+        ---
+        ![](../../assets/img/certs/cybrary-become-soc-1.png)
+
+      - ## **CompTIA Linux+**
+
+        ---
+        ![](../../assets/img/certs/cybrary-comptia-linux.png)
+
+
+      - ## **System Administrator**
+
+        ---
+        ![](../../assets/img/certs/cybrary-system-administrator.png)
+
+      - ## **CompTIA A+**
+
+        ---
+        ![](../../assets/img/certs/cybrary-comptia-a.png)
+
+    </div>
+
+??? success "TCM Security"
+
+    <div class="grid cards" markdown>
+
+      - ## **Web Application Penetration Testing**
+
+        ---
+        ![](../../assets/img/certs/tcm-webapp-pentest.png)
+
+      - ## **API Hacking**
+
+        ---
+        ![](../../assets/img/certs/tcm-api-hacking.png)
+
+      - ## **Ethical Hacking**
+
+        ---
+        ![](../../assets/img/certs/tcm-ethical-hacking.png)
+
+      - ## **Movement, Pivoting, Persistence**
+
+        ---
+        ![](../../assets/img/certs/tcm-pivoting-persistence.png)
+
+      - ## **Privilege Escalation Windows**
+
+        ---
+        ![](../../assets/img/certs/tcm-privesc-windows.png)
+
+      - ## **Privilege Escalation Linux**
+
+        ---
+        ![](../../assets/img/certs/tcm-privesc-linux.png)
+
+      - ## **External Pentest Playbook**
+
+        ---
+        ![](../../assets/img/certs/tcm-external-pentest-playbook.png)
+
+      - ## **Governance, Risk and Compliance**
+
+        ---
+        ![](../../assets/img/certs/tcm-governance-risk-compliance.png)
+
+      - ## **Open Source Intelligence (OSINT)**
+
+        ---
+        ![](../../assets/img/certs/tcm-osint.png)
+
+    </div>
+
+??? success "Try Hack Me"
+
+    <div class="grid cards" markdown>
+
+      - ### **Offensive Pentest**
+
+        ---
+        ![](../../assets/img/certs/thm-offensive-pentesting.jpeg)
+
+      - ### **CompTIA Pentest+**
+
+        ---
+        ![](../../assets/img/certs/thm-comptia-pentest.jpeg)
+
+      - ### **JR Pentest**
+
+        ---
+        ![](../../assets/img/certs/thm-jr-pentester.jpeg)
+
+    </div>
+
+??? success "Other"
+
+    <div class="grid cards" markdown>
+
+      - ### **Fortinet Network Security Level 3**
+
+        ---
+        ![](../../assets/img/certs/fortinet-network-sec-level-3.png)
+
+      - ### **Fortinet Network Security Level 2**
+
+        ---
+        ![](../../assets/img/certs/fortinet-network-sec-level-2.png)
+
+      - ### **Fortinet Network Security Level 1**
+
+        ---
+        ![](../../assets/img/certs/fortinet-network-sec-level-1.png)
+
+      -   ### **API Penetration Testing**
+
+        ---
+        ![](../../assets/img/certs/apisec-api-pentest.png)
+
+      - ### **EC Council Master OSINT**
+
+        ---
+        ![](../../assets/img/certs/eccouncil-master-osint.jpeg)
+
+      - ### **EC Council Reconnaissance**
+
+        ---
+        ![](../../assets/img/certs/eccouncil-master-recon.jpeg)
+
+    </div>
+
+---
+
+## :briefcase: **Professional Experience**
+
+<div class="grid cards" markdown>
+
+-   ## **HackerOne**
+
+    ### _Independent Cyber Security Researcher_
+
+    #### _Remote_
+
+    #### Jan 2023 - Present
+
+    ***
+
+    - Successfully identified and reported a significant security vulnerability through
+      HackerOne's Bug Bounty Program.
+    - Conducted thorough vulnerability assessments and penetration testing on a variety of web
+      applications to uncover security issues.
+    - Maintained up-to-date knowledge of the latest cybersecurity threats and trends.
+    - Collaborated with security teams to responsibly disclose vulnerabilities.
+    - Honed skills by using a good variety of cybersecurity tools.
+    - Practiced many methodologies to conduct security assessments.
+
+</div>
+
+---
+
+## :fontawesome-solid-graduation-cap: **Education**
+
+<div class="grid cards" markdown>
+
+-   ### **Electrical Engineering**
+
+    #### _University X_
+
+    #### Jan 2014 - Dez 2016
+
+    ***
+
+    - Successfully identified and reported a significant security vulnerability through
+      HackerOne's Bug Bounty Program, demonstrating strong analyticalskills and attention to
+      detail.
+
+</div>
+
+---
+
+## :package: **Projects**
+
+<div class="grid cards" markdown>
+
+-   ### **0xh3x73rs Team**
+
+    #### _Founding Member_
+
+    #### Jan 2014 - Dez 2016
+
+    ***
+
+    - Successfully identified and reported a significant security vulnerability through
+      HackerOne's Bug Bounty Program, demonstrating strong analyticalskills and attention to
+      detail.
+
+</div>
+
+---
+
+## :trophy: **Achievements**
+
+-   #### :star: 1st Place - CTF Hacker Talent of the Month (HackerOne)
+-   #### :star: Top 1% - Hacker Rankings (TryHackMe)
+
+---
+
+## :speech_balloon: **Languages**
+
+-   #### :flag_us: **English**: `Fluent`
+-   #### :flag_br: **Portuguese**: `Fluent`
+-   #### :flag_es: **Spanish**: `Conversational`
+
+---
+
+[:fontawesome-solid-handshake-simple: Let's Talk ](https://www.linkedin.com/in/0xrh0d4m1n){ .middle .md-button .btn-outline-success }
