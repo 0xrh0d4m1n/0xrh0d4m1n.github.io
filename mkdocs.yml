@@ -111,6 +111,15 @@ nav:
 ####################################################################
 extra:
     generator: false
+    consent:
+      title: Cookie Consent
+      description: >-
+        I use cookies to recognize your repeated visits and preferences, as well
+        as to measure whether users find what they're searching for. With your 
+        consent, you're helping me to make our experience better.
+      actions:
+        - manage
+        - accept
     analytics:
       provider: google
       property: G-FMK0ZJHBXF
