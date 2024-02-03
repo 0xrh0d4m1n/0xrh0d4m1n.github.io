@@ -111,6 +111,9 @@ nav:
 ####################################################################
 extra:
     generator: false
+    analytics:
+      provider: google
+      property: G-FMK0ZJHBXF
     social:
         - icon: fontawesome/brands/github
           link: https://github.com/0xrh0d4m1n
