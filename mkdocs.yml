@@ -15,7 +15,6 @@ theme:
         - search.suggest
         - search.highlight
         - navigation.top
-        - navigation.tracking
         - navigation.tabs
         - navigation.tabs.sticky
         - navigation.instant
