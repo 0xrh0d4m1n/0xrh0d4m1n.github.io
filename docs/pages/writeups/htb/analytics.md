@@ -7,8 +7,9 @@ tags:
     - Writeups
     - Walkthrough
     - Linux
-    - Kernel
     - Web
+    - Metabase
+    - Kernel
 ---
 
 [:octicons-arrow-left-24: Back to HackTheBox Writeups](./index.md){ .sm-button }
@@ -18,9 +19,9 @@ tags:
 ![](https://live.staticflickr.com/65535/53504825810_a88e0fc9bb_c.jpg){loading=lazy}
 
 ??? info "Information"
-    **Machine**: [Keeper](https://app.hackthebox.com/machines/569)  
+    **Machine**: [Analytics](https://app.hackthebox.com/machines/569)  
     **Level**: `Easy`  
-    **Tags**: `Linux`, `Kernel`, `Web`  
+    **Tags**: `Linux`, `Web`, `Metabase`, `Kernel`  
     **Pwn**: [Pwned by 0xrh0d4m1n](https://www.hackthebox.com/achievement/machine/1013077/569)
 
 ---
