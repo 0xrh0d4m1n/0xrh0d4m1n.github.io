@@ -424,7 +424,7 @@ expanding my knowledge and expertise.
 
     #### _Remote_
 
-    #### Jan 2023 - Present
+    #### 2023 - Present
 
     ***
 
@@ -445,17 +445,27 @@ expanding my knowledge and expertise.
 
 <div class="grid cards" markdown>
 
--   ### **Electrical Engineering**
+-   ### **B.Tech in Cybersecurity**
 
     #### _University X_
 
-    #### Jan 2014 - Dez 2016
+    #### 2023 - 2025
 
     ***
 
-    - Successfully identified and reported a significant security vulnerability through
-      HackerOne's Bug Bounty Program, demonstrating strong analyticalskills and attention to
-      detail.
+    - Actively involved in cybersecurity research projects and student-led initiatives.
+    - Strong foundation in network security, cryptography, and ethical hacking principles.
+  
+- ### **Electrical Engineering**
+
+    #### _University Z_
+
+    #### 2014 - 2016
+
+    ***
+
+    - Gained proficiency in programming languages (e.g., C, Python) for embedded systems design and automation tasks. 
+    - Developed problem-solving and analytical skills, providing a solid base for cybersecurity work.
 
 </div>
 
@@ -469,13 +479,14 @@ expanding my knowledge and expertise.
 
     #### _Founding Member_
 
-    #### Jan 2014 - Dez 2016
+    #### 2023 - 2024
 
     ***
 
-    - Successfully identified and reported a significant security vulnerability through
-      HackerOne's Bug Bounty Program, demonstrating strong analyticalskills and attention to
-      detail.
+    - Co-founded a bug bounty team, demonstrating leadership and initiative in the cybersecurity field.
+    - Collaborated with team members to identify and report vulnerabilities in various web applications.
+    - Contributed to the successful identification of significant security flaws.
+    - Developed expertise in vulnerability research and reporting methodologies.
 
 </div>
 
