@@ -123,15 +123,18 @@ extra:
       provider: google
       property: G-FMK0ZJHBXF
     social:
-        - icon: fontawesome/brands/github
-          link: https://github.com/0xrh0d4m1n
-          name: Github
         - icon: fontawesome/brands/x-twitter
           link: https://twitter.com/0xrh0d4m1n
           name: Twitter
-        - icon: fontawesome/brands/linkedin
-          link: https://www.linkedin.com/in/0xrh0d4m1n/
-          name: Linkedin
+        - icon: fontawesome/brands/github
+          link: https://github.com/0xrh0d4m1n
+          name: Github
+        - icon: fontawesome/brands/telegram
+          link: https://t.me/Oxrh0d4m1n
+          name: Telegram
+        - icon: fontawesome/brands/discord
+          link: https://discord.com/users/272990907307917313
+          name: Discord
 extra_css:
     - 'stylesheets/extra.css'
 
