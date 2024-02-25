@@ -28,6 +28,11 @@
   max-height: 500px !important;
 }
 
+.contact-badge {
+  display: inline !important;
+  margin-right: 50px !important;
+}
+
 
 @keyframes neonGlow {
   0%,
