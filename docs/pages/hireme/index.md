@@ -110,7 +110,7 @@ expanding my knowledge and expertise.
 
         ---
 
-        I adeptly leverage Nim's efficiency and expressive syntax to craft secure, high-performance applications with a focus on cybersecurity tooling.
+        I'm still exploring new languages like Nim, trying to adeptly leverage Nim's efficiency and expressive syntax to craft secure, high-performance applications with a focus on cybersecurity tooling.
 
       - ### **JavaScript**
 
@@ -118,7 +118,7 @@ expanding my knowledge and expertise.
 
         ---
 
-        My JavaScript expertise make me possible to perform penetration testing on web applications, identifying and exploiting client-side vulnerabilities.
+        My JavaScript expertise come from a long time, my background as developer made me possible to perform penetration testing on web applications, identifying and exploiting client-side vulnerabilities.
 
       - ### **Python**
 
@@ -126,7 +126,7 @@ expanding my knowledge and expertise.
 
         ---
 
-        My Python skills are honed for scripting powerful cybersecurity tools and automating complex security tasks.
+        My Python skills are honed for scripting powerful cybersecurity tools and also automating complex security tasks.
 
       - ### **Shell Script**
 
@@ -134,15 +134,15 @@ expanding my knowledge and expertise.
 
         ---
 
-        I employ ShellScript for automating security processes and orchestrating system-level tasks on Unix/Linux platforms.
+        I'm constantly using ShellScript for automating security processes and orchestrating system-level tasks on Unix/Linux platforms.
 
-      - ### **C**
+      - ### **Rust**
 
-        ![](../../assets/img/icons/c.png){ .skip-lightbox }
+        ![](../../assets/img/icons/rust.png){ .skip-lightbox }
 
         ---
 
-        With my proficiency in C, I delve into low-level programming to understand and tweak cybersecurity tools.
+        With my proficiency in Rust, I delve into low-level programming to create my own high-performance cybersecurity tools.
 
       - ### **Assembly**
 
@@ -150,7 +150,7 @@ expanding my knowledge and expertise.
 
         ---
 
-        My knowledge of Assembly allows me to perform meticulous analysis and reverse engineering of malware to strengthen defense mechanisms.
+        My knowledge of Assembly allows me to perform meticulous analysis and reverse engineering of malware through tools like Ghidra.
 
     </div>
 
