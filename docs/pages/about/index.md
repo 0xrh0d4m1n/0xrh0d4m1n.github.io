@@ -31,8 +31,8 @@ Within this realm of ones and zeroes, I stand as a dedicated sentinel for the sa
 
 ---
 
-## _If you have suggestions or any other subject, feel free to contact me at:_
+## _If you have suggestions or any other subject, feel free to contact me:_
 
-[:fontawesome-brands-twitter: Twitter](https://twitter.com/0xrh0d4m1n){ .md-button } [:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:fontawesome-brands-github: GitHub](https://github.com/0xrh0d4m1n){ .md-button } [:fontawesome-brands-discord: Discord](https://discord.com/users/272990907307917313){ .md-button }
+[:simple-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }
 
 ### _Hope you enjoy your stay, and thanks for visiting me! :wink:_

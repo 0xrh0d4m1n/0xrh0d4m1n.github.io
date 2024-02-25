@@ -5,10 +5,9 @@ hide:
 ---
 
 # Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
+## _Independent Cybersecurity Researcher_
 
-## _Cybersecurity Specialist_
-
-### [:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/0xrh0d4m1n) [:fontawesome-brands-square-github: GitHub](https://github.com/0xrh0d4m1n)
+[:simple-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
 
 ![](../../assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg){ .skip-lightbox }
 
@@ -449,7 +448,7 @@ expanding my knowledge and expertise.
 
     #### _University X_
 
-    #### 2023 - 2025
+    #### 2023 - 2026
 
     ***
 
@@ -507,4 +506,7 @@ expanding my knowledge and expertise.
 
 ---
 
-[:fontawesome-solid-handshake-simple: Let's Talk ](https://www.linkedin.com/in/0xrh0d4m1n){ .middle .md-button .btn-outline-success }
+## :arrow_down: **Download Resume**
+If you want to save my resume, you can download it below, feel free to contact me any time!
+
+[:material-file-download: Save My Resume ](./../../assets/docs/Resume.pdf){ .middle .md-button .btn-outline-success }
