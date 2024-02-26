@@ -126,6 +126,9 @@ extra:
         - icon: fontawesome/brands/x-twitter
           link: https://twitter.com/0xrh0d4m1n
           name: Twitter
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/in/0xrh0d4m1n
+          name: Linkedin
         - icon: fontawesome/brands/github
           link: https://github.com/0xrh0d4m1n
           name: Github
