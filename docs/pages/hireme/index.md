@@ -7,7 +7,7 @@ hide:
 # Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
 ## _Independent Cybersecurity Researcher_
 
-[:simple-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
+[:simple-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
 
 ![](../../assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg){ .skip-lightbox }
 
