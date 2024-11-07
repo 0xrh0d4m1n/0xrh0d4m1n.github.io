@@ -509,6 +509,6 @@ expanding my knowledge and expertise.
 ## :arrow_down: **Download Resume**
 If you want to save my resume, you can download it below, feel free to contact me any time!
 
-[:material-file-download: English Resume ](./../../assets/docs/resume-enus.pdf){ .middle .md-button .btn-outline-success }
+[:material-file-download: English Resume ](../../assets/docs/resume-enus.pdf){ .middle .md-button .btn-outline-success }
 
-[:material-file-download: Portuguese Resume ](./../../assets/docs/resume-ptbr.pdf){ .middle .md-button .btn-outline-success }
+[:material-file-download: Portuguese Resume ](../../assets/docs/resume-ptbr.pdf){ .middle .md-button .btn-outline-success }
