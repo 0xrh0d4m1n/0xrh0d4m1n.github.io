@@ -7,7 +7,7 @@ hide:
 # Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
 ## _Independent Cybersecurity Researcher_
 
-[:simple-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
+[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
 
 ![](../../assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg){ .skip-lightbox }
 
@@ -236,6 +236,88 @@ expanding my knowledge and expertise.
 
 ## :scroll: **Certifications**
 
+??? success "Fortinet"
+
+    <div class="grid cards" markdown>
+
+      - ### **Fortinet Cybersecurity Associate**
+
+        ---
+        ![](../../assets/img/certs/fortinet-fca.png)
+
+      - ### **Fortinet Cybersecurity Fundamentals**
+
+        ---
+        ![](../../assets/img/certs/fortinet-fcf.png)
+
+      - ### **Fortinet Network Security Level 3**
+
+        ---
+        ![](../../assets/img/certs/fortinet-network-sec-level-3.png)
+
+      - ### **Fortinet Network Security Level 2**
+
+        ---
+        ![](../../assets/img/certs/fortinet-network-sec-level-2.png)
+
+      - ### **Fortinet Network Security Level 1**
+
+        ---
+        ![](../../assets/img/certs/fortinet-network-sec-level-1.png)
+
+    </div>
+
+??? success "Google"
+
+    <div class="grid cards" markdown>
+
+      - ## **Cyber Professional Certification**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-0.png)
+
+      - ## **Foundations of Cybersecurity**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-1.png)
+
+      - ## **Manage Security Risks**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-2.png)
+
+      - ## **Networks and Network Security**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-3.png)
+
+      - ## **Linux and SQL**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-4.png)
+
+      - ## **Assets, Threats and Vulnerabilities**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-5.png)
+
+      - ## **Detection and Response**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-6.png)
+
+      - ## **Cybersecurity Tasks with Python**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-7.png)
+
+      - ## **Preparation for Cybersecurity Jobs**
+
+        ---
+        ![](../../assets/img/certs/google-cyber-8.png)
+
+    </div>
+
 ??? success "Cybrary"
 
     <div class="grid cards" markdown>
@@ -379,25 +461,10 @@ expanding my knowledge and expertise.
 
     <div class="grid cards" markdown>
 
-      - ### **Fortinet Network Security Level 3**
+      -   ### **Palo Alto Networks Cybersecurity Foundation**
 
         ---
-        ![](../../assets/img/certs/fortinet-network-sec-level-3.png)
-
-      - ### **Fortinet Network Security Level 2**
-
-        ---
-        ![](../../assets/img/certs/fortinet-network-sec-level-2.png)
-
-      - ### **Fortinet Network Security Level 1**
-
-        ---
-        ![](../../assets/img/certs/fortinet-network-sec-level-1.png)
-
-      -   ### **API Penetration Testing**
-
-        ---
-        ![](../../assets/img/certs/apisec-api-pentest.png)
+        ![](../../assets/img/certs/paloalto-foundation.png)
 
       - ### **EC Council Master OSINT**
 
@@ -408,6 +475,11 @@ expanding my knowledge and expertise.
 
         ---
         ![](../../assets/img/certs/eccouncil-master-recon.jpeg)
+
+      -   ### **API Penetration Testing**
+
+        ---
+        ![](../../assets/img/certs/apisec-api-pentest.png)
 
     </div>
 
