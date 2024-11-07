@@ -9,7 +9,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   ## [**Bizness**](bizness.md)
+-   ## [**Bizness**](3.Projects/0xrh0d4m1n/docs/pages/writeups/htb/bizness.md)
 
     <figure markdown>
         ![](https://live.staticflickr.com/65535/53513263261_2f4f606f86_w.jpg){loading=lazy}
@@ -17,7 +17,7 @@ hide:
 
     ---
 
-    [:octicons-arrow-right-24: Read Writeup...](bizness.md){ .md-button } 
+    [:octicons-arrow-right-24: Read Writeup...](3.Projects/0xrh0d4m1n/docs/pages/writeups/htb/bizness.md){ .md-button } 
 
 -   ## [**Analytics**](analytics.md)
 
