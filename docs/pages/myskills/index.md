@@ -5,7 +5,7 @@ hide:
 ---
 
 # Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
-## _Independent Cybersecurity Researcher_
+## _SOC Cybersecurity Analyst_
 
 [:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
 
@@ -489,24 +489,51 @@ expanding my knowledge and expertise.
 
 <div class="grid cards" markdown>
 
--   ## **HackerOne**
+-   ## **Nexusguard**
 
-    ### _Independent Cyber Security Researcher_
+    ### _SOC Cybersecurity Analyst_
 
-    #### _Remote_
+    #### _Remote, Singapore_
+
+    #### 2024 - Present
+
+    ***
+
+    - Monitor and analyze security events across enterprise systems using SIEM tools to detect, investigate, and respond to potential threats.
+    - Collaborate with incident response teams to mitigate risks and contain security incidents effectively.
+    - Conduct in-depth analysis of alerts to identify patterns indicative of cyber threats, enhancing detection and response capabilities.
+    - Generate detailed reports and presentations on threat intelligence findings, sharing actionable insights with stakeholders to fortify organizational security posture.
+    - Leverage Nexusguard's proprietary DDoS mitigation technologies to protect client infrastructures from volumetric, protocol-based, and application-layer attacks.
+
+-   ## **HackerOne, Bugcrowd, Intigriti**
+
+    ### _Cybersecurity Researcher_
+
+    #### _Remote, Worldwide_
 
     #### 2023 - Present
 
     ***
 
-    - Successfully identified and reported a significant security vulnerability through
-      HackerOne's Bug Bounty Program.
-    - Conducted thorough vulnerability assessments and penetration testing on a variety of web
-      applications to uncover security issues.
-    - Maintained up-to-date knowledge of the latest cybersecurity threats and trends.
-    - Collaborated with security teams to responsibly disclose vulnerabilities.
-    - Honed skills by using a good variety of cybersecurity tools.
-    - Practiced many methodologies to conduct security assessments.
+    - Successfully identified and reported a significant security vulnerability through HackerOne's Bug Bounty Program.
+    - Utilized advanced security testing platforms to perform comprehensive vulnerability assessments, identifying critical security flaws and weaknesses.
+    - Analyzed and reported findings from vulnerability discovery tools to provide actionable insights and recommendations for enhancing system security.
+    - Collaborated with cross-functional teams to address identified vulnerabilities, developing and implementing effective remediation strategies.
+
+-   ## **Freelancing**
+
+    ### _Fullstack Web Developer_
+
+    #### _Remote, Worldwide_
+
+    #### 2018 - 2022
+
+    ***
+
+    - Designed and developed scalable, high-performance web applications using a range of technologies including HTML, CSS, JavaScript, and also frameworks.
+    - Managed software development lifecycle from initial planning and design to deployment and maintenance, ensuring project delivery on time and within budget.
+    - Integrated third-party APIs and services to enhance application functionality and user experience, while maintaining high standards of code quality and security.
+    - Conducted thorough testing and debugging to identify and resolve issues, ensuring optimal performance and reliability of web applications.
 
 </div>
 
@@ -520,12 +547,9 @@ expanding my knowledge and expertise.
 
     #### _University X_
 
-    #### 2023 - 2026
+    #### 2023 - 2025
 
     ***
-
-    - Actively involved in cybersecurity research projects and student-led initiatives.
-    - Strong foundation in network security, cryptography, and ethical hacking principles.
   
 - ### **Electrical Engineering**
 
@@ -534,9 +558,6 @@ expanding my knowledge and expertise.
     #### 2014 - 2016
 
     ***
-
-    - Gained proficiency in programming languages (e.g., C, Python) for embedded systems design and automation tasks. 
-    - Developed problem-solving and analytical skills, providing a solid base for cybersecurity work.
 
 </div>
 

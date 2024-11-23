@@ -101,7 +101,7 @@ nav:
                 - Docker: pages/codex/devops/docker/index.md
                 - Kubernetes: pages/codex/devops/kubernetes/index.md
     - Blog: pages/blog/index.md
-    - Hire Me: pages/hireme/index.md
+    - My Skills: pages/myskills/index.md
     - Tracker: pages/tracker/index.md
     - Tags: pages/tags/index.md
 
