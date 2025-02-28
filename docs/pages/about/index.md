@@ -66,6 +66,5 @@ I believe in **peer-to-peer knowledge** and the power of **decentralized collabo
 [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button }
 [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button }
 [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button }
-[:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }    
 
 ###### _Stay free, stay secure. The battle for digital freedom never ends._
