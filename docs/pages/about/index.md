@@ -63,8 +63,8 @@ No hacker stands alone! Our knowledge is built upon the ideas and manifestos of 
 I believe in **peer-to-peer knowledge** and the power of **decentralized collaboration**. If you want to discuss **hacking, security, open-source, or digital freedom**, feel free to contact me.
 
 [:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button }
-[:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button }
-[:simple-github:](https://github.com/0xrh0d4m1n){ .md-button }
-[:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button }
+[:fontawesome-brands-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button }
+[:fontawesome-brands-github:](https://github.com/0xrh0d4m1n){ .md-button }
+[:fontawesome-brands-telegram:](https://t.me/Oxrh0d4m1n){ .md-button }
 
 ###### _Stay free, stay secure. The battle for digital freedom never ends._

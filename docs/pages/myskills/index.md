@@ -15,11 +15,19 @@ hide:
 
 ## :compass: **Executive Summary**
 
-I am passionate about cybersecurity, my fascination with hacking began in my youth and has remained a constant drive throughout my career. My journey started with an electrical engineering background, where I acquired a solid foundation in electronics and microcontrollers. Following in the footsteps of the most influential minds in IT and the trailblazing pioneers of the field, I left academia to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had acquired. This led me to web development.
+---
 
-Transitioning into web development, I rapidly evolved into a Full Stack Web Developer, a transformation made possible by the unwavering and invaluable support of great mentors around the world. My curiosity soon led me to the cutting-edge technology of blockchain and NFTs, where I was actively involved in innovative projects. However, it was the intricate and dynamic field of cybersecurity that truly captivated me, prompting a deep dive into cryptography and a range of security disciplines.
+I am passionate about cybersecurity, my fascination with hacking began in my youth and has remained a constant drive throughout my career. My journey started with an electrical engineering background, where I acquired a solid foundation in electronics and microcontrollers. Following in the footsteps of the most influential minds in IT and the trailblazing pioneers of the field, I left academia to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had acquired. This led me to web development.  
 
-I have completed top-tier courses on leading cybersecurity platforms, staying ahead of industry trends and mastering the most current practices. My education has been greatly enhanced by hands-on experience in advanced labs, where I've tackled real-world scenarios to hone my skills. Additionally, I have extensively practiced advanced bug bounty hunting techniques, participating in numerous platforms worldwide. This comprehensive, practical experience has not only broadened my technical expertise but also instilled a profound appreciation for the ever-evolving  landscape of knowledge in cybersecurity. I am committed to continuing this exhilarating journey, always learning, always adapting, and always pushing the boundaries of what's possible in the digital world. Today, I stand with a profound understanding of cybersecurity, shaped by extensive practice and the humility gained from the [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect). I am eager to continue this journey, constantly expanding my knowledge and expertise.
+Transitioning into web development, I rapidly evolved into a Full Stack Web Developer, a transformation made possible by the unwavering and invaluable support of great mentors around the world. My curiosity soon led me to the cutting-edge technology of blockchain and NFTs, where I was actively involved in innovative projects. However, it was the intricate and dynamic field of cybersecurity that truly captivated me, prompting a deep dive into cryptography, network security, and various security disciplines.  
+
+I have completed top-tier courses on leading cybersecurity platforms, staying ahead of industry trends and mastering the most current practices. My education has been greatly enhanced by hands-on experience in advanced labs, where I've tackled real-world scenarios to hone my skills. Additionally, I have extensively practiced advanced bug bounty hunting techniques, participating in numerous platforms worldwide.  
+
+Nowadays, I specialize in threat analysis, incident response, and mitigation strategies for large-scale cyber threats, particularly DDoS attacks and advanced network-based threats. As part of my role, I actively monitor, analyze, and counteract Layer 3, 4, and 7 attack vectors, ensuring business continuity and the security of mission-critical systems. I work with Web Application Firewalls (WAFs), SIEM, SOAR, and IDS/IPS solutions, optimizing detection and response mechanisms against sophisticated threats. My expertise extends to log analysis, monitoring, and network forensics, identifying attack patterns, distinguishing legitimate traffic from malicious activity, and reinforcing security perimeters.  
+
+Beyond defensive strategies, I have a strong focus on offensive security research, particularly threat modeling, threat hunting, and reverse engineering. To fully understand the evolving tactics of Advanced Persistent Threats (APTs), I engage in malware analysis and development, dissecting how advanced attack mechanisms operate. This allows me to anticipate adversary strategies, improve detection techniques, and craft better countermeasures against stealthy and persistent threats. My activities also involve deep forensic investigations, analyzing memory and disk artifacts, detecting rootkits, and leveraging sandboxing techniques to observe malware behavior in controlled environments during malware analysis experiments.  
+
+This comprehensive, hands-on experience has broadened my technical expertise and deepened my appreciation for the ever-evolving cybersecurity landscape. I stand with a solid understanding of defensive and offensive security operations, shaped by continuous practice and the humility gained from the [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect). I am committed to constant learning, always trying to stay ahead of adversaries, and pushing the boundaries of what’s possible in the digital world.
 
 ---
 
@@ -470,7 +478,7 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
 
 -   ## **Nexusguard**
 
-    ### _SOC Cybersecurity Analyst_
+    ### _SOC Analyst_
 
     #### _Remote, Singapore_
 
@@ -524,7 +532,8 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
 
 -   ### **B.Tech in Cybersecurity**
 
-    #### _University X_
+    #### _University X_ 
+    ###### _Snipped for privacy_
 
     #### 2023 - 2025
 
@@ -532,7 +541,8 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
   
 - ### **Electrical Engineering**
 
-    #### _University Z_
+    #### _University Y_ 
+    ###### _Snipped for privacy_
 
     #### 2014 - 2016
 
