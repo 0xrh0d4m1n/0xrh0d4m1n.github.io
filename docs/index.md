@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# **Welcome to my Cyberspace!**
+# **Welcome, [1337](https://en.wikipedia.org/wiki/Leet)!**
 
 ### _A long time ago, in a universe of infinite cells, where [Gliders](http://www.catb.org/hacker-emblem/faqs.html) travel endlessly..._
 
@@ -25,13 +25,13 @@ Dive into my **[Blog](pages/blog/index.md)**, where you'll find my freshest insi
 
 ## :martial_arts_uniform: **My Battles**
 
-Look into my **[Writeups](pages/writeups/index.md)** vault, where tales of virtual battles are chronicled. Each writeup is a saga of knowledge,skill, and cyber prowess.
+Each **[Writeup](pages/writeups/index.md)** is a saga of knowledge, skill, and cyber prowess.
 
 ---
 
 ## :books: **My Codex**
 
-For a good reading, explore my **[Codex](pages/codex/index.md)**, there, you will find scrolls of knowledge.They're the essence of cyber wisdom!
+For a good reading, explore my **[Codex](pages/codex/index.md)**, there, you will find bits of knowledge. 
 
 
 

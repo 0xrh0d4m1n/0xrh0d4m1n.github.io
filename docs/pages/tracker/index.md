@@ -14,11 +14,11 @@ hide:
 
 ---  
 
-## [**Blog**](../blog/index.md): 
+## [**Blog**](../blog/index.md) 
 
 > _Regularly posting my insights, thoughts and interesting stuff._  
 
-Latest Posts:  
+**My latest Posts**:    
 - [_Exploring the Cybersecurity Domains: A Comprehensive Guide_](../blog/posts/cybersecurity-domains.md)
 
 --- 

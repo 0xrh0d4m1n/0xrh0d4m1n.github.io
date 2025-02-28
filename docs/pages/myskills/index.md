@@ -7,7 +7,7 @@ hide:
 # Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
 ## _SOC Cybersecurity Analyst_
 
-[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }   
+[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:fontawesome-brands-github:](https://github.com/0xrh0d4m1n){ .md-button } [:fontawesome-brands-telegram:](https://t.me/Oxrh0d4m1n){ .md-button }   
 
 ![](../../assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg){ .skip-lightbox }
 
@@ -15,7 +15,7 @@ hide:
 
 ## :compass: **Executive Summary**
 
-I am passionate about cybersecurity, my fascination with hacking began in my youth and has remained a constant drive throughout my career. My journey started with an electrical engineering background, where I acquired a solid foundation in electronics and microcontrollers. Embracing the typical greatest IT minds path and following the path of IT pioneers, I left academia to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had acquired. This led me to web development.
+I am passionate about cybersecurity, my fascination with hacking began in my youth and has remained a constant drive throughout my career. My journey started with an electrical engineering background, where I acquired a solid foundation in electronics and microcontrollers. Following in the footsteps of the most influential minds in IT and the trailblazing pioneers of the field, I left academia to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had acquired. This led me to web development.
 
 Transitioning into web development, I rapidly evolved into a Full Stack Web Developer, a transformation made possible by the unwavering and invaluable support of great mentors around the world. My curiosity soon led me to the cutting-edge technology of blockchain and NFTs, where I was actively involved in innovative projects. However, it was the intricate and dynamic field of cybersecurity that truly captivated me, prompting a deep dive into cryptography and a range of security disciplines.
 
@@ -474,7 +474,7 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
 
     #### _Remote, Singapore_
 
-    #### 2024 - Present
+    #### 2024 — Present
 
     ***
 
@@ -490,7 +490,7 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
 
     #### _Remote, Worldwide_
 
-    #### 2023 - Present
+    #### 2023 — Present
 
     ***
 
@@ -565,7 +565,7 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
 
 ## :trophy: **Achievements**
 
--   #### :star: 1st Place - CTF Hacker Talent of the Month (HackerOne)
+-   #### :star: First Place — CTF Hacker Talent of the Month (HackerOne)
 -   #### :star: Top 1% - Hacker Rankings (TryHackMe)
 
 ---
@@ -579,7 +579,7 @@ I have completed top-tier courses on leading cybersecurity platforms, staying ah
 ---
 
 ## :arrow_down: **Download Resume**
-If you want to save my resume, you can download it below, feel free to contact me any time!
+If you want to save my résumé, you can download it below, feel free to contact me any time!
 
 [:material-file-download: English Resume ](../../assets/docs/resume-enus.pdf){ .middle .md-button .btn-outline-success }
 
