@@ -2,7 +2,7 @@
 # General Configuration
 ####################################################################
 site_name: 0xrh0d4m1n
-copyright: Copyright &copy; 2024 - 0xrh0d4m1n
+copyright: Copyright &copy; 2025 - 0xrh0d4m1n
 
 ####################################################################
 # Theme
@@ -48,58 +48,59 @@ nav:
     - Codex:
           - pages/codex/index.md
           - Systems:
-                - Linux:
-                      - Hardware and Sysconfig:
-                          - Linux Boot Process: pages/codex/systems/linux/hardware-and-sysconfig/boot-process.md
-                          - Kernel Module: pages/codex/systems/linux/hardware-and-sysconfig/kernel-module.md
-                          - Network Configuration: pages/codex/systems/linux/hardware-and-sysconfig/network-configuration.md
-                          - Storage Management: pages/codex/systems/linux/hardware-and-sysconfig/storage-management.md
-                          - Cloud and Virtualization: pages/codex/systems/linux/hardware-and-sysconfig/cloud-and-virtualization.md
-                          - Localization Options: pages/codex/systems/linux/hardware-and-sysconfig/localization-options.md
-                      - Operations and Maintenance:
-                          - Software Management: pages/codex/systems/linux/operations-and-maintenance/software-management.md
-                          - User and Group Management: pages/codex/systems/linux/operations-and-maintenance/user-and-group-management.md
-                          - File and Directory Management: pages/codex/systems/linux/operations-and-maintenance/file-and-directory-management.md
-                          - Service Management: pages/codex/systems/linux/operations-and-maintenance/service-management.md
-                          - Server Roles: pages/codex/systems/linux/operations-and-maintenance/server-roles.md
-                          - Job Scheduling and Automation: pages/codex/systems/linux/operations-and-maintenance/job-scheduling-and-automation.md
-                      - Security:
-                          - Permission, User Types, Privilege Escalation: pages/codex/systems/linux/linux-security/permissions-users-privileges.md
-                          - Access and Authentication: pages/codex/systems/linux/linux-security/access-authentication.md
-                          - Security Best Practices: pages/codex/systems/linux/linux-security/security-best-practices.md
-                          - Implementing Logging: pages/codex/systems/linux/linux-security/implementing-logging.md
-                          - Implementing and Configuring: pages/codex/systems/linux/linux-security/implementing-and-configuring.md
-                          - Backup Restore and Compression: pages/codex/systems/linux/linux-security/backup-restore-compression.md
-                      - Troubleshooting and Diagnostics:
-                          - System Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/System.md
-                          - Application Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/Application.md
-                          - Process Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/Process.md
-                          - User Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/User.md
-                          - Hardware Troubleshooting: pages/codex/systems/linux/troubleshooting-and-diagnostics/Hardware.md
-                - Windows: pages/codex/systems/windows/index.md
-          - Cyber Security:
-                - Infosec: pages/codex/cybersecurity/infosec/index.md
-                - Pentest: pages/codex/cybersecurity/pentest/index.md
-                - Red Team: pages/codex/cybersecurity/redteam/index.md
-                - Blue Team: pages/codex/cybersecurity/blueteam/index.md
-                - Threat Intel: pages/codex/cybersecurity/cti/index.md
+                - Linux: pages/codex/systems/linux.md
+                - Windows: pages/codex/systems/windows.md
           - Programming:
-                - Assembly: pages/codex/programming/assembly/index.md
-                - ShellScript: pages/codex/programming/shellscript/index.md
-                - Python: pages/codex/programming/python/index.md
-                - JavaScript: pages/codex/programming/javascript/index.md
-                - Nim: pages/codex/programming/nim/index.md
-                - Go: pages/codex/programming/go/index.md
-                - Rust: pages/codex/programming/rust/index.md
-          - Network:
-                - Basics: pages/codex/network/basics/index.md
-                - Firewalls: pages/codex/network/firewalls/index.md
-                - DNS: pages/codex/network/dns/index.md
-          - DevOps:
-                - Terraform: pages/codex/devops/terraform/index.md
-                - Ansible: pages/codex/devops/ansible/index.md
-                - Docker: pages/codex/devops/docker/index.md
-                - Kubernetes: pages/codex/devops/kubernetes/index.md
+                - Fundamentals: pages/codex/programming/index.md
+                - Assembly: pages/codex/programming/assembly.md
+                - Shellscript: pages/codex/programming/shellscript.md
+                - Powershell: pages/codex/programming/powershell.md
+                - Python: pages/codex/programming/python.md
+                - Javascript: pages/codex/programming/javascript.md
+                - Nim: pages/codex/programming/nim.md
+                - Rust: pages/codex/programming/rust.md
+          - Networking:
+                - Fundamentals: pages/codex/networking/index.md
+                - Subnetting: pages/codex/networking/subnetting.md
+                - OSI: pages/codex/networking/osi.md
+                - NAT: pages/codex/networking/nat.md
+                - Switching: pages/codex/networking/switching.md
+                - Routing: pages/codex/networking/routing.md
+                - Proxy: pages/codex/networking/proxy.md
+                - VLAN: pages/codex/networking/vlan.md
+                - VPN: pages/codex/networking/vpn.md
+                - Load-Balancer: pages/codex/networking/load-balancer.md
+                - IDS-IPS: pages/codex/networking/ids-ips.md
+                - Firewalls: pages/codex/networking/firewall.md
+                - WAF: pages/codex/networking/waf.md
+                - Honeypot: pages/codex/networking/honeypot.md
+          - Protocols:
+                - TCP: pages/codex/protocols/tcp.md
+                - IP: pages/codex/protocols/ip.md
+                - UDP: pages/codex/protocols/udp.md
+                - HTTP: pages/codex/protocols/http.md
+                - DNS: pages/codex/protocols/dns.md
+                - BGP: pages/codex/protocols/bgp.md
+                - OSPF: pages/codex/protocols/ospf.md
+                - RIP: pages/codex/protocols/rip.md
+                - ISIS: pages/codex/protocols/isis.md
+                - EIGRP: pages/codex/protocols/eigrp.md
+                - VRRP: pages/codex/protocols/vrrp.md
+                - HSRP: pages/codex/protocols/hsrp.md
+                - GLBP: pages/codex/protocols/glbp.md
+                - PBR: pages/codex/protocols/pbr.md
+          - SOC:
+                - Fundamentals: pages/codex/soc/index.md
+                - Cybersecurity: pages/codex/soc/cyberkillchain.md
+                - MITRE ATT&CK: pages/codex/soc/mitre-attck.md
+                - MITRE D3FEND: pages/codex/soc/mitre-defend.md
+                - SIEM: pages/codex/soc/siem.md
+                - SOAR: pages/codex/soc/soar.md
+          - Infra:
+                - Terraform: pages/codex/infra/terraform.md
+                - Ansible: pages/codex/infra/ansible.md
+                - Docker: pages/codex/infra/docker.md
+                - Kubernetes: pages/codex/infra/kubernetes.md
     - Blog: pages/blog/index.md
     - My Skills: pages/myskills/index.md
     - Tracker: pages/tracker/index.md

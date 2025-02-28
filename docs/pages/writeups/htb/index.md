@@ -9,7 +9,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   ## [**Bizness**](bizness.md)
+-   ## [**Bizness**](/docs/pages/writeups/htb/bizness.md)
 
     <figure markdown>
         ![](https://live.staticflickr.com/65535/53513263261_2f4f606f86_w.jpg){loading=lazy}

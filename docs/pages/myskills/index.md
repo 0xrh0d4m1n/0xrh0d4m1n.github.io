@@ -15,32 +15,11 @@ hide:
 
 ## :compass: **Executive Summary**
 
-Passionate about cybersecurity, my fascination with hacking began in my youth and has remained a
-constant drive throughout my career. My journey started with an electrical engineering
-background, where I acquired a solid foundation in electronics and microcontrollers. Embracing
-the typical greatest IT minds path and following the path of many IT pioneers, I left academia
-to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had
-acquired. This led me to web development.
+I am passionate about cybersecurity, my fascination with hacking began in my youth and has remained a constant drive throughout my career. My journey started with an electrical engineering background, where I acquired a solid foundation in electronics and microcontrollers. Embracing the typical greatest IT minds path and following the path of IT pioneers, I left academia to carve out my own path, a decision fueled by a desire to apply the robust knowledge base I had acquired. This led me to web development.
 
-Transitioning into web development, I rapidly evolved into a Full Stack Web Developer, a
-transformation made possible by the unwavering and invaluable support of great mentors around the
-world. My curiosity soon led me to the cutting-edge technology of blockchain and NFTs, where I
-was actively involved in innovative projects. However, it was the intricate and dynamic field of
-cybersecurity that truly captivated me, prompting a deep dive into cryptography and a range of
-security disciplines.
+Transitioning into web development, I rapidly evolved into a Full Stack Web Developer, a transformation made possible by the unwavering and invaluable support of great mentors around the world. My curiosity soon led me to the cutting-edge technology of blockchain and NFTs, where I was actively involved in innovative projects. However, it was the intricate and dynamic field of cybersecurity that truly captivated me, prompting a deep dive into cryptography and a range of security disciplines.
 
-I have completed top-tier courses on leading cybersecurity platforms, staying ahead of industry
-trends and mastering the most current practices. My education has been greatly enhanced by
-hands-on experience in advanced labs, where I've tackled real-world scenarios to hone my skills.
-Additionally, I have extensively practiced advanced bug bounty hunting techniques, participating
-in numerous platforms worldwide. This comprehensive, practical experience has not only broadened
-my technical expertise but also instilled a profound appreciation for the ever-evolving
-landscape of knowledge in cybersecurity. I am committed to continuing this exhilarating journey,
-always learning, always adapting, and always pushing the boundaries of what's possible in the
-digital world. Today, I stand with a profound understanding of cybersecurity, shaped by extensive
-practice and the humility gained from the [Dunning-Kruger effect](https://en.wikipedia.
-org/wiki/Dunning%E2%80%93Kruger_effect). I am eager to continue this journey, constantly
-expanding my knowledge and expertise.
+I have completed top-tier courses on leading cybersecurity platforms, staying ahead of industry trends and mastering the most current practices. My education has been greatly enhanced by hands-on experience in advanced labs, where I've tackled real-world scenarios to hone my skills. Additionally, I have extensively practiced advanced bug bounty hunting techniques, participating in numerous platforms worldwide. This comprehensive, practical experience has not only broadened my technical expertise but also instilled a profound appreciation for the ever-evolving  landscape of knowledge in cybersecurity. I am committed to continuing this exhilarating journey, always learning, always adapting, and always pushing the boundaries of what's possible in the digital world. Today, I stand with a profound understanding of cybersecurity, shaped by extensive practice and the humility gained from the [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect). I am eager to continue this journey, constantly expanding my knowledge and expertise.
 
 ---
 
