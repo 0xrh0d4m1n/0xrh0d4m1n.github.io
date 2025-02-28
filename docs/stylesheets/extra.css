@@ -1,8 +1,10 @@
 /* https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color */
-.md-tabs__list li:nth-of-type(6) .md-tabs__link {
+
+/*.md-tabs__list li:nth-of-type(6) .md-tabs__link {
   animation: neonGlow 2s ease-in-out infinite;
   color: #39ff14;
 }
+*/
 
 .md-tabs__list li:nth-of-type(6) .md-tabs__link:hover {
   color: #fff;

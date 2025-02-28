@@ -13,7 +13,7 @@ tags:
     - RCE
 ---
 
-[:octicons-arrow-left-24: Back to HackTheBox Writeups](./index.md){ .sm-button }
+[:octicons-arrow-left-24: Back to HackTheBox Writeups](/docs/pages/writeups/htb/index.md){ .sm-button }
 
 # **Codify**
 
@@ -306,7 +306,7 @@ joshua
 users
 tickets
 Joe WilliamsLocal setup?I use this site lot of the time. Is it possible to set this up locally? Like instead of coming to this site, can I download this and set it up in my own computer? A feature like that would be nice.open
-Tom HanksNeed networking modulesI think it would be better if you can implement a way to handle network-based stuff. Would help me out a lot. Thanks!open
+Tom HanksNeed networking modulesI think it would be better if you can implement a way to handle networking-based stuff. Would help me out a lot. Thanks!open
 ```
 
 Great progress, a hash with an username `joshua` which is in our `/etc/passwd`, let's crack it

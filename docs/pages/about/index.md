@@ -4,35 +4,68 @@ hide:
   - toc
 ---
 
-# **About Me**
+## :ninja: **Who Am I ?**
+
+<div style="display: flex; align-items: center; gap: 20px;">
+  <figure style="margin: 0;">
+    <img src="../../assets/img/profile/fc04b819-926c-48d8-b533-94243424c685.jpeg" alt="0xrh0d4m1n" style="max-height: 500px; border-radius: 8px;">
+    <figcaption style="font-size: 0.8em; text-align: center; color: gray;">
+      <b>Valdênio "<b style="color: yellow">0xrh0d4m1n</b>" Marinho</b>
+    </figcaption>
+  </figure>
+
+  <div>
+    Welcome, fellow traveler of the digital frontier. I am <b>0xrh0d4m1n</b>, a hacker, a builder, and a defender of the digital commons. I operate at the intersection of <b>cybersecurity, open-source, and digital sovereignty</b>, a place where freedom is measured in bits, and anonymity is not a crime, but a right.
+    <br><br>
+    Nowadays, where mass surveillance has become the norm, where centralization threatens autonomy, and where the balance of power tilts toward those who control information, I stand for <b>decentralization, privacy, and the hacker ethos</b>.
+    <br><br>
+    This space is my digital manifesto, a small place of my insights, tools, and knowledge for those who seek to <b>secure, defend, and freedom</b>. If you are here, chances are you are part of the resistance, whether you know it yet or not.
+  </div>
+</div>
 
 ---
 
-![](../../assets/img/hero/8b0b19aff84fe487ea30c72985ebb438.jpeg){ align=left .maxH200 loading=lazy .skip-lightbox}
+## :satellite: **My Mission**
 
-[//]: # (![]&#40;../../assets/img/dbd648926d59d5ce22e071bc60ae561da.jpeg&#41;{loading=lazy})
+The fight for privacy is not about hiding, it is about maintaining **control over our own lives**. True hackers are **builders**, not just breakers; they **create** systems that empower rather than enslave.
 
-## :ninja: **Who Am I?**
+I dedicate this space to the **preservation of digital freedom**, sharing:  
+- **Practical cybersecurity knowledge** for those who seek to defend themselves;  
+- **Writeups and analyses** of real-world attacks and vulnerabilities;  
+- **Cryptographic wisdom** which is not an option anymore, but a necessity;  
+- **Open-source software and tools** to fight against digital oppression.  
 
-Greetings, Nomad of the Net! You've jacked into my domain, a pulsating realm of neon dreams and silicon secrets. This is the ever-changing Nexus of my Imagination, my digital bastion of thought and creation. Here in this sprawl of electrons and code, you may refer to me as **0xrh0d4m1n**, your friend and assistant amidst the sprawling data labyrinths of the ‘net. The web—a limitless expanse of knowledge and wonder—is humanity's grandest odyssey. Together, we shall navigate the treacherous depths of this cybernetic world. Our saga is one of bytes and bravery—ready your terminal, the cybersecurity crusade awaits!
-
----
-
-## :compass: **My Mission**
-
-Within this realm of ones and zeroes, I stand as a dedicated sentinel for the sanctity of secrecy and a herald of the open-source crusade. My quest: to forge awareness within the digital fortress, empowering net-beings with the wisdom to shield their sovereign data realms. This enclave serves as my beacon, casting rays of cybersecurity insights and trusted protocols for those who seek enlightenment. May my byte-sized bastion be your lantern in the tempest-tossed seas of cyberspace. Navigate with stealth, savvy seafarer—your odyssey in the shadow-web is guarded. Cyber waves be steady; journey with vigilance!
-
+This is a place for **builders, defenders, and rebels**. If you believe in a future where privacy is a fundamental right, where cryptography is not a crime, and where open-source is the foundation of security, then you are home my friend.
 
 ---
 
-## :thought_balloon: **A Quote**
+## :lock: **A Quote to Remember**
 
-> Freedom is a voyage steered by the compass of knowledge and the sails of persistence, a transformative journey that requires humility and willingness. I believe that sailing this way, it is possible to anchor and rest in the safe harbor of our true potential. The digital world is our battleground, and knowledge is our self-defense weapon. – 0xrh0d4m1n
+> ### "_The computer can be used as a tool to liberate and protect people, rather than to control them._"  
+> — **Hal Finney** 🧙‍♂️  
+
+The [first recipient](https://www.blockchain.com/explorer/transactions/btc/f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16) of a [**Bitcoin**](https://bitcoin.org/en/bitcoin-paper) transaction. A [cypherpunk legend](https://bitcointalk.org/index.php?topic=155054.0). A man ahead of his time.
 
 ---
 
-## _If you have suggestions or any other subject, feel free to contact me:_
+## :bookmark_tabs: **Essential Hacker Literature**
+No hacker stands alone! Our knowledge is built upon the ideas and manifestos of those who came before us. Below are some of the most important documents in hacker history, If you want to understand the hacker movement, start here:
 
-[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:simple-github:](https://github.com/0xrh0d4m1n){ .md-button } [:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button } [:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }
+📖 **The Hacker Manifesto** *(1986, The Mentor)* - The original hacker ethos. [Read it here](https://www.phrack.org/issues/7/3.html)  
+📖 **The Cyphernomicon** *(1994, Timothy C. May)* - The cypherpunk philosophy. [Read it here](https://nakamotoinstitute.org/static/docs/cyphernomicon.txt)  
+📖 **A Cypherpunk’s Manifesto** *(1993, Eric Hughes)* - The foundation of digital privacy. [Read it here](https://www.activism.net/cypherpunk/manifesto.html)  
+📖 **The Cathedral and the Bazaar** *(1999, Eric S. Raymond)* - Open-source revolution. [Read it here](http://www.catb.org/~esr/writings/cathedral-bazaar/)  
+📖 **Reflections on Trusting Trust** *(1984, Ken Thompson)* - A hacker's lesson on security. [Read it here](https://dl.acm.org/doi/10.1145/358198.358210)
 
-### _Hope you enjoy your stay, and thanks for visiting me! :wink:_
+---
+
+## :envelope: **Reach me Out**
+I believe in **peer-to-peer knowledge** and the power of **decentralized collaboration**. If you want to discuss **hacking, security, open-source, or digital freedom**, feel free to contact me.
+
+[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button }
+[:simple-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button }
+[:simple-github:](https://github.com/0xrh0d4m1n){ .md-button }
+[:simple-telegram:](https://t.me/Oxrh0d4m1n){ .md-button }
+[:simple-discord:](https://discord.com/users/272990907307917313){ .md-button }    
+
+###### _Stay free, stay secure. The battle for digital freedom never ends._

@@ -11,7 +11,7 @@ tags:
     - KeePass
 ---
 
-[:octicons-arrow-left-24: Back to HackTheBox Writeups](./index.md){ .sm-button }
+[:octicons-arrow-left-24: Back to HackTheBox Writeups](/docs/pages/writeups/htb/index.md){ .sm-button }
 
 # **Keeper**
 
