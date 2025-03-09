@@ -11,48 +11,52 @@ hide:
 
 <div class="grid cards" markdown>
 
--   [**Hack The Box**](htb/index.md)
+-   ### **Cyberdefenders**
 
-    Read my HackTheBox writeups for step-by-step solutions and educational
-    insights on complex cybersecurity puzzles.
+    ![](../../assets/img/logos/cyberdefenders.png){ .skip-lightbox }
+
+    ***
+
+    [:octicons-arrow-right-24: Read Cyberdefenders Writeups](cdf/index.md){ .md-button }
+
+-   ### **Letsdefend**
+
+    ![](../../assets/img/logos/letsdefend.png){ .skip-lightbox }
+
+    ***
+
+    [:octicons-arrow-right-24: Read Letsdefend Writeups](ldf/index.md){ .md-button }  
+
+-   ### **HackTheBox**
 
     ![](../../assets/img/logos/hackthebox.png){ .skip-lightbox }
 
     ***
 
-    [:octicons-arrow-right-24: Read more about ...](htb/index.md){ .md-button }
+    [:octicons-arrow-right-24: Read HackTheBox Writeups](htb/index.md){ .md-button }  
 
--   [**Try Hack Me**](thm/index.md)
-
-    Discover my TryHackMe writeups, where we break down CTF challenges to
-    help you learn and improve your hacking skills.
+- ### **TryHackMe**
 
     ![](../../assets/img/logos/tryhackme.png){ .skip-lightbox }
 
     ***
 
-    [:octicons-arrow-right-24: Read more about ...](thm/index.md){ .md-button }
+    [:octicons-arrow-right-24: Read TryHackMe Writeups](thm/index.md){ .md-button }
 
--   [**Vulnhub**](vulnhub/index.md)
-
-    Browse through my Vulnhub writeups for comprehensive guides on tackling
-    virtual penetration testing environments.
+-   ### **Vulnhub**
 
     ![](../../assets/img/logos/vulnhub.png){ .skip-lightbox }
 
     ***
 
-    [:octicons-arrow-right-24: Read more about ...](vulnhub/index.md){ .md-button }
+    [:octicons-arrow-right-24: Read VulnHub Writeups](vulnhub/index.md){ .md-button }
 
--   [**Portswigger**](portswigger/index.md)
-
-    Check out my writeups on Portswigger challenges, offering a deep dive
-    into web security and best practices.
+-   ### **Portswigger**
 
     ![](../../assets/img/logos/portswigger.png){ .skip-lightbox }
 
     ***
 
-    [:octicons-arrow-right-24: Read more about ...](portswigger/index.md){ .md-button }
+    [:octicons-arrow-right-24: Read Portswigger Writeups](portswigger/index.md){ .md-button }
 
 </div>

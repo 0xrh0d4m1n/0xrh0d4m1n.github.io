@@ -2,6 +2,8 @@
 hide:
     - navigation
     - toc
+search:
+  exclude: true
 ---
 
 # **Content Index**
@@ -27,12 +29,12 @@ hide:
 
 > _My collection of technical challenge solutions and explanations._
 
+- :yellow_circle: [**Cyberdefenders**](../writeups/cdf/index.md)
+- :yellow_circle: [**LetsDefend**](../writeups/ldf/index.md)
 - :green_circle: [**Hack The Box**](../writeups/htb/index.md)  
 - :yellow_circle: [**TryHackMe**](../writeups/thm/index.md)
 - :yellow_circle: [**Vulnhub**](../writeups/vulnhub/index.md)
 - :yellow_circle: [**PortSwigger Labs**](../writeups/portswigger/index.md)  
-- :red_circle: **Cyberdefenders**
-- :red_circle: **LetsDefend**
 
 ---
 
@@ -41,8 +43,8 @@ hide:
 > _Knowledge base and quick technical reference library._  
 
 ### **Systems**  
-- :yellow_circle: Linux  
-- :yellow_circle: Windows  
+- :yellow_circle: [Linux](../codex/systems/linux.md)  
+- :yellow_circle: [Windows](../codex/systems/windows.md)  
 
 ### **Programming**  
 - :yellow_circle: [Fundamentals](../codex/programming/index.md)
@@ -91,7 +93,7 @@ hide:
 
 ### **Security Operations Center**    
 - :green_circle: [Fundamentals](../codex/soc/index.md)
-- :green_circle: [Cyber Kill Chain](../codex/soc/cyberkillchain.md)
+- :yellow_circle: [Cyber Kill Chain](../codex/soc/cyberkillchain.md)
 - :yellow_circle: [MITRE ATT&CK Framework](../codex/soc/mitre-attck.md)
 - :yellow_circle: [MITRE D3FEND Framework](../codex/soc/mitre-defend.md)
 - :yellow_circle: [Security information and event management (SIEM)](../codex/soc/siem.md)
@@ -111,3 +113,4 @@ hide:
 ### **Digital Forensics and Incident Response**  
 - :yellow_circle: Basics
 - :yellow_circle: Forensics
+- :yellow_circle: USB Forensics

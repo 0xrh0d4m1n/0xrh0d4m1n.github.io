@@ -1,6 +1,8 @@
 ---
-hide:
-    - toc
+slug: analytics
+tags:
+  - protocols
+  - dns
 ---
 
 # **DNS**

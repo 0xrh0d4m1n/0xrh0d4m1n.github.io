@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# **Welcome, [1337](https://en.wikipedia.org/wiki/Leet)!**
+# :wave: **Hello, World!**
 
 ### _A long time ago, in a universe of infinite cells, where [Gliders](http://www.catb.org/hacker-emblem/faqs.html) travel endlessly..._
 
@@ -17,21 +17,23 @@ hide:
 
 ---
 
-## :black_nib: **My Blog**
+## **Welcome to my world, Guest [1337](https://en.wikipedia.org/wiki/Leet)!**
 
-Dive into my **[Blog](pages/blog/index.md)**, where you'll find my freshest insights and helpful content to use in the world of cybersecurity.
+- ### :black_nib: **[Blog](pages/blog/index.md)**
+    > In my blog, you can find insights and some helpful content.
 
----
+- ### :martial_arts_uniform: **[Practice](pages/writeups/index.md)**
 
-## :martial_arts_uniform: **My Battles**
+    > Writeups of learning, sharpening skills, and cyber prowess.
 
-Each **[Writeup](pages/writeups/index.md)** is a saga of knowledge, skill, and cyber prowess.
+- ### :books: **[Codex](pages/codex/index.md)**
 
----
+    > For some reference, explore my Codex, you can find bits of knowledge there.
 
-## :books: **My Codex**
+- ### :toolbox: **[Toolbox](pages/toolbox/index.md)**
 
-For a good reading, explore my **[Codex](pages/codex/index.md)**, there, you will find bits of knowledge. 
+    > A collection of powerful tools for cybersecurity in general.
 
+- ### :abc: **[Glossary](pages/glossary/index.md)**
 
-
+    > A good reference of key terms in cybersecurity, hacking, and related fields.

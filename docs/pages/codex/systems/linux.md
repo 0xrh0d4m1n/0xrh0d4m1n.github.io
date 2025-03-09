@@ -1,12 +1,12 @@
 ---
-title: Linux Boot Process
+slug: analytics
+title: Linux
 tags:
-  - Systems
-  - Linux
-  - Sysadmin
+  - systems
+  - linux
 ---
 
----
+# **LINUX**
 
 <figure markdown>
   ![](../../../assets/img/hero/5aeb4a0f6e453ce98b2506f3259f2fc4.jpeg){ .skip-lightbox }

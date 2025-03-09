@@ -1,9 +1,11 @@
 ---
-hide:
-    - toc
+slug: analytics
+tags:
+  - networking
+  - firewall
 ---
 
-# **Firewalls**
+# **Firewall**
 
 ---
 

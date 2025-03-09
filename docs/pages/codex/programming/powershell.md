@@ -1,9 +1,11 @@
 ---
-hide:
-    - toc
+slug: analytics
+tags:
+  - programming
+  - powershell
 ---
 
-# **Powershell 101**
+# **PowerShell 101**
 
 ---
 

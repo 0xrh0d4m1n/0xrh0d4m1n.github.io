@@ -1,7 +1,8 @@
 ---
 slug: analytics
-hide:
-    - navigation
+tags:
+  - soc
+  - cyberkillchain
 ---
 
 # **Cyber Kill Chain**

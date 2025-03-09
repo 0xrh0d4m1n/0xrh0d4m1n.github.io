@@ -6,8 +6,20 @@
 }
 */
 
+.m4 {
+    margin: 4px !important;
+}
+
 .md-tabs__list li:nth-of-type(6) .md-tabs__link:hover {
   color: #fff;
+}
+
+.htb_badge_height {
+  height: 75px !important;
+}
+
+.maxH75 {
+  max-height: 75px !important;
 }
 
 .maxH100 {
