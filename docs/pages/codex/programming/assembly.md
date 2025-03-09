@@ -1,6 +1,8 @@
 ---
-hide:
-    - toc
+slug: analytics
+tags:
+  - programming
+  - assembly
 ---
 
 # **Assembly 101**

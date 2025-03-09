@@ -1,6 +1,8 @@
 ---
-hide:
-    - toc
+slug: analytics
+tags:
+  - programming
+  - python
 ---
 
 # **Python 101**

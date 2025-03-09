@@ -1,12 +1,10 @@
-####################################################################
 # General Configuration
-####################################################################
 site_name: 0xrh0d4m1n
+site_description: "Hacking and general cybersecurity."
+site_url: "https://0xrh0d4m1n.tech"
 copyright: Copyright &copy; 2025 - 0xrh0d4m1n
 
-####################################################################
 # Theme
-####################################################################
 theme:
     name: material
     logo: assets/img/logos/logo.svg
@@ -33,14 +31,16 @@ theme:
           primary: black
           accent: teal
 
-####################################################################
 # Pages
-####################################################################
 nav:
     - Home: index.md
     - About: pages/about/index.md
+    - Skills: pages/skills/index.md
+    - Blog: pages/blog/index.md
     - Writeups:
           - pages/writeups/index.md
+          - Cyberdefenders: pages/writeups/cdf/index.md
+          - LetsDefend: pages/writeups/ldf/index.md
           - HackTheBox: pages/writeups/htb/index.md
           - TryHackMe: pages/writeups/thm/index.md
           - Vulnhub: pages/writeups/vulnhub/index.md
@@ -91,7 +91,7 @@ nav:
                 - PBR: pages/codex/protocols/pbr.md
           - SOC:
                 - Fundamentals: pages/codex/soc/index.md
-                - Cybersecurity: pages/codex/soc/cyberkillchain.md
+                - Cyber Kill Chain: pages/codex/soc/cyberkillchain.md
                 - MITRE ATT&CK: pages/codex/soc/mitre-attck.md
                 - MITRE D3FEND: pages/codex/soc/mitre-defend.md
                 - SIEM: pages/codex/soc/siem.md
@@ -101,14 +101,12 @@ nav:
                 - Ansible: pages/codex/infra/ansible.md
                 - Docker: pages/codex/infra/docker.md
                 - Kubernetes: pages/codex/infra/kubernetes.md
-    - Blog: pages/blog/index.md
-    - My Skills: pages/myskills/index.md
-    - Tracker: pages/tracker/index.md
-    - Tags: pages/tags/index.md
+    - Toolbox: pages/toolbox/index.md
+    #- Learning: pages/learning/index.md
+    - Terminology: pages/glossary/index.md
+    #- Content Map: pages/tracker/index.md
 
-####################################################################
 # Extra
-####################################################################
 extra:
     generator: false
     consent:
@@ -139,9 +137,7 @@ extra:
 extra_css:
     - 'stylesheets/extra.css'
 
-####################################################################
 # Plugins
-####################################################################
 plugins:
     - search
     - open-in-new-tab
@@ -156,12 +152,8 @@ plugins:
           draft_on_serve: false
           post_url_format: '{categories}/{slug}'
           #      authors_profiles: true
-    - tags:
-          tags_file: pages/tags/index.md
 
-####################################################################
 # Extensions
-####################################################################
 markdown_extensions:
     ####################
     # Formatting

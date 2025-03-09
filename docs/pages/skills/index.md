@@ -4,10 +4,10 @@ hide:
   - toc
 ---
 
-# Valdenio Marinho A.K.A. "**0xrh0d4m1n**"
-## _SOC Cybersecurity Analyst_
+# **Valdenio Marinho** A.K.A. "**0xrh0d4m1n**"
+## _SOC Analyst_
 
-[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .md-button } [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .md-button } [:fontawesome-brands-github:](https://github.com/0xrh0d4m1n){ .md-button } [:fontawesome-brands-telegram:](https://t.me/Oxrh0d4m1n){ .md-button }   
+[:fontawesome-brands-x-twitter:](https://x.com/0xrh0d4m1n){ .m4 .sm-button } [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/0xrh0d4m1n){ .m4 .sm-button } [:fontawesome-brands-github:](https://github.com/0xrh0d4m1n){ .m4 .sm-button } [:fontawesome-brands-telegram:](https://t.me/Oxrh0d4m1n){ .m4 .sm-button }   
 
 ![](../../assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg){ .skip-lightbox }
 
@@ -575,8 +575,14 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 
 ## :trophy: **Achievements**
 
--   #### :star: First Place — CTF Hacker Talent of the Month (HackerOne)
--   #### :star: Top 1% - Hacker Rankings (TryHackMe)
+-   #### :star: Cyberdefenders 
+[![](https://cyberdefenders-storage.s3.me-central-1.amazonaws.com/profile-badges/0xrh0d4m1n.png){ .maxH100 }](https://cyberdefenders.org/p/0xrh0d4m1n)  
+
+-  #### :star: TryHackMe
+[![](https://tryhackme-badges.s3.amazonaws.com/0xrh0d4m1n.png){ .maxH100 }](https://tryhackme.com/p/0xrh0d4m1n)
+
+-  #### :star: HackTheBox
+[![0xrh0d4m1n](https://www.hackthebox.com/badge/image/1013077){ .htb_badge_height }](https://www.hackthebox.com/home/users/profile/1013077)
 
 ---
 
