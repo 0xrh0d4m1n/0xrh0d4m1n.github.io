@@ -6,16 +6,11 @@ sidebar:
 ---
 
 # **Valdenio Marinho** A.K.A. "**0xrh0d4m1n**"
-## _SOC Analyst_
+## _Cyber Security Architect - SOC_
 
-<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
-  <a href="https://x.com/0xrh0d4m1n" target="_blank" style="padding:6px 14px; border:1px solid currentColor; border-radius:4px; text-decoration:none; font-size:0.9em;">𝕏 Twitter</a>
-  <a href="https://www.linkedin.com/in/0xrh0d4m1n" target="_blank" style="padding:6px 14px; border:1px solid currentColor; border-radius:4px; text-decoration:none; font-size:0.9em;">LinkedIn</a>
-  <a href="https://github.com/0xrh0d4m1n" target="_blank" style="padding:6px 14px; border:1px solid currentColor; border-radius:4px; text-decoration:none; font-size:0.9em;">GitHub</a>
-  <a href="https://t.me/Oxrh0d4m1n" target="_blank" style="padding:6px 14px; border:1px solid currentColor; border-radius:4px; text-decoration:none; font-size:0.9em;">Telegram</a>
-</div>
+{{< social-links >}}
 
-<img src="/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg" alt="Hero" style="width:100%;">
+{{< hero-image src="/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg" alt="Hero" >}}
 
 ---
 
@@ -311,7 +306,4 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 
 If you want to save my résumé, you can download it below:
 
-<div style="display:flex; gap:12px; flex-wrap:wrap;">
-  <a href="/docs/resume-enus.pdf" target="_blank" style="padding:8px 16px; border:1px solid currentColor; border-radius:4px; text-decoration:none;">⬇️ English Resume</a>
-  <a href="/docs/resume-ptbr.pdf" target="_blank" style="padding:8px 16px; border:1px solid currentColor; border-radius:4px; text-decoration:none;">⬇️ Portuguese Resume</a>
-</div>
+{{< download-links >}}

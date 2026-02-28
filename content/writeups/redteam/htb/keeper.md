@@ -73,31 +73,31 @@ Content-Length: 149
 ```
 
 In the browser we reached to this page  
-<img src="https://live.staticflickr.com/65535/53505967308_9e4caed389_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53505967308_9e4caed389_o.png" class="writeup-img" loading="lazy" alt="">
 
 When clicked in the link from the previous page we get redirected to this `tickets` subdomain, which is presented to us by some tech named `RT v4.4.4`. After some research, I discovered that it is an application named "Request Tracker" used to manage Ticket Requests.  
-<img src="https://live.staticflickr.com/65535/53506238490_662d91c33c_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53506238490_662d91c33c_o.png" class="writeup-img" loading="lazy" alt="">
 
 Since we are in a login page, we could try to search for some "default credentials". Most threads mention `root:password`.  
-<img src="https://live.staticflickr.com/65535/53506238545_d2fe11a012_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53506238545_d2fe11a012_o.png" class="writeup-img" loading="lazy" alt="">
 
 So, I tried the default credentials.  
-<img src="https://live.staticflickr.com/65535/53505967328_5cebbaf4c2_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53505967328_5cebbaf4c2_o.png" class="writeup-img" loading="lazy" alt="">
 
 And Voilà, we are in!  
-<img src="https://live.staticflickr.com/65535/53505967318_24b7ec2a49_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53505967318_24b7ec2a49_o.png" class="writeup-img" loading="lazy" alt="">
 
 After a good time sniffing the application, I found this user list which has two users only: `lnorgaard@keeper.htb` and `root@localhost`.  
-<img src="https://live.staticflickr.com/65535/53504930402_da2e61290f_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53504930402_da2e61290f_o.png" class="writeup-img" loading="lazy" alt="">
 
 When clicking into `lnorgaard` user, we can spot a very useful information on the comments — default password `Welcome2023!`.  
-<img src="https://live.staticflickr.com/65535/53504930412_1439df69cf_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53504930412_1439df69cf_o.png" class="writeup-img" loading="lazy" alt="">
 
 Also, I found this interesting ticket.  
-<img src="https://live.staticflickr.com/65535/53505815826_03a15fcd3b_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53505815826_03a15fcd3b_o.png" class="writeup-img" loading="lazy" alt="">
 
 Which had an invaluable information — a KeePass Dump file in the home directory of user `lnorgaard`.  
-<img src="https://live.staticflickr.com/65535/53504930362_f80fe488cc_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53504930362_f80fe488cc_o.png" class="writeup-img" loading="lazy" alt="">
 
 ### **Initial Access**
 
@@ -147,7 +147,7 @@ cd RT30000
 ## 🎯 **Exploit**
 
 I found a tool to dump the KeePass master password from memory:  
-<img src="https://live.staticflickr.com/65535/53505967333_d5724ce29d_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53505967333_d5724ce29d_o.png" class="writeup-img" loading="lazy" alt="">
 
 ```bash
 git clone https://github.com/vdohney/keepass-password-dumper
@@ -167,7 +167,7 @@ Combined: ●{ø, Ï, ...}dgrød med fløde
 After searching for `dgrød med fløde` on Google, the suggestion was `rødgrød med fløde` — a Danish dessert.
 
 Using [KeeWeb](https://app.keeweb.info/) to open the `.kdbx` file with `rødgrød med fløde`:  
-<img src="https://live.staticflickr.com/65535/53504930417_4f4cdc3024_o.png" style="max-height:300px;" loading="lazy" alt="">
+<img src="https://live.staticflickr.com/65535/53504930417_4f4cdc3024_o.png" class="writeup-img" loading="lazy" alt="">
 
 Got a `root` password and a PuTTY key file. Exporting the key:
 ```bash

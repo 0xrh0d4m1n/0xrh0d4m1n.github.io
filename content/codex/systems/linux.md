@@ -7,9 +7,7 @@ tags:
 
 # **LINUX**
 
-<figure>
-  <img src="/img/hero/5aeb4a0f6e453ce98b2506f3259f2fc4.jpeg" alt="Linux" style="width:100%;">
-</figure>
+{{< hero-image src="/img/hero/5aeb4a0f6e453ce98b2506f3259f2fc4.jpeg" alt="Linux" >}}
 
 The boot process on Linux is divided into four stages.
 

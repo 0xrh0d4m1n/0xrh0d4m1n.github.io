@@ -12,9 +12,7 @@ categories:
 readingTime: true
 ---
 
-<figure>
-  <img src="/img/posts/b4ecfe1cc9caacd4d04fedb38303bb35.jpeg" alt="Cybersecurity Domains" style="width:100%;">
-</figure>
+{{< hero-image src="/img/posts/b4ecfe1cc9caacd4d04fedb38303bb35.jpeg" alt="Cybersecurity Domains" >}}
 
 Cybersecurity is an ever-evolving field that encompasses various domains, each vital to understanding and protecting the cyber ecosystem. Henry Jiang, a prominent figure in cybersecurity, has mapped out several of these domains, providing a framework for professionals and enthusiasts alike to navigate this complex landscape. In this blog post, we'll explore these domains extensively, supplementing Jiang's framework with additional insights and details to enrich your understanding of cybersecurity's multifaceted nature.
 
@@ -176,7 +174,7 @@ The cybersecurity domains are the critical pillars supporting the vast and dynam
 ---
 
 <figure>
-  <img src="/img/posts/0fcd29f3028933f3d043bea937c4d5cd.png" alt="Map of Cybersecurity Domains" style="max-height:500px; display:block; margin:auto;">
+  <img src="/img/posts/0fcd29f3028933f3d043bea937c4d5cd.png" alt="Map of Cybersecurity Domains" class="maxH500 img-centered">
 </figure>
 
 [Map of Cybersecurity Domains by Henry Jiang source](https://www.linkedin.com/pulse/cybersecurity-domain-map-ver-30-henry-jiang/) — [Thanks to Henry Jiang](https://www.linkedin.com/in/henry-jiang-9184211/)
