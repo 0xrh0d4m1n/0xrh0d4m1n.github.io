@@ -1,0 +1,18 @@
+{
+  "name": "0xrh0d4m1n-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for 0xrh0d4m1n.tech",
+  "scripts": {
+    "test": "node node_modules/playwright/cli.js test",
+    "test:ui": "node node_modules/playwright/cli.js test --ui",
+    "test:headed": "node node_modules/playwright/cli.js test --headed",
+    "test:report": "node node_modules/playwright/cli.js show-report",
+    "test:smoke": "node node_modules/playwright/cli.js test tests/smoke.spec.ts",
+    "test:assets": "node node_modules/playwright/cli.js test tests/assets.spec.ts",
+    "test:nav": "node node_modules/playwright/cli.js test tests/navigation.spec.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@axe-core/playwright": "^4.10.0"
+  }
+}

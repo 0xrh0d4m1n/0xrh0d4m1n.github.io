@@ -7,21 +7,13 @@ sidebar:
 
 ## 🥷 **Who Am I?**
 
-<div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;">
-  <figure style="margin:0; flex-shrink:0;">
-    <img src="/img/profile/fc04b819-926c-48d8-b533-94243424c685.jpeg" alt="0xrh0d4m1n" style="max-height:500px; border-radius:8px;">
-    <figcaption style="font-size:0.8em; text-align:center; color:gray;">
-      <b>Valdênio "<b style="color:#26a69a">0xrh0d4m1n</b>" Marinho</b>
-    </figcaption>
-  </figure>
-  <div>
-    Welcome, fellow traveler of the digital frontier. I am <b>0xrh0d4m1n</b>, a hacker, a builder, and a defender of the digital commons. I operate at the intersection of <b>cybersecurity, open-source, and digital sovereignty</b> — a place where freedom is measured in bits, and anonymity is not a crime, but a right.
-    <br><br>
-    Nowadays, where mass surveillance has become the norm, where centralization threatens autonomy, and where the balance of power tilts toward those who control information, I stand for <b>decentralization, privacy, and the hacker ethos</b>.
-    <br><br>
-    This space is my digital manifesto — a place of my insights, tools, and knowledge for those who seek to <b>secure, defend, and freedom</b>. If you are here, chances are you are part of the resistance, whether you know it yet or not.
-  </div>
-</div>
+{{< profile-figure src="/img/profile/fc04b819-926c-48d8-b533-94243424c685.jpeg" caption="**Valdênio \"<span class='accent'>0xrh0d4m1n</span>\" Marinho**" >}}
+Welcome, fellow traveler of the digital frontier. I am **0xrh0d4m1n**, a hacker, a builder, and a defender of the digital commons. I operate at the intersection of **cybersecurity, open-source, and digital sovereignty** — a place where freedom is measured in bits, and anonymity is not a crime, but a right.
+
+Nowadays, where mass surveillance has become the norm, where centralization threatens autonomy, and where the balance of power tilts toward those who control information, I stand for **decentralization, privacy, and the hacker ethos**.
+
+This space is my digital manifesto — a place of my insights, tools, and knowledge for those who seek to **secure, defend, and freedom**. If you are here, chances are you are part of the resistance, whether you know it yet or not.
+{{< /profile-figure >}}
 
 ---
 
@@ -65,13 +57,6 @@ No hacker stands alone! Our knowledge is built upon the ideas and manifestos of 
 
 I believe in **peer-to-peer knowledge** and the power of **decentralized collaboration**. If you want to discuss **hacking, security, open-source, or digital freedom**, feel free to contact me.
 
-<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
-  <a href="https://x.com/0xrh0d4m1n" target="_blank" style="padding:8px 16px; border:1px solid currentColor; border-radius:4px; text-decoration:none;">𝕏 Twitter</a>
-  <a href="https://www.linkedin.com/in/0xrh0d4m1n" target="_blank" style="padding:8px 16px; border:1px solid currentColor; border-radius:4px; text-decoration:none;">LinkedIn</a>
-  <a href="https://github.com/0xrh0d4m1n" target="_blank" style="padding:8px 16px; border:1px solid currentColor; border-radius:4px; text-decoration:none;">GitHub</a>
-  <a href="https://t.me/Oxrh0d4m1n" target="_blank" style="padding:8px 16px; border:1px solid currentColor; border-radius:4px; text-decoration:none;">Telegram</a>
-</div>
-
-<br>
+{{< social-links >}}
 
 ###### _Stay free, stay secure. The battle for digital freedom never ends._

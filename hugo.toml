@@ -45,6 +45,9 @@ staticDir = ["static", "docs/assets"]
     # Show breadcrumbs on all pages
     breadcrumbs = true
 
+  [params.sidebar]
+    hide = true
+
 [menu]
   [[menu.main]]
     name = "Home"
