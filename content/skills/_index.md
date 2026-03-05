@@ -1,22 +1,17 @@
 ---
 title: "Skills"
-toc: false
-sidebar:
-  hide: true
----
-
-# **Valdenio Marinho** A.K.A. "**0xrh0d4m1n**"
-## _Cyber Security Architect - SOC_
-
-{{< social-links >}}
-
-{{< hero-image src="/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg" alt="Hero" >}}
-
+# Banner / profile (LinkedIn-style)
+profile_name: "Valdenio Marinho"
+profile_headline: "Cyber Security Architect — SOC"
+profile_avatar: "assets/img/profile/me.jpg"
+profile_cover: "assets/img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg"
+profile_tag_pills: ["SOC", "NOC", "CTI", "CSIRT", "DFIR"]
+profile_company: "Akamai Technologies"
+profile_company_icon: ""  # optional: e.g. "assets/img/company/akamai.png"
+profile_contact_url: "/contact/"  # future contact page
 ---
 
 ## 🧭 **Executive Summary**
-
----
 
 I am passionate about cybersecurity — my fascination with hacking began in my youth and has remained a constant drive throughout my career. My journey started with an electrical engineering background, where I acquired a solid foundation in electronics and microcontrollers. Following in the footsteps of the most influential minds in IT and the trailblazing pioneers of the field, I left academia to carve out my own path — a decision fueled by a desire to apply the robust knowledge base I had acquired.
 
@@ -32,100 +27,124 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 
 ---
 
+## 💼 **Professional Experience**
+
+{{< exp-card company="Akamai Technologies" role="Cyber Security Architect - SOC" location="Cambridge, Massachusetts, United States — Remote" dates="Dec 2025 — Present" logo="akamai" >}}
+- Lead the technical integration of security solutions, including configuration, validation, troubleshooting, and readiness for go-live.
+- Analyze customer traffic patterns and security events to identify risks and tailor protective controls to business requirements.
+- Design and implement security architectures, transforming compliance expectations into technical specifications and actionable frameworks.
+- Collaborate with cross-functional teams to define scope, delivery timelines, success criteria, and technical execution plans.
+- Provide expert guidance to customers, supporting them through deployment, optimization, and security posture improvements.
+- Continuously develop and share knowledge, participating in internal training, enhancing best practices, and contributing to team enablement.
+{{< /exp-card >}}
+
+{{< exp-card company="Nexusguard" role="SOC Analyst" location="Remote, Singapore" dates="2024 — Present" logo="https://www.google.com/s2/favicons?domain=nexusguard.com&sz=128" >}}
+- Monitor and analyze security events across enterprise systems using SIEM tools to detect, investigate, and respond to potential threats.
+- Collaborate with incident response teams to mitigate risks and contain security incidents effectively.
+- Conduct in-depth analysis of alerts to identify patterns indicative of cyber threats, enhancing detection and response capabilities.
+- Generate detailed reports and presentations on threat intelligence findings.
+- Leverage Nexusguard's proprietary DDoS mitigation technologies to protect client infrastructures from volumetric, protocol-based, and application-layer attacks.
+{{< /exp-card >}}
+
+{{< exp-card company="HackerOne, Bugcrowd, Intigriti" role="Cybersecurity Researcher" location="Remote, Worldwide" dates="2023 — Present" logo="hackerone" >}}
+- Successfully identified and reported a significant security vulnerability through HackerOne's Bug Bounty Program.
+- Utilized advanced security testing platforms to perform comprehensive vulnerability assessments.
+- Analyzed and reported findings from vulnerability discovery tools to provide actionable insights.
+- Collaborated with cross-functional teams to address identified vulnerabilities.
+{{< /exp-card >}}
+
+{{< exp-card company="Freelancing" role="Fullstack Web Developer" location="Remote, Worldwide" dates="2018 — 2022" logo="freelancer" >}}
+- Designed and developed scalable, high-performance web applications.
+- Managed software development lifecycle from initial planning and design to deployment and maintenance.
+- Integrated third-party APIs and services to enhance application functionality.
+- Conducted thorough testing and debugging to ensure optimal performance.
+{{< /exp-card >}}
+
+---
+
 ## 🧰 **Skills & Expertise**
 
-<details>
-<summary>💼 Technical Skills</summary>
+<div class="skill-shields-block">
 
-<div class="skill-grid">
-  <div class="skill-card">
-    <img src="/img/icons/pentesting.png" alt="">
-    <h3>Penetration Testing</h3>
-    <p>Simulating cyber attacks to identify and exploit security vulnerabilities.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/risk-management.png" alt="">
-    <h3>Risk Assessment</h3>
-    <p>Evaluating and prioritizing potential risks to minimize the impact.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/vulnerability-assessment.png" alt="">
-    <h3>Vulnerability Assessment</h3>
-    <p>Systematically identifying and quantifying security vulnerabilities in systems.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/security-operations.png" alt="">
-    <h3>Security Operations</h3>
-    <p>Overseeing and maintaining a secure operational computing environment.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/incident-response.png" alt="">
-    <h3>Incident Response</h3>
-    <p>Effectively managing and mitigating cyber incidents to minimize damage and recovery time.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/cyber-threat.png" alt="">
-    <h3>Cyber Threat Intel</h3>
-    <p>Analyzing and interpreting information about potential cyber threats to prevent attacks.</p>
-  </div>
+### 💼 Security & Operations
+
+<div class="skill-shields">
+
+[![](https://img.shields.io/badge/-Penetration%20Testing-7f1d1d?logo=target&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Red%20Team-991b1b?logo=hackthebox&logoColor=9FEF00&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Ethical%20Hacking-b91c1c?logo=kalilinux&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-SOC-0f766e?logo=parrotsecurity&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-SIEM-0369a1?logo=googlechronicle&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-NOC-1e40af?logo=junipernetworks&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Incident%20Response-b91c1c?logo=hackerone&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Malware%20Analysis-581c87?logo=malwarebytes&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Digital%20Forensics-0c4a6e?logo=googlechronicle&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Bug%20Bounty-9a3412?logo=bugcrowd&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Recon-4c1d95?logo=radar&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Vulnerability%20Assessment-d97706?logo=openbugbounty&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Network%20Security-155e75?logo=paloaltonetworks&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Web%20App%20Security-374151?logo=owasp&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-GRC-b45309?logo=dependencycheck&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Risk%20Management-b45309?logo=securityscorecard&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Cryptography-5b21b6?logo=cryptomator&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Information%20Security-047857?logo=keybase&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+
 </div>
 
-</details>
+### 💻 Programming & Stack
 
-<details>
-<summary>💻 Programming Languages</summary>
+<div class="skill-shields">
 
-<div class="skill-grid">
-  <div class="skill-card">
-    <img src="/img/icons/nim.png" alt="">
-    <h3>Nim</h3>
-    <p>Adeptly leveraging Nim's efficiency and expressive syntax to craft secure, high-performance applications with a focus on cybersecurity tooling.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/javascript.png" alt="">
-    <h3>JavaScript</h3>
-    <p>Long background as developer enabling penetration testing on web applications, identifying and exploiting client-side vulnerabilities.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/python.png" alt="">
-    <h3>Python</h3>
-    <p>Python skills honed for scripting powerful cybersecurity tools and automating complex security tasks.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/shellscript.png" alt="">
-    <h3>Shell Script</h3>
-    <p>Constantly using ShellScript for automating security processes and orchestrating system-level tasks on Unix/Linux platforms.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/rust.png" alt="">
-    <h3>Rust</h3>
-    <p>Proficiency in Rust for low-level programming to create high-performance cybersecurity tools.</p>
-  </div>
-  <div class="skill-card">
-    <img src="/img/icons/assembly.png" alt="">
-    <h3>Assembly</h3>
-    <p>Knowledge of Assembly for meticulous analysis and reverse engineering of malware through tools like Ghidra.</p>
-  </div>
+[![](https://img.shields.io/badge/-JavaScript-a16207?logo=javascript&logoColor=F7DF1E&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-TypeScript-1e40af?logo=typescript&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Python-1e3a5f?logo=python&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Node.js-166534?logo=nodedotjs&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Go-0d9488?logo=go&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Nim-92400e?logo=nim&logoColor=FFE000&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Rust-1c1917?logo=rust&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Shell%20Script-14532d?logo=gnubash&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-React-0c4a6e?logo=react&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Next.js-1c1917?logo=nextdotjs&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Express.js-374151?logo=express&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-GraphQL-e11d48?logo=graphql&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Redux-5b21b6?logo=redux&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Assembly-0c4a6e?logo=intel&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+
 </div>
 
-</details>
+### 🔧 Tools & Technologies
 
-<details>
-<summary>🔧 Tools & Technologies</summary>
+<div class="skill-shields">
 
-<div class="skill-grid">
-  <div class="skill-card"><img src="/img/icons/burpsuite.png" alt=""><h3>Burp Suite</h3><p>Comprehensive web application security testing and uncovering critical vulnerabilities.</p></div>
-  <div class="skill-card"><img src="/img/icons/owasp-zap.png" alt=""><h3>OWASP ZAP</h3><p>Automated security scanning and targeted manual testing of web apps.</p></div>
-  <div class="skill-card"><img src="/img/icons/openvas.png" alt=""><h3>Greenbone OpenVAS</h3><p>Scan and evaluate the security of network services and systems.</p></div>
-  <div class="skill-card"><img src="/img/icons/nessus.png" alt=""><h3>Tenable Nessus</h3><p>Identify a wide range of vulnerabilities and security issues within infrastructure.</p></div>
-  <div class="skill-card"><img src="/img/icons/qualys.png" alt=""><h3>Qualys</h3><p>Vulnerability management and securing web applications and cloud environments.</p></div>
-  <div class="skill-card"><img src="/img/icons/metasploit.png" alt=""><h3>Metasploit</h3><p>Developing and executing exploit code to assess network defenses.</p></div>
-  <div class="skill-card"><img src="/img/icons/nmap.png" alt=""><h3>Nmap</h3><p>Advanced network discovery and security auditing to reveal potential vulnerabilities.</p></div>
-  <div class="skill-card"><img src="/img/icons/wireshark.png" alt=""><h3>Wireshark</h3><p>Packet analysis, monitoring and diagnosing network traffic for security investigations.</p></div>
-  <div class="skill-card"><img src="/img/icons/ghidra.png" alt=""><h3>Ghidra</h3><p>Reverse engineering, dissecting malicious code to understand and mitigate attack vectors.</p></div>
+[![](https://img.shields.io/badge/-Burp%20Suite-c2410c?logo=burpsuite&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-OWASP%20ZAP-374151?logo=owasp&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Kali%20Linux-557c3b?logo=kalilinux&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-OpenVAS-14532d?logo=scan&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Tenable%20Nessus-0369a1?logo=securityscorecard&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Metasploit-155e75?logo=metasploit&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Nmap-991b1b?logo=junipernetworks&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Wireshark-1e40af?logo=wireshark&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Splunk-0f766e?logo=splunk&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Elastic-1e3a5f?logo=elastic&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Snort-7f1d1d?logo=snort&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Ghidra-0e7490?logo=eclipseide&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Docker-0284c7?logo=docker&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Kubernetes-326ce5?logo=kubernetes&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Ansible-1c1917?logo=ansible&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Cloudflare-c2410c?logo=cloudflare&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Fortinet-0f766e?logo=fortinet&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Palo%20Alto-1e40af?logo=paloaltonetworks&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Cisco-0d9488?logo=cisco&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-F5-374151?logo=f5&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Grafana-b45309?logo=grafana&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-MongoDB-047857?logo=mongodb&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-MySQL-0c4a6e?logo=mysql&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Redis-dc2626?logo=redis&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+[![](https://img.shields.io/badge/-Git-374151?logo=git&logoColor=ffffff&style=for-the-badge&logoWidth=28&labelColor=1f2937)](#)
+
 </div>
 
-</details>
+</div>
 
 ---
 
@@ -135,11 +154,11 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 <summary>✅ Fortinet</summary>
 
 <div class="cert-grid">
-  <div class="cert-card"><img src="/img/certs/fortinet-fca.png" alt="Fortinet Cybersecurity Associate"><p><strong>Fortinet Cybersecurity Associate</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/fortinet-fcf.png" alt="Fortinet Cybersecurity Fundamentals"><p><strong>Fortinet Cybersecurity Fundamentals</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/fortinet-network-sec-level-3.png" alt="Fortinet Network Security Level 3"><p><strong>Network Security Level 3</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/fortinet-network-sec-level-2.png" alt="Fortinet Network Security Level 2"><p><strong>Network Security Level 2</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/fortinet-network-sec-level-1.png" alt="Fortinet Network Security Level 1"><p><strong>Network Security Level 1</strong></p></div>
+  <div class="cert-card">{{< cert-img "fortinet-fca.png" "Fortinet Cybersecurity Associate" >}}<p><strong>Fortinet Cybersecurity Associate</strong></p></div>
+  <div class="cert-card">{{< cert-img "fortinet-fcf.png" "Fortinet Cybersecurity Fundamentals" >}}<p><strong>Fortinet Cybersecurity Fundamentals</strong></p></div>
+  <div class="cert-card">{{< cert-img "fortinet-network-sec-level-3.png" "Fortinet Network Security Level 3" >}}<p><strong>Network Security Level 3</strong></p></div>
+  <div class="cert-card">{{< cert-img "fortinet-network-sec-level-2.png" "Fortinet Network Security Level 2" >}}<p><strong>Network Security Level 2</strong></p></div>
+  <div class="cert-card">{{< cert-img "fortinet-network-sec-level-1.png" "Fortinet Network Security Level 1" >}}<p><strong>Network Security Level 1</strong></p></div>
 </div>
 
 </details>
@@ -148,15 +167,15 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 <summary>✅ Google</summary>
 
 <div class="cert-grid">
-  <div class="cert-card"><img src="/img/certs/google-cyber-0.png" alt="Google Cyber Professional"><p><strong>Cyber Professional Certification</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-1.png" alt="Foundations of Cybersecurity"><p><strong>Foundations of Cybersecurity</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-2.png" alt="Manage Security Risks"><p><strong>Manage Security Risks</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-3.png" alt="Networks and Network Security"><p><strong>Networks and Network Security</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-4.png" alt="Linux and SQL"><p><strong>Linux and SQL</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-5.png" alt="Assets Threats Vulnerabilities"><p><strong>Assets, Threats and Vulnerabilities</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-6.png" alt="Detection and Response"><p><strong>Detection and Response</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-7.png" alt="Cybersecurity Tasks with Python"><p><strong>Cybersecurity Tasks with Python</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/google-cyber-8.png" alt="Preparation for Cybersecurity Jobs"><p><strong>Preparation for Cybersecurity Jobs</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-0.png" "Google Cyber Professional" >}}<p><strong>Cyber Professional Certification</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-1.png" "Foundations of Cybersecurity" >}}<p><strong>Foundations of Cybersecurity</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-2.png" "Manage Security Risks" >}}<p><strong>Manage Security Risks</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-3.png" "Networks and Network Security" >}}<p><strong>Networks and Network Security</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-4.png" "Linux and SQL" >}}<p><strong>Linux and SQL</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-5.png" "Assets Threats Vulnerabilities" >}}<p><strong>Assets, Threats and Vulnerabilities</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-6.png" "Detection and Response" >}}<p><strong>Detection and Response</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-7.png" "Cybersecurity Tasks with Python" >}}<p><strong>Cybersecurity Tasks with Python</strong></p></div>
+  <div class="cert-card">{{< cert-img "google-cyber-8.png" "Preparation for Cybersecurity Jobs" >}}<p><strong>Preparation for Cybersecurity Jobs</strong></p></div>
 </div>
 
 </details>
@@ -165,18 +184,18 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 <summary>✅ Cybrary</summary>
 
 <div class="cert-grid">
-  <div class="cert-card"><img src="/img/certs/cybrary-offensive-pentest.png" alt=""><p><strong>Offensive Penetration Testing</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-advanced-pentest.png" alt=""><p><strong>Advanced Penetration Testing</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-become-pentester.png" alt=""><p><strong>Penetration Testing</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-pentest-ethical-hacking.png" alt=""><p><strong>Penetration Testing & Ethical Hacking</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-owasp-top10.png" alt=""><p><strong>OWASP TOP 10</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-comptia-security.png" alt=""><p><strong>CompTIA Security+</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-cyber-kill-chain.png" alt=""><p><strong>Cyber Kill Chain Framework</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-mitre-framework.png" alt=""><p><strong>MITRE ATT&CK Framework</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-become-soc-1.png" alt=""><p><strong>Security Operations Analyst (SOC)</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-comptia-linux.png" alt=""><p><strong>CompTIA Linux+</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-system-administrator.png" alt=""><p><strong>System Administrator</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/cybrary-comptia-a.png" alt=""><p><strong>CompTIA A+</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-offensive-pentest.png" "Offensive Penetration Testing" >}}<p><strong>Offensive Penetration Testing</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-advanced-pentest.png" "Advanced Penetration Testing" >}}<p><strong>Advanced Penetration Testing</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-become-pentester.png" "Penetration Testing" >}}<p><strong>Penetration Testing</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-pentest-ethical-hacking.png" "Penetration Testing & Ethical Hacking" >}}<p><strong>Penetration Testing & Ethical Hacking</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-owasp-top10.png" "OWASP TOP 10" >}}<p><strong>OWASP TOP 10</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-comptia-security.png" "CompTIA Security+" >}}<p><strong>CompTIA Security+</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-cyber-kill-chain.png" "Cyber Kill Chain Framework" >}}<p><strong>Cyber Kill Chain Framework</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-mitre-framework.png" "MITRE ATT&CK Framework" >}}<p><strong>MITRE ATT&CK Framework</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-become-soc-1.png" "Security Operations Analyst (SOC)" >}}<p><strong>Security Operations Analyst (SOC)</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-comptia-linux.png" "CompTIA Linux+" >}}<p><strong>CompTIA Linux+</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-system-administrator.png" "System Administrator" >}}<p><strong>System Administrator</strong></p></div>
+  <div class="cert-card">{{< cert-img "cybrary-comptia-a.png" "CompTIA A+" >}}<p><strong>CompTIA A+</strong></p></div>
 </div>
 
 </details>
@@ -185,15 +204,15 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 <summary>✅ TCM Security</summary>
 
 <div class="cert-grid">
-  <div class="cert-card"><img src="/img/certs/tcm-webapp-pentest.png" alt=""><p><strong>Web Application Penetration Testing</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-api-hacking.png" alt=""><p><strong>API Hacking</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-ethical-hacking.png" alt=""><p><strong>Ethical Hacking</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-pivoting-persistence.png" alt=""><p><strong>Movement, Pivoting, Persistence</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-privesc-windows.png" alt=""><p><strong>Privilege Escalation Windows</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-privesc-linux.png" alt=""><p><strong>Privilege Escalation Linux</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-external-pentest-playbook.png" alt=""><p><strong>External Pentest Playbook</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-governance-risk-compliance.png" alt=""><p><strong>Governance, Risk and Compliance</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/tcm-osint.png" alt=""><p><strong>OSINT</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-webapp-pentest.png" "Web Application Penetration Testing" >}}<p><strong>Web Application Penetration Testing</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-api-hacking.png" "API Hacking" >}}<p><strong>API Hacking</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-ethical-hacking.png" "Ethical Hacking" >}}<p><strong>Ethical Hacking</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-pivoting-persistence.png" "Movement, Pivoting, Persistence" >}}<p><strong>Movement, Pivoting, Persistence</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-privesc-windows.png" "Privilege Escalation Windows" >}}<p><strong>Privilege Escalation Windows</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-privesc-linux.png" "Privilege Escalation Linux" >}}<p><strong>Privilege Escalation Linux</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-external-pentest-playbook.png" "External Pentest Playbook" >}}<p><strong>External Pentest Playbook</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-governance-risk-compliance.png" "Governance, Risk and Compliance" >}}<p><strong>Governance, Risk and Compliance</strong></p></div>
+  <div class="cert-card">{{< cert-img "tcm-osint.png" "OSINT" >}}<p><strong>OSINT</strong></p></div>
 </div>
 
 </details>
@@ -202,9 +221,9 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 <summary>✅ Try Hack Me</summary>
 
 <div class="cert-grid">
-  <div class="cert-card"><img src="/img/certs/thm-offensive-pentesting.jpeg" alt=""><p><strong>Offensive Pentest</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/thm-comptia-pentest.jpeg" alt=""><p><strong>CompTIA Pentest+</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/thm-jr-pentester.jpeg" alt=""><p><strong>JR Pentest</strong></p></div>
+  <div class="cert-card">{{< cert-img "thm-offensive-pentesting.jpeg" "Offensive Pentest" >}}<p><strong>Offensive Pentest</strong></p></div>
+  <div class="cert-card">{{< cert-img "thm-comptia-pentest.jpeg" "CompTIA Pentest+" >}}<p><strong>CompTIA Pentest+</strong></p></div>
+  <div class="cert-card">{{< cert-img "thm-jr-pentester.jpeg" "JR Pentest" >}}<p><strong>JR Pentest</strong></p></div>
 </div>
 
 </details>
@@ -213,54 +232,13 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 <summary>✅ Other</summary>
 
 <div class="cert-grid">
-  <div class="cert-card"><img src="/img/certs/paloalto-foundation.png" alt=""><p><strong>Palo Alto Networks Cybersecurity Foundation</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/eccouncil-master-osint.jpeg" alt=""><p><strong>EC Council Master OSINT</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/eccouncil-master-recon.jpeg" alt=""><p><strong>EC Council Reconnaissance</strong></p></div>
-  <div class="cert-card"><img src="/img/certs/apisec-api-pentest.png" alt=""><p><strong>API Penetration Testing</strong></p></div>
+  <div class="cert-card">{{< cert-img "paloalto-foundation.png" "Palo Alto Networks Cybersecurity Foundation" >}}<p><strong>Palo Alto Networks Cybersecurity Foundation</strong></p></div>
+  <div class="cert-card">{{< cert-img "eccouncil-master-osint.jpeg" "EC Council Master OSINT" >}}<p><strong>EC Council Master OSINT</strong></p></div>
+  <div class="cert-card">{{< cert-img "eccouncil-master-recon.jpeg" "EC Council Reconnaissance" >}}<p><strong>EC Council Reconnaissance</strong></p></div>
+  <div class="cert-card">{{< cert-img "apisec-api-pentest.png" "API Penetration Testing" >}}<p><strong>API Penetration Testing</strong></p></div>
 </div>
 
 </details>
-
----
-
-## 💼 **Professional Experience**
-
-<div class="exp-card">
-
-### **Nexusguard** — _SOC Analyst_
-#### _Remote, Singapore_ | **2024 — Present**
-
-- Monitor and analyze security events across enterprise systems using SIEM tools to detect, investigate, and respond to potential threats.
-- Collaborate with incident response teams to mitigate risks and contain security incidents effectively.
-- Conduct in-depth analysis of alerts to identify patterns indicative of cyber threats, enhancing detection and response capabilities.
-- Generate detailed reports and presentations on threat intelligence findings.
-- Leverage Nexusguard's proprietary DDoS mitigation technologies to protect client infrastructures from volumetric, protocol-based, and application-layer attacks.
-
-</div>
-
-<div class="exp-card">
-
-### **HackerOne, Bugcrowd, Intigriti** — _Cybersecurity Researcher_
-#### _Remote, Worldwide_ | **2023 — Present**
-
-- Successfully identified and reported a significant security vulnerability through HackerOne's Bug Bounty Program.
-- Utilized advanced security testing platforms to perform comprehensive vulnerability assessments.
-- Analyzed and reported findings from vulnerability discovery tools to provide actionable insights.
-- Collaborated with cross-functional teams to address identified vulnerabilities.
-
-</div>
-
-<div class="exp-card">
-
-### **Freelancing** — _Fullstack Web Developer_
-#### _Remote, Worldwide_ | **2018 — 2022**
-
-- Designed and developed scalable, high-performance web applications.
-- Managed software development lifecycle from initial planning and design to deployment and maintenance.
-- Integrated third-party APIs and services to enhance application functionality.
-- Conducted thorough testing and debugging to ensure optimal performance.
-
-</div>
 
 ---
 
@@ -306,4 +284,5 @@ This comprehensive, hands-on experience has broadened my technical expertise and
 
 If you want to save my résumé, you can download it below:
 
-{{< download-links >}}
+- [⬇️ English Resume](/docs/resume-enus.pdf)
+- [⬇️ Portuguese Resume](/docs/resume-ptbr.pdf)

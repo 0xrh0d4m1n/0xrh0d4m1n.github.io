@@ -1,0 +1,61 @@
+<style>
+  .site-logo-wrapper {
+    border-radius: 50%;
+    /* Arcade bezel: extruded look (raised button with bottom "thickness") */
+    box-shadow:
+      0 3px 0 0 rgba(0, 0, 0, 0.25),
+      0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, border-color 0.2s;
+  }
+  .site-logo-wrapper:hover {
+    box-shadow:
+      0 4px 0 0 rgba(0, 0, 0, 0.2),
+      0 6px 12px rgba(0, 0, 0, 0.18);
+  }
+  .site-logo-wrapper.pressed {
+    transform: translateY(3px);
+    box-shadow: 0 0 0 0 transparent, 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+  .dark .site-logo-wrapper {
+    box-shadow:
+      0 3px 0 0 rgba(0, 0, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .dark .site-logo-wrapper:hover {
+    box-shadow:
+      0 4px 0 0 rgba(0, 0, 0, 0.45),
+      0 6px 12px rgba(0, 0, 0, 0.35);
+  }
+  .dark .site-logo-wrapper.pressed {
+    box-shadow: 0 0 0 0 transparent, 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .site-logo-wrapper {
+    border: 2px solid rgb(201, 209, 217);
+  }
+  .site-logo-wrapper:hover {
+    border-color: var(--color-primary);
+  }
+  .dark .site-logo-wrapper:hover {
+    border-color: var(--color-darkmode-primary);
+  }
+</style>
+<span
+  class="site-logo-wrapper inline-flex shrink-0 items-center justify-center w-12 h-12 bg-body dark:bg-darkmode-light p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:focus-visible:outline-darkmode-primary"
+  role="img"
+  aria-label="{{ site.Title }} logo">
+  <img src="/img/logos/logo.svg" alt="" class="site-logo h-9 w-9 pointer-events-none" width="36" height="36" />
+</span>
+<script>
+  (function () {
+    var script = document.currentScript;
+    var wrapper = script && script.previousElementSibling;
+    if (!wrapper || !wrapper.classList || !wrapper.classList.contains('site-logo-wrapper')) return;
+    function setPressed(pressed) {
+      wrapper.classList.toggle('pressed', !!pressed);
+    }
+    wrapper.addEventListener('pointerdown', function () { setPressed(true); });
+    wrapper.addEventListener('pointerup', function () { setPressed(false); });
+    wrapper.addEventListener('pointerleave', function () { setPressed(false); });
+    wrapper.addEventListener('pointercancel', function () { setPressed(false); });
+  })();
+</script>

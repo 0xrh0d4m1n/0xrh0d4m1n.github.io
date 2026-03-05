@@ -7,8 +7,6 @@ tags:
   - Linux
   - Web
   - KeePass
-sidebar:
-  hide: true
 ---
 
 [← Back to HackTheBox Writeups](/writeups/redteam/htb/)

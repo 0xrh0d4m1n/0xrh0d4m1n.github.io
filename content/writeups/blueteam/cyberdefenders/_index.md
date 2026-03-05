@@ -1,7 +1,6 @@
 ---
 title: "Cyberdefenders"
 description: "Blue team lab writeups from Cyberdefenders"
-toc: false
 weight: 1
 ---
 

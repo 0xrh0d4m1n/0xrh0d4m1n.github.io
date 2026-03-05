@@ -1,0 +1,743 @@
+{{ define "main" }}
+  <div class="profile-linkedin">
+    {{/* Profile card (LinkedIn-style): banner inside card, then photo + name + role + tags + company + social + Contact */}}
+    <div class="profile-card">
+      <div class="profile-card-inner">
+        {{/* 1–2: Banner (cover) contained inside the card, first element */}}
+        <div class="profile-cover" aria-hidden="true">
+          {{ $coverParam := .Param "profile_cover" }}
+          {{ $coverPath := strings.TrimPrefix "assets/" ($coverParam | default "") }}
+          {{ if $coverPath }}
+            {{ with resources.Get $coverPath }}
+              <img src="{{ .RelPermalink }}" alt="" class="profile-cover-img" />
+            {{ else }}
+              <img src="{{ $coverParam }}" alt="" class="profile-cover-img" />
+            {{ end }}
+          {{ end }}
+          <div class="profile-cover-overlay"></div>
+        </div>
+        <div class="profile-card-body">
+        <div class="profile-card-left">
+          <div class="profile-avatar-wrap">
+            {{ $avatarParam := .Param "profile_avatar" }}
+            {{ $avatarPath := strings.TrimPrefix "assets/" ($avatarParam | default "") }}
+            {{ if $avatarPath }}
+              {{ with resources.Get $avatarPath }}
+                <img src="{{ .RelPermalink }}" alt="" class="profile-avatar" />
+              {{ else }}
+                <img src="{{ $avatarParam }}" alt="" class="profile-avatar" />
+              {{ end }}
+            {{ else if $avatarParam }}
+              <img src="{{ $avatarParam }}" alt="" class="profile-avatar" />
+            {{ else }}
+              <div class="profile-avatar profile-avatar-placeholder">
+                <span>{{ with .Param "profile_name" }}{{ substr . 0 2 }}{{ else }}{{ substr .Title 0 2 }}{{ end }}</span>
+              </div>
+            {{ end }}
+          </div>
+          <h1 class="profile-name">{{ .Param "profile_name" | default .Title }}</h1>
+          <p class="profile-headline">{{ .Param "profile_headline" | default "Professional" }}</p>
+          {{ with .Param "profile_tag_pills" }}
+            <div class="profile-tag-pills" aria-label="Tags">
+              {{ range . }}
+                <span class="profile-tag-pill">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+          <div class="profile-location" aria-label="Location">
+            <img src="https://flagcdn.com/w40/br.png" alt="" class="profile-location-flag" width="24" height="18" loading="lazy" />
+            <span class="profile-location-text">Brazil</span>
+          </div>
+        </div>
+        <div class="profile-card-right">
+          {{ with .Param "profile_company" }}
+            <div class="profile-company">
+              {{ $iconParam := $.Param "profile_company_icon" }}
+              {{ $iconPath := strings.TrimPrefix "assets/" ($iconParam | default "") }}
+              {{ if $iconPath }}
+                {{ with resources.Get $iconPath }}
+                  <img src="{{ .RelPermalink }}" alt="" class="profile-company-icon" />
+                {{ end }}
+              {{ else }}
+                <span class="profile-company-icon profile-company-icon-placeholder" aria-hidden="true">◆</span>
+              {{ end }}
+              <span class="profile-company-name">{{ . }}</span>
+            </div>
+          {{ end }}
+          {{ with site.Data.social.main }}
+            <div class="profile-social" aria-label="Social networks">
+              {{ range . }}
+                <a href="{{ .link }}" class="profile-social-link" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
+                  <i class="{{ .icon }}" aria-hidden="true"></i>
+                </a>
+              {{ end }}
+            </div>
+          {{ end }}
+          {{ $contactURL := .Param "profile_contact_url" | default "/contact/" }}
+          <a href="{{ $contactURL }}" class="profile-contact-btn">Contact</a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    {{/* Main content: About, Experience, Education, Skills, Certifications */}}
+    <div class="profile-feed">
+      <div class="profile-feed-inner content">
+        {{ .Content }}
+      </div>
+    </div>
+
+    {{/* Certification modal: backdrop + 16:9 box ~80% viewport */}}
+    <div id="cert-modal-backdrop" class="cert-modal-backdrop" aria-hidden="true" hidden>
+      <div class="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+        <button type="button" class="cert-modal-close" aria-label="Close">×</button>
+        <button type="button" class="cert-modal-prev" aria-label="Previous certification">← Previous</button>
+        <button type="button" class="cert-modal-next" aria-label="Next certification">Next →</button>
+        <div class="cert-modal-content">
+          <img class="cert-modal-img" src="" alt="" />
+          <p id="cert-modal-title" class="cert-modal-title"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .profile-linkedin {
+      --profile-body: var(--color-body);
+      --profile-card-bg: var(--color-light);
+      --profile-border: var(--color-border);
+      --profile-text: var(--color-text);
+      --profile-text-dark: var(--color-text-dark);
+      --profile-text-light: var(--color-text-light);
+      --profile-primary: var(--color-primary);
+      padding-bottom: 2rem;
+    }
+    .dark .profile-linkedin {
+      --profile-body: var(--color-darkmode-body);
+      --profile-card-bg: var(--color-darkmode-light);
+      --profile-border: var(--color-darkmode-border);
+      --profile-text: var(--color-darkmode-text);
+      --profile-text-dark: var(--color-darkmode-text-dark);
+      --profile-text-light: var(--color-darkmode-text-light);
+      --profile-primary: var(--color-darkmode-primary);
+    }
+    .profile-card {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .profile-card-inner {
+      position: relative;
+      background: var(--profile-card-bg);
+      border: 1px solid var(--profile-border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .profile-cover {
+      position: relative;
+      z-index: 0;
+      height: 200px;
+      background: linear-gradient(135deg, var(--profile-body) 0%, var(--profile-card-bg) 50%, var(--profile-border) 100%);
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+    }
+    .profile-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-cover-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom, transparent 40%, var(--profile-card-bg) 100%);
+    }
+    .profile-card-body {
+      position: relative;
+      z-index: 2;
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+    .profile-card-left {
+      flex: 1;
+      min-width: 200px;
+      text-align: left;
+    }
+    .profile-card-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+    .profile-avatar-wrap {
+      margin-top: -48px;
+      margin-bottom: 0.5rem;
+    }
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 25%;
+      border: 4px solid var(--profile-card-bg);
+      background: var(--profile-border);
+    }
+    .profile-avatar-placeholder {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--profile-primary);
+      text-transform: uppercase;
+    }
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--profile-text-dark);
+      margin: 0 0 0.25rem;
+    }
+    .profile-headline {
+      font-size: 0.95rem;
+      color: var(--profile-text-light);
+      margin: 0 0 0.75rem;
+    }
+    .profile-tag-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .profile-tag-pill {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--profile-primary);
+      background: transparent;
+      border: 1px solid var(--profile-primary);
+      border-radius: 999px;
+    }
+    .profile-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--profile-text);
+    }
+    .profile-location-flag {
+      width: 24px;
+      height: 18px;
+      object-fit: contain;
+      display: block;
+    }
+    .profile-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--profile-card-bg);
+      background: var(--profile-primary);
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .profile-contact-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .profile-company {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .profile-company-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+    .profile-company-icon-placeholder {
+      font-size: 1.25rem;
+      color: var(--profile-primary);
+    }
+    .profile-company-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--profile-text-dark);
+    }
+    .profile-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .profile-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--profile-text);
+      border: 1px solid var(--profile-border);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .profile-social-link:hover {
+      border-color: var(--profile-primary);
+      color: var(--profile-primary);
+    }
+    .profile-social-link i {
+      font-size: 1.1rem;
+    }
+    .profile-feed {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .profile-feed-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    /* Hide duplicate h1 / hero image from content if present (main title in profile card) */
+    .profile-feed-inner > h1:first-child {
+      display: none !important;
+    }
+    .profile-feed-inner > p:first-of-type:has(> img:only-child) {
+      display: none !important;
+    }
+    .profile-feed-inner hr {
+      border: none;
+      border-top: 1px solid var(--profile-border);
+      margin: 0.5rem 0;
+    }
+    /* Override prose img margin (theme applies margin-top/bottom: 2em) */
+    .profile-feed-inner img {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    /* LinkedIn-style section cards */
+    .profile-feed-inner .section-card {
+      background: var(--profile-card-bg);
+      border: 1px solid var(--profile-border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .profile-feed-inner h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--profile-text-dark);
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--profile-border);
+    }
+    .profile-feed-inner h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--profile-primary);
+      margin: 1rem 0 0.25rem;
+    }
+    .profile-feed-inner h3:first-child { margin-top: 0; }
+    .profile-feed-inner h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--profile-text-light);
+      margin: 0 0 0.5rem;
+    }
+    .profile-feed-inner p, .profile-feed-inner li {
+      color: var(--profile-text);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0 0 0.5rem;
+    }
+    .profile-feed-inner ul { margin: 0.5rem 0; padding-left: 1.25rem; }
+    .profile-feed-inner details {
+      background: var(--profile-body);
+      border: 1px solid var(--profile-border);
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .profile-feed-inner details summary {
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      color: var(--profile-text-dark);
+      cursor: pointer;
+      list-style: none;
+    }
+    .profile-feed-inner details summary::-webkit-details-marker { display: none; }
+    .profile-feed-inner details[open] summary {
+      border-bottom: 1px solid var(--profile-border);
+      color: var(--profile-primary);
+    }
+    .profile-feed-inner .skill-shields {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 0.2rem;
+      row-gap: 0.2rem;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .profile-feed-inner .skill-shields p {
+      margin: 0;
+      display: contents;
+    }
+    .profile-feed-inner .skill-shields a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    .profile-feed-inner .skill-shields img {
+      height: 34px;
+      display: block;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      box-sizing: border-box;
+    }
+    .profile-feed-inner .skill-shields-block {
+      margin-top: 0.5rem;
+    }
+    .profile-feed-inner .skill-shields-block h3 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      color: var(--profile-text-dark);
+    }
+    .profile-feed-inner .skill-shields-block h3:first-child {
+      margin-top: 0;
+    }
+    .profile-feed-inner .skill-grid,
+    .profile-feed-inner .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .profile-feed-inner .skill-card,
+    .profile-feed-inner .cert-card {
+      background: var(--profile-card-bg);
+      border: 1px solid var(--profile-border);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .profile-feed-inner .skill-card:hover,
+    .profile-feed-inner .cert-card:hover {
+      border-color: var(--profile-primary);
+    }
+    .profile-feed-inner .skill-card img,
+    .profile-feed-inner .cert-card img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .profile-feed-inner .skill-card h3,
+    .profile-feed-inner .cert-card p {
+      font-size: 0.85rem;
+      margin: 0;
+      color: var(--profile-text-dark);
+    }
+    .profile-feed-inner .skill-card p {
+      font-size: 0.75rem;
+      color: var(--profile-text-light);
+      margin-top: 0.25rem;
+    }
+    .profile-feed-inner .exp-card {
+      background: var(--profile-body);
+      border: 1px solid var(--profile-border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .profile-feed-inner .exp-card:last-child { margin-bottom: 0; }
+    .profile-feed-inner .exp-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .profile-feed-inner .exp-card-logo {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: var(--profile-card-bg);
+      padding: 0 4px 4px 4px;
+      box-sizing: border-box;
+      align-self: flex-start;
+    }
+    .profile-feed-inner .exp-card-logo--light {
+      filter: invert(1);
+    }
+    .profile-feed-inner .exp-card-title-block {
+      flex: 1;
+      min-width: 0;
+    }
+    .profile-feed-inner .exp-card-company {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--profile-text-dark);
+      margin: 0 0 0.2rem;
+      padding-top: 0;
+      line-height: 1.3;
+    }
+    .profile-feed-inner .exp-card-meta {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--profile-text-light);
+      margin: 0;
+    }
+    .profile-feed-inner .exp-card-body {
+      margin-left: 0;
+    }
+    .profile-feed-inner .exp-card-body ul {
+      margin: 0.5rem 0 0 1.25rem;
+      padding: 0;
+    }
+    .profile-feed-inner table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      color: var(--profile-text);
+    }
+    .profile-feed-inner th,
+    .profile-feed-inner td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--profile-border);
+    }
+    .profile-feed-inner th {
+      color: var(--profile-text-light);
+      font-weight: 500;
+    }
+    .profile-feed-inner a {
+      color: var(--profile-primary);
+      text-decoration: none;
+    }
+    .profile-feed-inner a:hover { text-decoration: underline; }
+
+    /* Certification modal: ~80% viewport, 16:9 */
+    .cert-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+    .cert-modal-backdrop[data-open="true"] {
+      opacity: 1;
+      visibility: visible;
+    }
+    .cert-modal-backdrop[hidden] { display: none !important; }
+    .cert-modal-backdrop[data-open="true"][hidden] { display: flex !important; }
+    .cert-modal {
+      position: relative;
+      width: 80vw;
+      max-width: min(80vw, calc(80vh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      max-height: 80vh;
+      background: var(--profile-card-bg);
+      border: 1px solid var(--profile-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .cert-modal-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 1rem;
+      min-height: 0;
+    }
+    .cert-modal-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    .cert-modal-title {
+      color: var(--profile-text-dark);
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+      text-align: center;
+    }
+    .cert-modal-close,
+    .cert-modal-prev,
+    .cert-modal-next {
+      position: absolute;
+      top: 0.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 1px solid var(--profile-border);
+      background: var(--profile-card-bg);
+      color: var(--profile-text);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 6px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .cert-modal-close:hover,
+    .cert-modal-prev:hover,
+    .cert-modal-next:hover {
+      border-color: var(--profile-primary);
+      color: var(--profile-primary);
+    }
+    .cert-modal-close {
+      right: 0.5rem;
+    }
+    .cert-modal-prev {
+      left: 0.5rem;
+      right: auto;
+      font-size: 0.9rem;
+      width: auto;
+      padding: 0 0.75rem;
+    }
+    .cert-modal-next {
+      right: 3rem;
+      left: auto;
+      font-size: 0.9rem;
+      width: auto;
+      padding: 0 0.75rem;
+    }
+    .profile-feed-inner .cert-card {
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    (function () {
+      const feed = document.querySelector(".profile-feed-inner");
+      if (!feed) return;
+      var child = feed.firstElementChild;
+      while (child) {
+        var next = child.nextElementSibling;
+        if (child.tagName === "H2") {
+          var card = document.createElement("div");
+          card.className = "section-card";
+          feed.insertBefore(card, child);
+          card.appendChild(child);
+          while (card.nextElementSibling && card.nextElementSibling.tagName !== "H2") {
+            card.appendChild(card.nextElementSibling);
+          }
+        }
+        child = next;
+      }
+    })();
+
+    (function () {
+      const backdrop = document.getElementById("cert-modal-backdrop");
+      const modal = backdrop && backdrop.querySelector(".cert-modal");
+      const modalImg = modal && modal.querySelector(".cert-modal-img");
+      const modalTitle = modal && modal.querySelector(".cert-modal-title");
+      const btnClose = modal && modal.querySelector(".cert-modal-close");
+      const btnPrev = modal && modal.querySelector(".cert-modal-prev");
+      const btnNext = modal && modal.querySelector(".cert-modal-next");
+      if (!backdrop || !modal || !modalImg || !modalTitle) return;
+
+      var certCards = [];
+      var currentIndex = 0;
+
+      function getCertData() {
+        var cards = document.querySelectorAll(".profile-linkedin .cert-card");
+        var out = [];
+        cards.forEach(function (card) {
+          var img = card.querySelector("img");
+          var titleEl = card.querySelector("p strong");
+          out.push({
+            src: img ? img.getAttribute("src") || "" : "",
+            title: titleEl ? titleEl.textContent.trim() : "",
+          });
+        });
+        return out;
+      }
+
+      function openModal(index) {
+        certCards = getCertData();
+        if (certCards.length === 0) return;
+        currentIndex = (index + certCards.length) % certCards.length;
+        var d = certCards[currentIndex];
+        modalImg.setAttribute("src", d.src);
+        modalImg.setAttribute("alt", d.title);
+        modalTitle.textContent = d.title;
+        backdrop.removeAttribute("hidden");
+        backdrop.setAttribute("data-open", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        backdrop.setAttribute("data-open", "false");
+        backdrop.setAttribute("hidden", "");
+        document.body.style.overflow = "";
+      }
+
+      function showNext() {
+        if (certCards.length === 0) return;
+        currentIndex = (currentIndex + 1) % certCards.length;
+        var d = certCards[currentIndex];
+        modalImg.setAttribute("src", d.src);
+        modalImg.setAttribute("alt", d.title);
+        modalTitle.textContent = d.title;
+      }
+
+      function showPrev() {
+        if (certCards.length === 0) return;
+        currentIndex = (currentIndex - 1 + certCards.length) % certCards.length;
+        var d = certCards[currentIndex];
+        modalImg.setAttribute("src", d.src);
+        modalImg.setAttribute("alt", d.title);
+        modalTitle.textContent = d.title;
+      }
+
+      document.querySelectorAll(".profile-linkedin .cert-card").forEach(function (card, index) {
+        card.addEventListener("click", function () {
+          openModal(index);
+        });
+      });
+
+      if (btnClose) btnClose.addEventListener("click", closeModal);
+      if (btnPrev) btnPrev.addEventListener("click", showPrev);
+      if (btnNext) btnNext.addEventListener("click", showNext);
+      backdrop.addEventListener("click", function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+      modal.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && backdrop.getAttribute("data-open") === "true") closeModal();
+      });
+    })();
+  </script>
+{{ end }}

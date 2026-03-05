@@ -1,8 +1,5 @@
 ---
 title: "Toolbox"
-toc: false
-sidebar:
-  hide: true
 ---
 
 # **Toolbox**

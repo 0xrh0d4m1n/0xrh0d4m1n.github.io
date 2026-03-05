@@ -1,23 +1,7 @@
-{{/*
-  hero-image shortcode
-  ──────────────────────────────────────────────────────────────────────────────
-  Renders a full-width hero image with an optional caption.
-
-  Parameters:
-    src     (required) – image path, e.g. /img/hero/b0740b2a.jpg
-    alt     (optional) – alt text
-    caption (optional) – caption text below the image
-
-  Usage:
-    {{< hero-image src="/img/hero/6f684e69.png" alt="Conway's Game of Life" caption="An artistic representation…" >}}
-*/}}
-{{ $src     := .Get "src" }}
-{{ $alt     := .Get "alt"     | default "" }}
-{{ $caption := .Get "caption" | default "" }}
-
-<figure class="hero-figure">
-  <img src="{{ $src }}" alt="{{ $alt }}" class="hero-figure__image">
-  {{ if $caption }}
-  <figcaption class="hero-figure__caption">{{ $caption }}</figcaption>
-  {{ end }}
-</figure>
+{{- $path := .Get 0 | default "img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg" -}}
+{{- $alt := .Get "alt" | default "Hero" -}}
+{{- with resources.Get $path -}}
+  <img src="{{ .RelPermalink }}" alt="{{ $alt }}" class="hero-image" loading="eager" />
+{{- else -}}
+  <img src="/{{ $path }}" alt="{{ $alt }}" class="hero-image" />
+{{- end -}}

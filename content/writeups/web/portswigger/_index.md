@@ -1,7 +1,6 @@
 ---
 title: "PortSwigger"
 description: "PortSwigger Web Security Academy writeups"
-toc: false
 weight: 1
 ---
 

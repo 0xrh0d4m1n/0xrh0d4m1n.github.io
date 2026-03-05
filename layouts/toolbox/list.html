@@ -1,0 +1,361 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section toolbox-section">
+    <div class="container toolbox-container">
+      <aside class="toolbox-sidebar" aria-label="Toolbox categories">
+        <nav class="toolbox-nav">
+          <ul class="toolbox-nav-list"></ul>
+        </nav>
+      </aside>
+      <div class="toolbox-main">
+        <div class="toolbox-page">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      function slugify(text) {
+        return text
+          .replace(/\s*[⚙️🔭🚨⚠️💥☣️🌐📚👾]\s*/g, "")
+          .replace(/\s+/g, "-")
+          .replace(/\*\*/g, "")
+          .replace(/[^\w\-]/g, "")
+          .toLowerCase() || "category";
+      }
+      const page = document.querySelector(".toolbox-page");
+      if (!page) return;
+      const section = page.querySelector(".tool-section");
+      if (section) {
+        section.classList.add("toolbox-category-card");
+        const h2 = section.querySelector("h2");
+        if (h2) section.id = slugify(h2.textContent);
+      }
+      for (const hr of Array.from(page.querySelectorAll(":scope > hr"))) hr.remove();
+      let h2;
+      while ((h2 = page.querySelector(":scope > h2"))) {
+        const card = document.createElement("div");
+        card.className = "toolbox-category-card";
+        card.id = slugify(h2.textContent);
+        page.insertBefore(card, h2);
+        card.appendChild(h2);
+        while (card.nextElementSibling && card.nextElementSibling.tagName === "DETAILS") {
+          card.appendChild(card.nextElementSibling);
+        }
+      }
+      const cards = Array.from(page.querySelectorAll(".toolbox-category-card"));
+      const firstId = cards[0] && cards[0].id ? cards[0].id : "general";
+
+      const navList = document.querySelector(".toolbox-nav-list");
+      if (navList) {
+        for (const card of cards) {
+          const h2 = card.querySelector("h2");
+          if (!h2 || !card.id) continue;
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = "#" + card.id;
+          a.textContent = h2.textContent.replace(/\*\*/g, "").trim();
+          a.className = "toolbox-nav-link";
+          a.setAttribute("data-category-id", card.id);
+          li.appendChild(a);
+          navList.appendChild(li);
+        }
+      }
+
+      function getSelectedId() {
+        const hash = window.location.hash.slice(1);
+        if (hash && cards.some(function (c) { return c.id === hash; })) return hash;
+        return firstId;
+      }
+
+      function showCategory(id) {
+        cards.forEach(function (card) {
+          card.classList.toggle("is-visible", card.id === id);
+        });
+        document.querySelectorAll(".toolbox-nav-link").forEach(function (a) {
+          a.classList.toggle("is-active", a.getAttribute("data-category-id") === id);
+        });
+        if (window.location.hash !== "#" + id) {
+          window.history.replaceState(null, "", "#" + id);
+        }
+      }
+
+      navList && navList.addEventListener("click", function (e) {
+        const a = e.target.closest("a[data-category-id]");
+        if (!a) return;
+        e.preventDefault();
+        showCategory(a.getAttribute("data-category-id"));
+      });
+
+      if (!window.location.hash && firstId) {
+        window.history.replaceState(null, "", "#" + firstId);
+      }
+      showCategory(getSelectedId());
+      window.addEventListener("popstate", function () {
+        showCategory(getSelectedId());
+      });
+      window.addEventListener("hashchange", function () {
+        showCategory(getSelectedId());
+      });
+    })();
+  </script>
+
+  <style>
+    .toolbox-container {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .toolbox-sidebar {
+      flex-shrink: 0;
+      width: 220px;
+      position: sticky;
+      top: 6rem;
+    }
+
+    .toolbox-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toolbox-nav-link {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toolbox-nav-link:hover {
+      color: var(--color-primary);
+      background: var(--color-light);
+    }
+
+    .dark .toolbox-nav-link {
+      color: var(--color-darkmode-text);
+    }
+
+    .dark .toolbox-nav-link:hover {
+      color: var(--color-darkmode-primary);
+      background: var(--color-darkmode-light);
+    }
+
+    .toolbox-nav-link.is-active {
+      color: var(--color-primary);
+      font-weight: 600;
+      background: var(--color-light);
+    }
+
+    .dark .toolbox-nav-link.is-active {
+      color: var(--color-darkmode-primary);
+      background: var(--color-darkmode-light);
+    }
+
+    .toolbox-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .toolbox-page > h1:first-child {
+      display: none;
+    }
+
+    .toolbox-page {
+      display: block;
+    }
+
+    .toolbox-category-card {
+      display: none;
+    }
+
+    /* Selected category: title + grid of its items as cards */
+    .toolbox-category-card.is-visible {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .toolbox-category-card.is-visible > h2 {
+      grid-column: 1 / -1;
+      margin-bottom: 0.25rem;
+    }
+
+    .toolbox-category-card.is-visible > details {
+      background: var(--tb-card-bg);
+      border: 1px solid var(--tb-card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .dark .toolbox-category-card.is-visible > details {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .toolbox-category-card.is-visible > details summary {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--tb-border);
+    }
+
+    .toolbox-category-card.is-visible > details > *:not(summary) {
+      padding: 1rem 1.5rem 1.25rem;
+    }
+
+    .toolbox-category-card.is-visible > details[open] summary {
+      border-bottom-color: var(--tb-card-border);
+    }
+
+    @media (max-width: 992px) {
+      .toolbox-container {
+        flex-direction: column;
+      }
+      .toolbox-sidebar {
+        position: static;
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 1rem;
+      }
+      .dark .toolbox-sidebar {
+        border-color: var(--color-darkmode-border);
+      }
+      .toolbox-nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .toolbox-nav-link {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.85rem;
+      }
+      .toolbox-category-card.is-visible {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .toolbox-category-card.is-visible {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* One card per category: title + vertical list of details */
+    .toolbox-category-card {
+      --tb-card-bg: var(--color-light);
+      --tb-card-border: var(--color-border);
+      --tb-card-title: var(--color-text-light);
+      --tb-item-bg: var(--color-light);
+      --tb-border: var(--color-border);
+      --tb-title: var(--color-text-light);
+      --tb-link: var(--color-primary);
+    }
+
+    .dark .toolbox-category-card {
+      --tb-card-bg: var(--color-darkmode-light);
+      --tb-card-border: var(--color-darkmode-border);
+      --tb-card-title: var(--color-darkmode-text-light);
+      --tb-item-bg: var(--color-darkmode-light);
+      --tb-border: var(--color-darkmode-border);
+      --tb-title: var(--color-darkmode-text-light);
+      --tb-link: var(--color-darkmode-primary);
+    }
+
+    /* Base card styles (only .is-visible is shown; see .toolbox-category-card { display: none } above) */
+    .toolbox-category-card:not(.is-visible) {
+      display: none !important;
+    }
+
+    .toolbox-category-card > h2 {
+      margin: 0;
+      padding: 1rem 1.25rem;
+      font-size: var(--text-h4, 1.25rem);
+      font-weight: 600;
+      color: var(--tb-card-title);
+      border-bottom: 1px solid var(--tb-card-border);
+    }
+
+    .toolbox-category-card > details {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid var(--tb-border);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .toolbox-category-card > details:last-child {
+      border-bottom: none;
+    }
+
+    .toolbox-category-card > details summary {
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--tb-title);
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      background: transparent;
+    }
+
+    .toolbox-category-card > details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .toolbox-category-card > details summary::after {
+      content: "+";
+      float: right;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    .toolbox-category-card > details[open] summary::after {
+      content: "−";
+    }
+
+    .toolbox-category-card > details > *:not(summary) {
+      padding: 0 1.25rem 1rem 1.25rem;
+    }
+
+    .toolbox-category-card details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toolbox-category-card details li {
+      margin: 0;
+      padding: 0.5rem 0 0.5rem 0;
+      padding-left: 1rem;
+      border-bottom: 1px solid var(--tb-border);
+      display: block;
+    }
+
+    .toolbox-category-card details li:last-child {
+      border-bottom: none;
+    }
+
+    .toolbox-category-card details a {
+      color: var(--tb-link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toolbox-category-card details a:hover {
+      text-decoration: underline;
+    }
+  </style>
+{{ end }}
