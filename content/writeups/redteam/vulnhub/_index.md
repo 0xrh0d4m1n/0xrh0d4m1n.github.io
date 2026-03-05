@@ -1,7 +1,6 @@
 ---
 title: "Vulnhub"
 description: "Vulnhub machine writeups"
-toc: false
 weight: 3
 ---
 

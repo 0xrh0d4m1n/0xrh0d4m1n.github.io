@@ -1,7 +1,6 @@
 ---
 title: "HackTheBox"
 description: "HackTheBox machine writeups"
-toc: false
 weight: 1
 ---
 

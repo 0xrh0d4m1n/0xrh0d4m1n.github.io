@@ -1,7 +1,0 @@
-{{/*
-  head-end.html — Hextra extension point (called at end of <head>).
-  Compiles assets/css/custom.scss via Hugo Pipes and injects it as a stylesheet.
-  The .scss file is the single source of truth for all custom styles (SSOT / DRY).
-*/}}
-{{- $scss := resources.Get "css/custom.scss" | toCSS | minify | fingerprint -}}
-<link rel="stylesheet" href="{{ $scss.RelPermalink }}" integrity="{{ $scss.Data.Integrity }}">

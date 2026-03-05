@@ -1,7 +1,6 @@
 ---
 title: "TryHackMe"
 description: "TryHackMe machine writeups"
-toc: false
 weight: 2
 ---
 

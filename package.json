@@ -1,18 +1,23 @@
 {
-  "name": "0xrh0d4m1n-tests",
-  "version": "1.0.0",
-  "description": "Playwright E2E tests for 0xrh0d4m1n.tech",
+  "name": "0xrh0d4m1n.github.io",
+  "description": "Personal site — Hugoplate theme",
+  "private": true,
   "scripts": {
-    "test": "node node_modules/playwright/cli.js test",
-    "test:ui": "node node_modules/playwright/cli.js test --ui",
-    "test:headed": "node node_modules/playwright/cli.js test --headed",
-    "test:report": "node node_modules/playwright/cli.js show-report",
-    "test:smoke": "node node_modules/playwright/cli.js test tests/smoke.spec.ts",
-    "test:assets": "node node_modules/playwright/cli.js test tests/assets.spec.ts",
-    "test:nav": "node node_modules/playwright/cli.js test tests/navigation.spec.ts"
+    "sync-theme-json": "node -e \"require('fs').mkdirSync('themes/hugoplate/data',{recursive:true}); require('fs').copyFileSync('data/theme.json','themes/hugoplate/data/theme.json')\"",
+    "dev": "npm run sync-theme-json && node themes/hugoplate/scripts/themeGenerator.js && hugo server",
+    "build": "npm run sync-theme-json && node themes/hugoplate/scripts/themeGenerator.js && hugo --gc --minify --forceSyncStatic",
+    "preview": "npm run build && hugo server --disableFastRender -e production",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "devDependencies": {
-    "@playwright/test": "^1.50.0",
-    "@axe-core/playwright": "^4.10.0"
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/cli": "^4.2.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "concurrently": "^9.2.1",
+    "serve": "^14.2.5",
+    "tailwind-bootstrap-grid": "^7.0.0",
+    "tailwindcss": "^4.2.1"
   }
 }

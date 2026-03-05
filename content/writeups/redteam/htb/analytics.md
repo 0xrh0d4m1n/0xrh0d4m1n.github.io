@@ -7,8 +7,6 @@ tags:
   - Linux
   - Web
   - Metabase
-sidebar:
-  hide: true
 ---
 
 [← Back to HackTheBox Writeups](/writeups/redteam/htb/)

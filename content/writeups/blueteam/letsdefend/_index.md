@@ -1,7 +1,6 @@
 ---
 title: "LetsDefend"
 description: "Blue team lab writeups from LetsDefend"
-toc: false
 weight: 2
 ---
 

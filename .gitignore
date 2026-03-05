@@ -7,6 +7,11 @@ resources/_gen/
 /vendor/
 /_vendor/
 
+# Node
+node_modules/
+npm-debug.log*
+.yarn-error.log
+
 # OS
 .DS_Store
 Thumbs.db
@@ -17,13 +22,12 @@ Thumbs.db
 *.swp
 *.swo
 
+# Playwright
+test-results/
+playwright-report/
+.playwright/
+
 # Python (legacy - no longer used)
 .venv/
 __pycache__/
 *.py[cod]
-
-# Playwright
-node_modules/
-playwright-report/
-test-results/
-.playwright/

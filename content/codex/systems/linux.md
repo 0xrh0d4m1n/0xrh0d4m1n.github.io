@@ -7,7 +7,7 @@ tags:
 
 # **LINUX**
 
-{{< hero-image src="/img/hero/5aeb4a0f6e453ce98b2506f3259f2fc4.jpeg" alt="Linux" >}}
+![Linux](/img/hero/5aeb4a0f6e453ce98b2506f3259f2fc4.jpeg)
 
 The boot process on Linux is divided into four stages.
 
