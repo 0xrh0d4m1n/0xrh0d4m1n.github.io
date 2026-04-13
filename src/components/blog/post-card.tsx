@@ -1,0 +1,70 @@
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import type { SerializedPost } from "./types";
+
+export function PostCard({ post }: { post: SerializedPost }) {
+  return (
+    <Link href={post.href} className="group block">
+      <Card className="h-full transition-colors hover:border-primary/40">
+        {post.image && (
+          <div className="overflow-hidden rounded-t-lg">
+            <img
+              src={post.image}
+              alt=""
+              className="h-40 w-full object-cover transition-transform group-hover:scale-105"
+            />
+          </div>
+        )}
+        <CardHeader className="pb-2">
+          {post.categories?.[0] && (
+            <Badge variant="default" className="mb-1 w-fit text-[10px]">
+              {post.categories[0]}
+            </Badge>
+          )}
+          <CardTitle className="text-base font-heading leading-snug transition-colors group-hover:text-primary">
+            {post.title}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pb-2">
+          {post.description && (
+            <p className="line-clamp-2 text-sm text-muted-foreground">
+              {post.description}
+            </p>
+          )}
+        </CardContent>
+        <CardFooter className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          {post.date && (
+            <time>
+              {new Date(post.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </time>
+          )}
+          <span>&middot;</span>
+          <span>{post.readingTime} min read</span>
+          {post.tags && post.tags.length > 0 && (
+            <>
+              <span>&middot;</span>
+              <div className="flex flex-wrap gap-1">
+                {post.tags.slice(0, 3).map((tag) => (
+                  <Badge key={tag} variant="outline" className="text-[10px]">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </>
+          )}
+        </CardFooter>
+      </Card>
+    </Link>
+  );
+}

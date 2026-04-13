@@ -1,7 +1,0 @@
-{{- $path := .Get 0 | default "img/hero/b0740b2a8afc9453749b5e013a2db6fb.jpg" -}}
-{{- $alt := .Get "alt" | default "Hero" -}}
-{{- with resources.Get $path -}}
-  <img src="{{ .RelPermalink }}" alt="{{ $alt }}" class="hero-image" loading="eager" />
-{{- else -}}
-  <img src="/{{ $path }}" alt="{{ $alt }}" class="hero-image" />
-{{- end -}}
