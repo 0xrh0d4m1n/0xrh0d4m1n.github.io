@@ -1,11 +1,6 @@
-# Hugo build output
-public/
-resources/_gen/
-.hugo_build.lock
-
-# Hugo module cache / vendor snapshots
-/vendor/
-/_vendor/
+# Next.js
+.next/
+out/
 
 # Node
 node_modules/
@@ -22,12 +17,15 @@ Thumbs.db
 *.swp
 *.swo
 
-# Playwright
-test-results/
-playwright-report/
-.playwright/
+# AI
+.claude
 
-# Python (legacy - no longer used)
-.venv/
-__pycache__/
-*.py[cod]
+# Env
+.env
+.env.local
+.env.*.local
+
+# Playwright
+tests/.output/
+tests/playwright-report/
+.playwright/

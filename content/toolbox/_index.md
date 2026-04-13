@@ -4,8 +4,6 @@ title: "Toolbox"
 
 # **Toolbox**
 
-<div class="tool-section">
-
 ## ⚙️ **General**
 
 <details>
@@ -62,8 +60,6 @@ title: "Toolbox"
 - [**Crackstation**](https://crackstation.net/)
 
 </details>
-
-</div>
 
 ---
 
