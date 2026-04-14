@@ -29,9 +29,7 @@ const NAV_ITEMS = [
   { label: "About", href: "/about/" },
   { label: "Blog", href: "/blog/" },
   { label: "Writeups", href: "/writeups/" },
-  { label: "Codex", href: "/codex/" },
   { label: "Toolbox", href: "/toolbox/" },
-  { label: "Glossary", href: "/glossary/" },
 ];
 
 /**
@@ -82,16 +80,11 @@ function NavLink({
  */
 export function SiteHeader() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
-      <div
-        className={`mx-auto flex h-14 items-center justify-between px-4 ${
-          isHome ? "max-w-6xl" : "w-[90vw] max-w-none"
-        }`}
-      >
+      <div className="mx-auto flex h-14 w-[90vw] max-w-none items-center justify-between px-4">
         <Button variant="ghost" size="sm" className="font-heading text-lg font-bold tracking-tight text-primary px-2 gap-2" asChild>
           <Link href="/" className="flex items-center gap-2">
             <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border-[3px] border-muted-foreground bg-muted dark:border-primary">
