@@ -35,20 +35,9 @@ const SECTIONS = [
       "HackTheBox, CyberDefenders, and PortSwigger walkthroughs.",
   },
   {
-    href: "/codex/",
-    label: "Codex",
-    description:
-      "Networking, protocols, programming, and SOC reference.",
-  },
-  {
     href: "/toolbox/",
     label: "Toolbox",
     description: "Curated tools for offensive and defensive security.",
-  },
-  {
-    href: "/glossary/",
-    label: "Glossary",
-    description: "Key cybersecurity terms and definitions.",
   },
 ] as const;
 
@@ -67,7 +56,14 @@ export default function HomePage() {
           src={HERO.video}
         />
         <div className="absolute inset-0 bg-background/60 dark:bg-background/70" aria-hidden />
-        <div className="relative z-10 mx-auto max-w-2xl text-center">
+        <div className="relative z-10 mx-auto max-w-2xl text-center flex flex-col items-center">
+          {/* Animated GIF avatar */}
+          <img
+            src="/img/hero/54879845732140987541253743874983361.gif"
+            alt="0xrh0d4m1n"
+            className="mb-6 h-56 w-56 sm:h-72 sm:w-72 aspect-square rounded-full object-cover border-4 border-primary shadow-[0_0_40px_rgba(159,239,0,0.3)]"
+          />
+
           <h1 className="mb-4 text-4xl font-bold font-heading sm:text-5xl">
             {HERO.title}
           </h1>

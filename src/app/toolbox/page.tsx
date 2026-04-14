@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
+import { ToolboxLayout } from "@/components/toolbox/toolbox-layout";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const mod = await import("@content/toolbox/_index.md");
-  const title = (mod.frontmatter?.title as string) ?? "Toolbox";
-  return { title };
-}
+export const metadata: Metadata = { title: "Toolbox" };
 
-export default async function ToolboxPage() {
-  const mod = await import("@content/toolbox/_index.md");
-  const Content = mod.default;
-  const frontmatter = (mod.frontmatter ?? {}) as { title?: string };
-
+export default function ToolboxPage() {
   return (
-    <div className="mx-auto w-[90vw] max-w-none px-4 py-12">
-      <h1 className="mb-8 text-3xl font-bold font-heading">
-        {frontmatter.title}
-      </h1>
-      <div className="prose max-w-none">
-        <Content />
+    <div className="mx-auto w-[90vw] max-w-[1600px] px-4 py-8">
+      <div className="mb-6">
+        <h1 className="mb-1 text-3xl font-bold font-heading">Toolbox</h1>
+        <p className="text-muted-foreground">
+          Curated collection of cybersecurity tools, resources &amp; references.
+        </p>
       </div>
+
+      <ToolboxLayout />
     </div>
   );
 }
