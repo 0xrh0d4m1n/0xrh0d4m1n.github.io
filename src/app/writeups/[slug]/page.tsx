@@ -3,6 +3,7 @@ import Link from "next/link";
 import path from "path";
 import fs from "fs";
 import { getAllSlugs } from "@/lib/content";
+import { formatDate } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -59,7 +60,7 @@ export default async function WriteupPage({ params }: Props) {
 
       {frontmatter.date && (
         <time className="mb-4 block text-sm text-muted-foreground">
-          {new Date(frontmatter.date).toLocaleDateString("en-US", {
+          {formatDate(frontmatter.date, {
             year: "numeric",
             month: "long",
             day: "numeric",

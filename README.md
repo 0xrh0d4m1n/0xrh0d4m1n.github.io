@@ -1,6 +1,6 @@
 # 0xrh0d4m1n.tech
 
-Personal site and blog focused on hacking and cybersecurity.  
+Personal cybersecurity portfolio and blog.
 Built with **Next.js 15**, **shadcn/ui**, **Tailwind CSS v4**, and **MDX**.
 
 ---
@@ -13,10 +13,9 @@ Built with **Next.js 15**, **shadcn/ui**, **Tailwind CSS v4**, and **MDX**.
 | Language | TypeScript |
 | UI | shadcn/ui + Tailwind CSS v4 |
 | Icons | Font Awesome (SVG, free solid + brands) |
-| Content | Markdown → MDX (@next/mdx, dynamic import + remark-mdx-frontmatter) |
+| Content | Markdown + MDX (@next/mdx, remark-gfm, rehype-pretty-code) |
 | Hosting | GitHub Pages |
 | CI/CD | GitHub Actions |
-| Testing | Playwright |
 
 ---
 
@@ -25,48 +24,60 @@ Built with **Next.js 15**, **shadcn/ui**, **Tailwind CSS v4**, and **MDX**.
 ```
 .
 ├── .github/workflows/deploy.yml   # CI/CD
-├── content/                       # All Markdown content (80 files)
-│   ├── _index.md                  # Homepage data
-│   ├── about/                     # About page
+├── content/                       # Markdown content
 │   ├── blog/                      # Blog posts
-│   ├── codex/                     # Reference articles (infra, networking, protocols, soc, etc.)
-│   ├── skills/                    # Skills & certifications
-│   ├── toolbox/                   # Security tools
-│   └── writeups/                  # CTF writeups (blueteam, redteam, web)
-├── data/                          # Site metadata
-│   ├── social.json                # Social links
-│   └── theme.json                 # Color palette & fonts
+│   └── writeups/                  # CTF writeups (flat, with platform/category in frontmatter)
 ├── public/                        # Static assets (images, docs, favicons)
 ├── src/
 │   ├── app/                       # Next.js App Router pages
 │   │   ├── layout.tsx             # Root layout (header, footer, theme)
-│   │   ├── page.tsx               # Homepage
-│   │   ├── about/page.tsx
-│   │   ├── blog/page.tsx          # Blog listing
-│   │   ├── blog/[slug]/page.tsx   # Blog post
-│   │   ├── codex/page.tsx         # Codex index
-│   │   ├── codex/[category]/      # Category listing + article
-│   │   ├── glossary/page.tsx
-│   │   ├── skills/page.tsx
-│   │   ├── toolbox/page.tsx
-│   │   └── writeups/              # Writeups (catch-all route)
-│   ├── components/                # React components
-│   │   ├── site-header.tsx        # Navigation header
-│   │   ├── site-footer.tsx        # Footer
+│   │   ├── page.tsx               # Homepage (hero + section cards)
+│   │   ├── about/page.tsx         # About (hardcoded profile, skills, achievements, resume)
+│   │   ├── blog/page.tsx          # Blog listing (search, pagination, sidebar)
+│   │   ├── blog/[slug]/page.tsx   # Blog post (ToC, reading progress, lightbox)
+│   │   ├── toolbox/page.tsx       # Toolbox (category sidebar + tool grid)
+│   │   ├── writeups/page.tsx      # Writeups data grid (sortable, searchable)
+│   │   └── writeups/[slug]/       # Individual writeup page
+│   ├── components/
+│   │   ├── blog/                  # Blog components (cards, sidebar, ToC, lightbox)
+│   │   ├── toolbox/               # Toolbox layout component
+│   │   ├── writeups/              # Writeups data grid component
+│   │   ├── ui/                    # shadcn/ui primitives
+│   │   ├── site-header.tsx        # Sticky navigation header
+│   │   ├── site-footer.tsx        # Footer with social links
+│   │   ├── image-lightbox.tsx     # Generic image lightbox modal
 │   │   ├── theme-provider.tsx     # Dark/light mode provider
 │   │   └── theme-toggle.tsx       # Theme switch button
-│   ├── mdx-components.tsx         # MDX global components (@next/mdx)
-│   └── lib/
-│       ├── content.ts             # Content loading (reads content/*.md)
-│       ├── icons.ts               # Font Awesome icon registry (site default)
-│       └── utils.ts               # shadcn utility (cn)
+│   ├── data/
+│   │   └── toolbox.ts             # Toolbox tools data (categories, tools, URLs)
+│   ├── lib/
+│   │   ├── content.ts             # Content loading (frontmatter parsing, writeup helpers)
+│   │   ├── icons.ts               # Font Awesome icon registry
+│   │   ├── profile.ts             # Shared author profile constant
+│   │   └── utils.ts               # shadcn utility (cn)
+│   ├── mdx-components.tsx         # MDX global components (headings with IDs)
+│   └── styles/
+│       └── globals.css            # Global styles (prose, syntax highlighting, tables)
 ├── components.json                # shadcn/ui config
-├── next.config.ts                 # Static export + image config
-├── postcss.config.mjs
+├── next.config.ts                 # Static export + MDX plugins
 ├── tsconfig.json
 ├── package.json
 └── CNAME
 ```
+
+---
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage — hero with animated GIF, section cards |
+| `/about/` | Profile, skills, achievements, certifications, resume |
+| `/blog/` | Blog listing with search, pagination, topic sidebar |
+| `/blog/[slug]/` | Blog post with reading progress, ToC, related posts, image lightbox |
+| `/writeups/` | Sortable & searchable data grid of all CTF writeups |
+| `/writeups/[slug]/` | Individual writeup page |
+| `/toolbox/` | Curated cybersecurity tools organized by category with search |
 
 ---
 
@@ -102,7 +113,9 @@ Push to `main` or `master`. GitHub Actions will:
 
 ## Adding content
 
-Drop a `.md` file in the appropriate `content/` directory with frontmatter:
+### Blog post
+
+Drop a `.md` file in `content/blog/` with frontmatter:
 
 ```yaml
 ---
@@ -110,12 +123,31 @@ title: "My New Post"
 date: 2024-03-15
 tags: [cybersecurity, SOC]
 categories: [SOC]
+image: "https://picsum.photos/seed/mypost/1200/630"
 ---
 
 Your content here...
 ```
 
-The content pipeline reads `content/`, parses frontmatter with `gray-matter`, and renders via `next-mdx-remote`.
+### Writeup
+
+Drop a `.md` file in `content/writeups/` with frontmatter:
+
+```yaml
+---
+title: "Machine Name"
+date: 2024-03-15
+platform: "htb"
+category: "redteam"
+difficulty: "Easy"
+tags: [HackTheBox, Linux, Web]
+---
+
+Your writeup here...
+```
+
+Supported platforms: `htb`, `thm`, `vulnhub`, `cyberdefenders`, `letsdefend`, `portswigger`.
+Supported categories: `redteam`, `blueteam`, `web`.
 
 ---
 

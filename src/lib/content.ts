@@ -62,7 +62,7 @@ export function getContent(relativePath: string): ContentItem | null {
  * Returns the section index entry for a given section (its `_index.md`).
  * Used for section title and description on index/listing pages.
  *
- * @param section - Section path under `content/` (e.g. `blog`, `codex/networking`, `writeups/blueteam`).
+ * @param section - Section path under `content/` (e.g. `blog`, `writeups`).
  * @returns The index item or null if `_index.md` is missing.
  */
 export function getSectionIndex(section: string): ContentItem | null {
@@ -71,9 +71,9 @@ export function getSectionIndex(section: string): ContentItem | null {
 
 /**
  * Lists all content files in a section (excluding `_index.md`), sorted by weight, then date, then title.
- * Used to build blog post lists, codex article lists, and writeup lists.
+ * Used to build blog post lists and writeup lists.
  *
- * @param section - Section path under `content/` (e.g. `blog`, `codex/soc`).
+ * @param section - Section path under `content/` (e.g. `blog`, `writeups`).
  * @returns Array of items (slug, meta, href) for each `.md` file in that directory.
  */
 export function getContentList(section: string): ContentItem[] {
@@ -90,33 +90,6 @@ export function getContentList(section: string): ContentItem[] {
         return a.meta.weight - b.meta.weight;
       if (a.meta.date && b.meta.date)
         return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime();
-      return a.meta.title.localeCompare(b.meta.title);
-    });
-}
-
-/**
- * Lists direct subdirectories of a section, each with the meta from its `_index.md`.
- * Used to build category/team cards (e.g. codex categories, writeups blueteam/redteam).
- *
- * @param section - Section path under `content/` (e.g. `codex`, `writeups`).
- * @returns Array of { name, meta } for each subdirectory, sorted by weight then title.
- */
-export function getSubsections(
-  section: string,
-): Array<{ name: string; meta: ContentMeta }> {
-  const dirPath = path.join(CONTENT_DIR, section);
-  if (!fs.existsSync(dirPath)) return [];
-
-  return fs
-    .readdirSync(dirPath, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => {
-      const index = getSectionIndex(path.join(section, d.name));
-      return { name: d.name, meta: index?.meta ?? { title: d.name } };
-    })
-    .sort((a, b) => {
-      if (a.meta.weight !== undefined && b.meta.weight !== undefined)
-        return a.meta.weight - b.meta.weight;
       return a.meta.title.localeCompare(b.meta.title);
     });
 }
@@ -152,7 +125,7 @@ export function getRelatedPosts(
 /* ── Writeup helpers ────────────────────────────────────────────── */
 
 /**
- * Flat writeup entry enriched with source / category from directory path.
+ * Flat writeup entry with source and category from frontmatter.
  */
 export interface WriteupItem {
   slug: string;
@@ -235,9 +208,9 @@ export function getAllWriteups(): WriteupItem[] {
 
 /**
  * Returns the list of content slugs in a section (filenames without `.md`, excluding `_index`).
- * Used by `generateStaticParams` for blog and codex dynamic routes.
+ * Used by `generateStaticParams` for blog and writeup dynamic routes.
  *
- * @param section - Section path under `content/` (e.g. `blog`, `codex/infra`).
+ * @param section - Section path under `content/` (e.g. `blog`, `writeups`).
  * @returns Array of slug strings.
  */
 export function getAllSlugs(section: string): string[] {

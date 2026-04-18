@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { formatDate } from "@/lib/utils";
 import { TableOfContents } from "./table-of-contents";
 import type { SerializedPost } from "./types";
 
@@ -50,7 +51,7 @@ export function PostSidebar({ relatedPosts, relatedTags }: PostSidebarProps) {
                   </p>
                   {post.date && (
                     <time className="text-[11px] text-muted-foreground">
-                      {new Date(post.date).toLocaleDateString("en-US", {
+                      {formatDate(post.date, {
                         month: "short",
                         day: "numeric",
                       })}

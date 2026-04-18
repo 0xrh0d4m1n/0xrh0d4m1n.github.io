@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { formatDate } from "@/lib/utils";
 import type { SerializedPost } from "./types";
 
 export function PostCard({ post }: { post: SerializedPost }) {
@@ -42,7 +43,7 @@ export function PostCard({ post }: { post: SerializedPost }) {
         <CardFooter className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           {post.date && (
             <time>
-              {new Date(post.date).toLocaleDateString("en-US", {
+              {formatDate(post.date, {
                 month: "short",
                 day: "numeric",
                 year: "numeric",

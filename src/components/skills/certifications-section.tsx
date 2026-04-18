@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import {
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Download,
@@ -235,82 +236,112 @@ export function CertificationsSection({
 }: {
   groups: CertCompanyGroup[];
 }) {
-  const [open, setOpen] = useState(false);
-  const [activeGroupIdx, setActiveGroupIdx] = useState(0);
+  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+  const [modalState, setModalState] = useState<{
+    open: boolean;
+    groupIdx: number;
+    certIdx: number;
+  }>({ open: false, groupIdx: 0, certIdx: 0 });
 
-  const activeGroup = groups[activeGroupIdx] ?? null;
+  const activeGroup = groups[modalState.groupIdx] ?? null;
+
+  const toggleExpand = (idx: number) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+  };
+
+  const openCert = (groupIdx: number, certIdx: number) => {
+    setModalState({ open: true, groupIdx, certIdx });
+  };
 
   return (
-    <div className="space-y-4">
-      {groups.map((g, idx) => {
-        const hasOverflow = g.certs.length > 6;
-        const thumbs = hasOverflow ? g.certs.slice(0, 5) : g.certs.slice(0, 6);
-        const remaining = g.certs.length - thumbs.length;
-
-        return (
-          <Card
-            key={g.company}
-            className="p-4 transition-colors hover:border-primary/40 hover:bg-accent/50"
-          >
-            <button
-              type="button"
-              className="w-full cursor-pointer text-left"
-              onClick={() => {
-                setActiveGroupIdx(idx);
-                setOpen(true);
-              }}
+    <div>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+        {groups.map((g, gIdx) => {
+          const isExpanded = expanded.has(gIdx);
+          return (
+            <Card
+              key={g.company}
+              className={cn(
+                "overflow-hidden p-0 transition-all",
+                isExpanded && "col-span-full"
+              )}
             >
-              <div className="flex items-start gap-3">
+              <button
+                type="button"
+                onClick={() => toggleExpand(gIdx)}
+                className="flex w-full cursor-pointer items-center gap-3 p-4 text-left transition-colors hover:bg-accent/50"
+                aria-expanded={isExpanded}
+                aria-label={`${isExpanded ? "Collapse" : "Expand"} ${g.company} certifications`}
+              >
                 {g.logo ? (
                   <img
                     src={g.logo}
                     alt={`${g.company} logo`}
-                    className="h-10 w-10 rounded-md border bg-background object-contain p-1"
+                    className="h-12 w-12 shrink-0 rounded-md border bg-background object-contain p-1"
                   />
                 ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md border bg-muted text-sm font-bold text-muted-foreground">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border bg-muted text-base font-bold text-muted-foreground">
                     {g.company.trim().slice(0, 1).toUpperCase()}
                   </div>
                 )}
                 <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <div className="truncate text-base font-semibold">
-                      {g.company}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {g.certs.length} cert{g.certs.length === 1 ? "" : "s"}
-                    </div>
+                  <div className="truncate text-sm font-semibold">
+                    {g.company}
                   </div>
-                  <div className="mt-2 grid grid-cols-3 gap-2">
-                    {thumbs.map((cert) => (
-                      <div key={cert.src} className="rounded-md border bg-background p-1">
+                  <div className="text-xs text-muted-foreground">
+                    {g.certs.length} cert{g.certs.length === 1 ? "" : "s"}
+                  </div>
+                </div>
+                <ChevronDown
+                  className={cn(
+                    "h-4 w-4 shrink-0 text-muted-foreground transition-transform",
+                    isExpanded && "rotate-180"
+                  )}
+                />
+              </button>
+
+              {isExpanded && (
+                <div className="border-t bg-muted/10 p-3">
+                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                    {g.certs.map((cert, cIdx) => (
+                      <button
+                        key={cert.src}
+                        type="button"
+                        onClick={() => openCert(gIdx, cIdx)}
+                        className="group flex cursor-pointer flex-col items-center gap-2 rounded-md border bg-background p-2 transition-colors hover:border-primary/40 hover:bg-accent/50"
+                        title={cert.title}
+                      >
                         <img
                           src={cert.src}
                           alt={cert.title}
-                          className="h-16 w-full object-contain"
+                          className="h-20 w-full object-contain"
+                          loading="lazy"
                         />
-                      </div>
+                        <div className="line-clamp-2 w-full text-center text-[10px] leading-tight text-muted-foreground group-hover:text-foreground">
+                          {cert.title}
+                        </div>
+                      </button>
                     ))}
-                    {remaining > 0 && (
-                      <div className="flex h-16 items-center justify-center rounded-md border bg-muted/30 text-xs font-medium text-muted-foreground">
-                        +{remaining}
-                      </div>
-                    )}
                   </div>
                 </div>
-              </div>
-            </button>
-          </Card>
-        );
-      })}
+              )}
+            </Card>
+          );
+        })}
+      </div>
 
       {activeGroup && (
         <CertImageModal
-          open={open}
-          onClose={() => setOpen(false)}
+          open={modalState.open}
+          onClose={() => setModalState((s) => ({ ...s, open: false }))}
           company={activeGroup.company}
           certs={activeGroup.certs}
-          initialIndex={0}
+          initialIndex={modalState.certIdx}
         />
       )}
     </div>

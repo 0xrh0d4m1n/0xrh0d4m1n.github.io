@@ -89,7 +89,7 @@ export function SiteHeader() {
           <Link href="/" className="flex items-center gap-2">
             <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border-[3px] border-muted-foreground bg-muted dark:border-primary">
               <Image
-                src="/img/logos/logo.svg"
+                src="https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380690/Website/Logos/logo_bzdu8d.svg"
                 alt=""
                 width={32}
                 height={32}

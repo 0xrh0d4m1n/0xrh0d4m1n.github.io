@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 
 /* ── Public types ─────────────────────────────────────────────── */
@@ -353,7 +353,7 @@ export function WriteupDataGrid({
                     {/* Date */}
                     <td className="px-4 py-3 whitespace-nowrap font-mono text-xs text-muted-foreground">
                       {w.date
-                        ? new Date(w.date).toLocaleDateString("en-US", {
+                        ? formatDate(w.date, {
                             year: "numeric",
                             month: "short",
                             day: "numeric",

@@ -17,8 +17,20 @@ Thumbs.db
 *.swp
 *.swo
 
-# AI
-.claude
+# AI / Agentic workflow (nunca commitar memória, tasks, estado de agente, regras locais)
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.cursor/
+.cursorrules
+.windsurfrules
+.aider*
+.continue/
+.github/copilot-instructions.md
+AGENTS.md
+.agent/
+.ai/
+tasks/
 
 # Env
 .env

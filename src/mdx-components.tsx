@@ -1,7 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import type { ReactNode } from "react";
 
-/** Generate a URL-friendly ID from heading text */
+/** Generate a URL-friendly ID from heading text for in-page anchor navigation. */
 function slugify(children: ReactNode): string {
   const text = typeof children === "string"
     ? children
@@ -14,42 +14,45 @@ function slugify(children: ReactNode): string {
     .replace(/(^-|-$)/g, "");
 }
 
+/**
+ * Custom MDX component overrides.
+ *
+ * Each heading wrapper injects a slugified `id` so the table of contents
+ * and in-page anchor links work. All visual styling (colors, sizes,
+ * spacing, hover states, etc.) lives in `src/styles/globals.css` under
+ * the `.prose` selectors so both light and dark themes can be themed
+ * from a single source of truth.
+ */
 const components: MDXComponents = {
   h1: ({ children, ...props }) => (
-    <h1
-      id={slugify(children)}
-      className="mt-10 mb-4 text-3xl font-bold font-heading scroll-mt-20"
-      {...props}
-    >
+    <h1 id={slugify(children)} {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }) => (
-    <h2
-      id={slugify(children)}
-      className="mt-10 mb-4 text-2xl font-bold font-heading scroll-mt-20"
-      {...props}
-    >
+    <h2 id={slugify(children)} {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }) => (
-    <h3
-      id={slugify(children)}
-      className="mt-8 mb-3 text-xl font-semibold font-heading scroll-mt-20"
-      {...props}
-    >
+    <h3 id={slugify(children)} {...props}>
       {children}
     </h3>
   ),
   h4: ({ children, ...props }) => (
-    <h4
-      id={slugify(children)}
-      className="mt-6 mb-2 text-lg font-semibold font-heading scroll-mt-20"
-      {...props}
-    >
+    <h4 id={slugify(children)} {...props}>
       {children}
     </h4>
+  ),
+  h5: ({ children, ...props }) => (
+    <h5 id={slugify(children)} {...props}>
+      {children}
+    </h5>
+  ),
+  h6: ({ children, ...props }) => (
+    <h6 id={slugify(children)} {...props}>
+      {children}
+    </h6>
   ),
 };
 
