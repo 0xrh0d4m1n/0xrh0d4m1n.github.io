@@ -3,7 +3,7 @@ title: "All Markdown Elements"
 date: 2026-04-12
 description: "A comprehensive reference post testing every Markdown and MDX element to verify how they render on the site. Use this as a visual QA checklist."
 tags: ["markdown", "showcase", "testing", "reference"]
-categories: ["Reference"]
+categories: ["Markdown"]
 image: "https://picsum.photos/seed/mdx-reference/800/400"
 authors:
   - name: "0xrh0d4m1n"
@@ -14,6 +14,10 @@ authors:
 ## Headings
 
 The following heading levels are available in Markdown:
+
+# Heading Level 1
+
+## Heading Level 2
 
 ### Heading Level 3
 
@@ -288,7 +292,7 @@ ORDER BY attempt_count DESC;
 
 ### Regular Image
 
-![Cybersecurity Lab Setup](/img/hero/b0740b2a8afc9453749b5e013a2db6fb.png)
+![Cybersecurity Lab Setup](https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380568/Website/About/b0740b2a8afc9453749b5e013a2db6fb_lp1jkn.png)
 
 ### External Image
 

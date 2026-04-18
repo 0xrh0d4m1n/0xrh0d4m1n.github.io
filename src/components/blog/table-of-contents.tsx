@@ -19,7 +19,7 @@ export function TableOfContents() {
     const article = document.querySelector("[data-blog-content]");
     if (!article) return;
 
-    const elements = article.querySelectorAll("h2, h3");
+    const elements = article.querySelectorAll("h1, h2, h3");
     const items: TocItem[] = [];
 
     elements.forEach((el) => {
@@ -33,10 +33,14 @@ export function TableOfContents() {
           .replace(/[^a-z0-9]+/g, "-")
           .replace(/(^-|-$)/g, "") ?? "";
       }
+
+      const tag = el.tagName;
+      const level = tag === "H1" ? 1 : tag === "H2" ? 2 : 3;
+
       items.push({
         id: el.id,
         text: el.textContent ?? "",
-        level: el.tagName === "H2" ? 2 : 3,
+        level,
       });
     });
 
@@ -77,7 +81,7 @@ export function TableOfContents() {
       </CardHeader>
       <CardContent>
         <nav className="space-y-1">
-          {headings.map((h) => (
+          {headings.map((h, i) => (
             <a
               key={h.id}
               href={`#${h.id}`}
@@ -87,10 +91,18 @@ export function TableOfContents() {
               }}
               className={cn(
                 "block text-xs leading-relaxed transition-colors hover:text-primary",
-                h.level === 3 && "pl-3",
+                // H1 → top-level topic: subtle top margin (except the first item)
+                h.level === 1 && i > 0 && "mt-3",
+                h.level === 1 && "font-semibold",
+                // H2 → slight indent
+                h.level === 2 && "pl-3",
+                // H3 → deeper indent
+                h.level === 3 && "pl-6",
                 activeId === h.id
-                  ? "font-medium text-primary"
-                  : "text-muted-foreground"
+                  ? "text-primary"
+                  : h.level === 1
+                    ? "text-foreground/80"
+                    : "text-muted-foreground"
               )}
             >
               {h.text}

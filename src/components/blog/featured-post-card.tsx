@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { formatDate } from "@/lib/utils";
 import type { SerializedPost } from "./types";
 
 export function FeaturedPostCard({ post }: { post: SerializedPost }) {
@@ -27,11 +28,12 @@ export function FeaturedPostCard({ post }: { post: SerializedPost }) {
             <Badge variant="default" className="text-[10px]">
               Featured
             </Badge>
-            {post.categories?.[0] && (
-              <Badge variant="secondary" className="text-[10px]">
-                {post.categories[0]}
-              </Badge>
-            )}
+            {post.categories?.[0] &&
+              post.categories[0].toLowerCase() !== "featured" && (
+                <Badge variant="secondary" className="text-[10px]">
+                  {post.categories[0]}
+                </Badge>
+              )}
           </div>
           <CardTitle className="text-2xl font-heading leading-tight transition-colors group-hover:text-primary">
             {post.title}
@@ -47,7 +49,7 @@ export function FeaturedPostCard({ post }: { post: SerializedPost }) {
         <CardFooter className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           {post.date && (
             <time>
-              {new Date(post.date).toLocaleDateString("en-US", {
+              {formatDate(post.date, {
                 month: "long",
                 day: "numeric",
                 year: "numeric",

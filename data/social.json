@@ -1,7 +1,0 @@
-{
-  "main": [
-    {"name": "github", "icon": "fab fa-github", "link": "https://github.com/0xrh0d4m1n"},
-    {"name": "linkedin", "icon": "fab fa-linkedin", "link": "https://www.linkedin.com/in/0xrh0d4m1n/"},
-    {"name": "x", "icon": "fab fa-x-twitter", "link": "https://x.com/0xrh0d4m1n"}
-  ]
-}

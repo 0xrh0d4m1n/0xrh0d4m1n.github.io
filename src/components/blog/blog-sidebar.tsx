@@ -11,6 +11,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { SITE_AUTHOR } from "@/lib/profile";
+import { formatDate } from "@/lib/utils";
 
 interface BlogSidebarProps {
   recentPosts: { title: string; date?: string; href: string }[];
@@ -68,7 +69,7 @@ export function BlogSidebar({
                 </p>
                 {post.date && (
                   <time className="text-[11px] text-muted-foreground">
-                    {new Date(post.date).toLocaleDateString("en-US", {
+                    {formatDate(post.date, {
                       month: "short",
                       day: "numeric",
                     })}

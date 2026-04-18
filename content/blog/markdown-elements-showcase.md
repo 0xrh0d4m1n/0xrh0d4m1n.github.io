@@ -190,7 +190,7 @@ ___
 
 Image (if file exists under public):
 
-![Placeholder alt text](/img/hero/b0740b2a8afc9453749b5e013a2db6fb.png)
+![Placeholder alt text](https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380568/Website/About/b0740b2a8afc9453749b5e013a2db6fb_lp1jkn.png)
 
 ---
 

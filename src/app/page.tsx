@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const HERO = {
   title: "0xrh0d4m1n",
-  video: "/vid/hero/912938669731443170483.mp4",
+  video: "https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/video/upload/q_auto/f_auto/v1776380472/Website/Homepage/912938669731443170483_b9tluh.mp4",
   description:
     "Security research & defensive hacking. Notes, writeups, and tools for red team, blue team, and building safer systems.",
 } as const;
@@ -59,7 +59,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-2xl text-center flex flex-col items-center">
           {/* Animated GIF avatar */}
           <img
-            src="/img/hero/54879845732140987541253743874983361.gif"
+            src="https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380450/Website/Homepage/54879845732140987541253743874983361_hfxt3v.gif"
             alt="0xrh0d4m1n"
             className="mb-6 h-56 w-56 sm:h-72 sm:w-72 aspect-square rounded-full object-cover border-4 border-primary shadow-[0_0_40px_rgba(159,239,0,0.3)]"
           />

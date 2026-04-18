@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllSlugs, getContent, getRelatedPosts } from "@/lib/content";
+import { formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PostSidebar } from "@/components/blog/post-sidebar";
 import { ProseImageLightbox } from "@/components/blog/prose-image-lightbox";
@@ -49,6 +50,7 @@ export default async function BlogPostPage({ params }: Props) {
     image?: string;
     description?: string;
     authors?: Array<{ name: string; link?: string; image?: string }>;
+    relatedTopics?: string[];
   };
 
   // Get current post metadata for reading time
@@ -59,13 +61,19 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedItems = getRelatedPosts("blog", slug, fm.tags ?? [], 4);
   const relatedPosts = relatedItems.map(serialize);
 
-  // Collect all related tags (from current + related posts)
-  const relatedTags = Array.from(
-    new Set([
-      ...(fm.tags ?? []),
-      ...relatedItems.flatMap((p) => p.meta.tags ?? []),
-    ])
-  ).sort();
+  // Related Topics:
+  //   • If `relatedTopics` is explicitly set in frontmatter, use it verbatim
+  //     (author-controlled, no sorting — respect the order they wrote).
+  //   • Otherwise, auto-aggregate from current post tags + related posts' tags.
+  const relatedTags =
+    fm.relatedTopics && fm.relatedTopics.length > 0
+      ? fm.relatedTopics
+      : Array.from(
+          new Set([
+            ...(fm.tags ?? []),
+            ...relatedItems.flatMap((p) => p.meta.tags ?? []),
+          ])
+        ).sort();
 
   const author = fm.authors?.[0];
 
@@ -148,7 +156,7 @@ export default async function BlogPostPage({ params }: Props) {
               <>
                 <span>&middot;</span>
                 <time>
-                  {new Date(fm.date).toLocaleDateString("en-US", {
+                  {formatDate(fm.date, {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
@@ -179,7 +187,7 @@ export default async function BlogPostPage({ params }: Props) {
             <ProseImageLightbox>
               <div
                 data-blog-content
-                className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-headings:scroll-mt-20 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-pre:rounded-lg prose-pre:border prose-pre:border-border prose-code:text-primary prose-blockquote:border-l-primary prose-img:rounded-lg prose-table:border prose-th:border prose-th:px-3 prose-th:py-2 prose-td:border prose-td:px-3 prose-td:py-2"
+                className="prose prose-neutral max-w-none dark:prose-invert"
               >
                 <Content />
               </div>
