@@ -22,7 +22,7 @@ The capture is a single `.pcapng` file with roughly twenty-five thousand packets
 
 ## Questions
 
-### Q1
+### Question 1
 
 > In network communication, what are the IP addresses of the sender and receiver?
 
@@ -44,7 +44,7 @@ From the packet headers, **`192.168.235.XXX`** is the host typing as P13, and **
 192.168.235.137,192.168.235.131
 </spoiler>
 
-### Q2
+### Question 2
 
 > P13 uploaded a file to the web server. What is the IP address of the server?
 
@@ -70,7 +70,7 @@ The answer is therefore the destination of that POST.
 192.168.1.7
 </spoiler>
 
-### Q3
+### Question 3
 
 > What is the name of the file that was sent through the network?
 
@@ -94,7 +94,7 @@ The filename confirms what the content suggests: whoever prepared this upload st
 file
 </spoiler>
 
-### Q4
+### Question 4
 
 > What is the name of the web server where the file was uploaded?
 
@@ -118,7 +118,7 @@ Beneath the headers, the HTML body confirms the purpose of the page: a title of 
 Apache
 </spoiler>
 
-### Q5
+### Question 5
 
 > What directory was the file uploaded to?
 
@@ -140,7 +140,7 @@ That single line closes the loop on two questions at once: it confirms the filen
 uploads
 </spoiler>
 
-### Q6
+### Question 6
 
 > How long did it take the sender to send the encrypted file?
 
