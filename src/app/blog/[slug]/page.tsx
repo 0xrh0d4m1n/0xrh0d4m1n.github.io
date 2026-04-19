@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import path from "path";
+import fs from "fs";
 import { getAllSlugs, getContent, getRelatedPosts } from "@/lib/content";
 import { formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -17,9 +19,18 @@ export async function generateStaticParams() {
   return getAllSlugs("blog").map((slug) => ({ slug }));
 }
 
+const CONTENT_BLOG = path.join(process.cwd(), "content", "blog");
+
+async function importPost(slug: string) {
+  if (fs.existsSync(path.join(CONTENT_BLOG, `${slug}.mdx`))) {
+    return import(`@content/blog/${slug}.mdx`);
+  }
+  return import(`@content/blog/${slug}.md`);
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const mod = await import(`@content/blog/${slug}.md`);
+  const mod = await importPost(slug);
   const title = (mod.frontmatter?.title as string) ?? slug;
   return { title };
 }
@@ -40,7 +51,7 @@ function serialize(item: NonNullable<ReturnType<typeof getContent>>): Serialized
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const mod = await import(`@content/blog/${slug}.md`);
+  const mod = await importPost(slug);
   const Content = mod.default;
   const fm = (mod.frontmatter ?? {}) as {
     title?: string;
@@ -54,7 +65,8 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   // Get current post metadata for reading time
-  const currentPost = getContent(`blog/${slug}.md`);
+  const currentPost =
+    getContent(`blog/${slug}.mdx`) ?? getContent(`blog/${slug}.md`);
   const readingTime = currentPost?.readingTime ?? 1;
 
   // Related posts & tags
@@ -186,7 +198,7 @@ export default async function BlogPostPage({ params }: Props) {
           <article className="w-full min-w-0 lg:w-[70%]">
             <ProseImageLightbox>
               <div
-                data-blog-content
+                data-prose-content
                 className="prose prose-neutral max-w-none dark:prose-invert"
               >
                 <Content />

@@ -46,7 +46,8 @@ export function getContent(relativePath: string): ContentItem | null {
 
   const raw = fs.readFileSync(fullPath, "utf-8");
   const { data, content: body } = matter(raw);
-  const slug = path.basename(relativePath, ".md").replace(/^_index$/, "");
+  const ext = path.extname(relativePath);
+  const slug = path.basename(relativePath, ext).replace(/^_index$/, "");
   const wordCount = body.split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
@@ -58,6 +59,9 @@ export function getContent(relativePath: string): ContentItem | null {
   };
 }
 
+const CONTENT_EXT_RE = /\.(md|mdx)$/;
+const INDEX_RE = /^_index\.(md|mdx)$/;
+
 /**
  * Returns the section index entry for a given section (its `_index.md`).
  * Used for section title and description on index/listing pages.
@@ -66,7 +70,14 @@ export function getContent(relativePath: string): ContentItem | null {
  * @returns The index item or null if `_index.md` is missing.
  */
 export function getSectionIndex(section: string): ContentItem | null {
-  return getContent(path.join(section, "_index.md"));
+  const dir = path.join(CONTENT_DIR, section);
+  for (const ext of ["md", "mdx"]) {
+    const p = path.join(section, `_index.${ext}`);
+    if (fs.existsSync(path.join(CONTENT_DIR, p))) return getContent(p);
+  }
+  // Keep path-based lookup for callers that compute `dir` (no-op if missing).
+  void dir;
+  return null;
 }
 
 /**
@@ -82,7 +93,7 @@ export function getContentList(section: string): ContentItem[] {
 
   return fs
     .readdirSync(dirPath)
-    .filter((f) => f.endsWith(".md") && f !== "_index.md")
+    .filter((f) => CONTENT_EXT_RE.test(f) && !INDEX_RE.test(f))
     .map((f) => getContent(path.join(section, f)))
     .filter((item): item is ContentItem => item !== null)
     .sort((a, b) => {
@@ -165,13 +176,13 @@ export function getAllWriteups(): WriteupItem[] {
 
   const files = fs
     .readdirSync(writeupsDir)
-    .filter((f) => f.endsWith(".md") && f !== "_index.md");
+    .filter((f) => CONTENT_EXT_RE.test(f) && !INDEX_RE.test(f));
 
   const items: WriteupItem[] = files.map((file) => {
     const raw = fs.readFileSync(path.join(writeupsDir, file), "utf-8");
     const { data } = matter(raw);
     const meta = data as ContentMeta;
-    const slug = file.replace(/\.md$/, "");
+    const slug = file.replace(CONTENT_EXT_RE, "");
 
     const platformKey = (meta.platform as string) ?? "";
     const categoryKey = (meta.category as string) ?? "";
@@ -219,6 +230,6 @@ export function getAllSlugs(section: string): string[] {
 
   return fs
     .readdirSync(dirPath)
-    .filter((f) => f.endsWith(".md") && f !== "_index.md")
-    .map((f) => f.replace(/\.md$/, ""));
+    .filter((f) => CONTENT_EXT_RE.test(f) && !INDEX_RE.test(f))
+    .map((f) => f.replace(CONTENT_EXT_RE, ""));
 }

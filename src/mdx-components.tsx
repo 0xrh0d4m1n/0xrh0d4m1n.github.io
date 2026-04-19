@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import type { ReactNode } from "react";
+import { Spoiler } from "@/components/prose/spoiler";
 
 /** Generate a URL-friendly ID from heading text for in-page anchor navigation. */
 function slugify(children: ReactNode): string {
@@ -54,6 +55,7 @@ const components: MDXComponents = {
       {children}
     </h6>
   ),
+  Spoiler,
 };
 
 export function useMDXComponents(componentsOverrides?: MDXComponents): MDXComponents {

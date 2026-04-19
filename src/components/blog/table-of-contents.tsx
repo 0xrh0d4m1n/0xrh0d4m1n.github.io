@@ -16,7 +16,7 @@ export function TableOfContents() {
 
   // Extract headings from the article on mount
   useEffect(() => {
-    const article = document.querySelector("[data-blog-content]");
+    const article = document.querySelector("[data-prose-content]");
     if (!article) return;
 
     const elements = article.querySelectorAll("h1, h2, h3");
