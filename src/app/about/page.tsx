@@ -368,14 +368,14 @@ const EDUCATION: EducationRow[] = [
     institution: "Unicesumar", 
     location: "Brazil",
     logo: "https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380663/Website/Logos/unicesumar_wvptkn.jpg",
-    period: "2023 — 2025" 
+    period: "Present"
   },
   { 
     degree: "Electrical Engineering", 
     institution: "Universidade Federal de Campina Grande", 
     location: "Brazil",
     logo: "https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380662/Website/Logos/ufcg_ro66lv.jpg",
-    period: "2014 — 2016" 
+    period: "2018"
   },
 ];
 
