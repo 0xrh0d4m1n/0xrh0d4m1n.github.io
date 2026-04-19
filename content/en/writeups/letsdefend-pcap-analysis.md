@@ -38,7 +38,7 @@ From the packet headers, **`192.168.235.XXX`** is the host typing as P13, and **
 
 ![](https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776568108/Writeups/Letsdefend/PcapAnalysis/58b2a71c-867b-4c77-bab7-ef663c420ea5.png)
 
-#### Q1's Anwser
+#### Anwser
 
 <spoiler>
 192.168.235.137,192.168.235.131
@@ -64,7 +64,7 @@ Second, the request carries a `Content-Type: multipart/form-data` header along w
 
 The answer is therefore the destination of that POST.
 
-#### Q2's Anwser
+#### Anwser
 
 <spoiler>
 192.168.1.7
@@ -88,7 +88,7 @@ Below that header, the body itself is a wall of unreadable bytes rather than leg
 
 The filename confirms what the content suggests: whoever prepared this upload stripped any identifying metadata down to the minimum.
 
-#### Q3's Anwser
+#### Anwser
 
 <spoiler>
 file
@@ -112,7 +112,7 @@ Each of those components maps to its own list of published vulnerabilities, so a
 
 Beneath the headers, the HTML body confirms the purpose of the page: a title of `My Corp. Panel` and a heading reading `Upload your files`, with a simple form containing one file input. This is a homebuilt internal upload endpoint, not a commercial product.
 
-#### Q4's Anwser
+#### Anwser
 
 <spoiler>
 Apache
@@ -134,7 +134,7 @@ file uploaded at XYZ/file
 
 That single line closes the loop on two questions at once: it confirms the filename from Q3 (`file`) and exposes the storage location, which is a relative path under the web root. Anything dropped through this form lands in that folder, which means a responder investigating the host would go straight to it to pull copies of whatever was submitted before it can be accessed or executed.
 
-#### Q5's Anwser
+#### Anwser
 
 <spoiler>
 uploads
@@ -154,7 +154,7 @@ That is just few milliseconds. The value is strikingly low, and it tells you som
 
 In other words, from the moment the first SYN left P13's machine until the server finished acknowledging the entire upload, **the encrypted file was on its way and confirmed delivered in few seconds**.
 
-#### Q6's Anwser
+#### Anwser
 
 <spoiler>
 0.0073

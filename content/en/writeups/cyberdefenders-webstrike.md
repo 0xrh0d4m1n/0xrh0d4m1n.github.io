@@ -48,7 +48,7 @@ Running that IP through a geolocation lookup, for example, `ipinfo.io`, places i
 
 With the origin identified, a perimeter defender can decide whether blanket geo-blocking from that region is appropriate, or whether narrower filtering on the specific address and its known infrastructure is enough.
 
-#### Q1's Answer
+#### Answer
 
 <spoiler>
 Tianjin
@@ -72,7 +72,7 @@ Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
 
 The attacker is presenting as Firefox 115 on 64-bit Linux. It is a plausible string on its own, but combined with the source IP it gives us a specific signature we can carry forward into IDS rules or SIEM queries to catch repeat attempts from the same tooling.
 
-#### Q2's Answer
+#### Answer
 
 <spoiler>
 Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
@@ -102,7 +102,7 @@ The second attempt is the same payload, but with a small twist: the filename is 
 
 The bypass is classic: when extension filtering is implemented as a substring check rather than a strict last-extension check, appending a permitted extension before the executable one tricks the filter while Apache still happily executes the file as PHP.
 
-#### Q3's Answer
+#### Answer
 
 <spoiler>
 image.jpg.php
