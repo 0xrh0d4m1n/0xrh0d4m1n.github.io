@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -26,6 +27,8 @@ export function BlogSidebar({
   activeTag,
   onTagClick,
 }: BlogSidebarProps) {
+  const tSidebar = useTranslations("sidebar");
+  const tBlog = useTranslations("blog");
   return (
     <div className="space-y-4">
       {/* ── Mini About ─────────────────────────────────────────── */}
@@ -43,7 +46,7 @@ export function BlogSidebar({
             href={SITE_AUTHOR.href}
             className="text-xs font-medium text-primary hover:underline"
           >
-            Read more &rarr;
+            {tSidebar("readMore")} &rarr;
           </Link>
         </CardContent>
       </Card>
@@ -53,7 +56,7 @@ export function BlogSidebar({
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold">
-              Recent Posts
+              {tBlog("recentPosts")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -85,7 +88,7 @@ export function BlogSidebar({
       {allTags.length > 0 && (
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-semibold">Topics</CardTitle>
+            <CardTitle className="text-sm font-semibold">{tSidebar("topics")}</CardTitle>
           </CardHeader>
           <CardContent>
             <Separator className="mb-3" />

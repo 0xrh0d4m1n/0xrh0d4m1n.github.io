@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import path from "path";
 import fs from "fs";
-import { getAllSlugs } from "@/lib/content";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getAllSlugs, hasLocaleOverride } from "@/lib/content";
+import { routing, toBcp47 } from "@/i18n/routing";
 import { formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,42 +12,50 @@ import { TableOfContents } from "@/components/blog/table-of-contents";
 import { ProseImageLightbox } from "@/components/blog/prose-image-lightbox";
 import { ReadingProgress } from "@/components/blog/reading-progress";
 import { ScrollToTop } from "@/components/blog/scroll-to-top";
+import { DynamicTranslator } from "@/components/dynamic-translator";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
-
-const CONTENT_WRITEUPS = path.join(process.cwd(), "content", "writeups");
 
 export async function generateStaticParams() {
-  return getAllSlugs("writeups").map((slug) => ({ slug }));
+  const slugs = getAllSlugs("writeups");
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug })),
+  );
 }
 
-async function importWriteup(slug: string) {
-  if (fs.existsSync(path.join(CONTENT_WRITEUPS, `${slug}.mdx`))) {
-    return import(`@content/writeups/${slug}.mdx`);
+const CONTENT_DIR = path.join(process.cwd(), "content");
+
+async function importWriteup(locale: string, slug: string) {
+  const override = hasLocaleOverride(locale, "writeups", slug);
+  if (override) {
+    if (override.endsWith(".mdx")) {
+      if (locale === "pt-br") return import(`@content/pt-br/writeups/${slug}.mdx`);
+      if (locale === "es") return import(`@content/es/writeups/${slug}.mdx`);
+    }
+    if (locale === "pt-br") return import(`@content/pt-br/writeups/${slug}.md`);
+    if (locale === "es") return import(`@content/es/writeups/${slug}.md`);
   }
-  return import(`@content/writeups/${slug}.md`);
+  if (fs.existsSync(path.join(CONTENT_DIR, "en", "writeups", `${slug}.mdx`))) {
+    return import(`@content/en/writeups/${slug}.mdx`);
+  }
+  return import(`@content/en/writeups/${slug}.md`);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const mod = await importWriteup(slug);
+  const { locale, slug } = await params;
+  const mod = await importWriteup(locale, slug);
   const title = (mod.frontmatter?.title as string) ?? slug;
   return { title };
 }
 
 export default async function WriteupPage({ params }: Props) {
-  const { slug } = await params;
-  const mdPath = path.join(CONTENT_WRITEUPS, `${slug}.md`);
-  const mdxPath = path.join(CONTENT_WRITEUPS, `${slug}.mdx`);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "writeups" });
 
-  if (!fs.existsSync(mdPath) && !fs.existsSync(mdxPath)) {
-    const { notFound } = await import("next/navigation");
-    notFound();
-  }
-
-  const mod = await importWriteup(slug);
+  const mod = await importWriteup(locale, slug);
   const Content = mod.default;
   const fm = (mod.frontmatter ?? {}) as {
     title?: string;
@@ -58,16 +68,19 @@ export default async function WriteupPage({ params }: Props) {
     description?: string;
   };
 
+  const hasOverride = hasLocaleOverride(locale, "writeups", slug) !== null;
+  const shouldTranslate = locale !== routing.defaultLocale && !hasOverride;
+
   return (
     <>
       <ReadingProgress />
 
       <div className="mx-auto w-[90vw] max-w-[1200px] px-4 py-8">
         <Link
-          href="/writeups/"
+          href={`/${locale}/writeups/`}
           className="mb-6 inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-primary"
         >
-          &larr; Back to Writeups
+          &larr; {t("backToWriteups")}
         </Link>
 
         {fm.image && (
@@ -116,7 +129,7 @@ export default async function WriteupPage({ params }: Props) {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
-                })}
+                }, toBcp47(locale))}
               </time>
             </div>
           )}
@@ -139,7 +152,13 @@ export default async function WriteupPage({ params }: Props) {
                 data-prose-content
                 className="prose prose-neutral max-w-none dark:prose-invert"
               >
-                <Content />
+                <DynamicTranslator
+                  enabled={shouldTranslate}
+                  targetLocale={locale}
+                  contentKey={`writeups/${slug}`}
+                >
+                  <Content />
+                </DynamicTranslator>
               </div>
             </ProseImageLightbox>
           </article>
@@ -152,7 +171,7 @@ export default async function WriteupPage({ params }: Props) {
                 <Card>
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-semibold">
-                      Tags
+                      {t("tags")}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>

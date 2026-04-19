@@ -2,35 +2,56 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import path from "path";
 import fs from "fs";
-import { getAllSlugs, getContent, getRelatedPosts } from "@/lib/content";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getAllSlugs,
+  getContent,
+  getRelatedPosts,
+  hasLocaleOverride,
+} from "@/lib/content";
+import { routing, toBcp47 } from "@/i18n/routing";
 import { formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PostSidebar } from "@/components/blog/post-sidebar";
 import { ProseImageLightbox } from "@/components/blog/prose-image-lightbox";
 import { ReadingProgress } from "@/components/blog/reading-progress";
 import { ScrollToTop } from "@/components/blog/scroll-to-top";
+import { DynamicTranslator } from "@/components/dynamic-translator";
 import type { SerializedPost } from "@/components/blog/types";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return getAllSlugs("blog").map((slug) => ({ slug }));
+  const slugs = getAllSlugs("blog");
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug })),
+  );
 }
 
-const CONTENT_BLOG = path.join(process.cwd(), "content", "blog");
+const CONTENT_DIR = path.join(process.cwd(), "content");
 
-async function importPost(slug: string) {
-  if (fs.existsSync(path.join(CONTENT_BLOG, `${slug}.mdx`))) {
-    return import(`@content/blog/${slug}.mdx`);
+async function importPost(locale: string, slug: string) {
+  // Prefer locale-specific override; fall back to default locale source.
+  const override = hasLocaleOverride(locale, "blog", slug);
+  if (override) {
+    if (override.endsWith(".mdx")) {
+      if (locale === "pt-br") return import(`@content/pt-br/blog/${slug}.mdx`);
+      if (locale === "es") return import(`@content/es/blog/${slug}.mdx`);
+    }
+    if (locale === "pt-br") return import(`@content/pt-br/blog/${slug}.md`);
+    if (locale === "es") return import(`@content/es/blog/${slug}.md`);
   }
-  return import(`@content/blog/${slug}.md`);
+  if (fs.existsSync(path.join(CONTENT_DIR, "en", "blog", `${slug}.mdx`))) {
+    return import(`@content/en/blog/${slug}.mdx`);
+  }
+  return import(`@content/en/blog/${slug}.md`);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const mod = await importPost(slug);
+  const { locale, slug } = await params;
+  const mod = await importPost(locale, slug);
   const title = (mod.frontmatter?.title as string) ?? slug;
   return { title };
 }
@@ -50,8 +71,11 @@ function serialize(item: NonNullable<ReturnType<typeof getContent>>): Serialized
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
-  const mod = await importPost(slug);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "blog" });
+
+  const mod = await importPost(locale, slug);
   const Content = mod.default;
   const fm = (mod.frontmatter ?? {}) as {
     title?: string;
@@ -64,19 +88,13 @@ export default async function BlogPostPage({ params }: Props) {
     relatedTopics?: string[];
   };
 
-  // Get current post metadata for reading time
   const currentPost =
-    getContent(`blog/${slug}.mdx`) ?? getContent(`blog/${slug}.md`);
+    getContent(`en/blog/${slug}.mdx`) ?? getContent(`en/blog/${slug}.md`);
   const readingTime = currentPost?.readingTime ?? 1;
 
-  // Related posts & tags
-  const relatedItems = getRelatedPosts("blog", slug, fm.tags ?? [], 4);
+  const relatedItems = getRelatedPosts("blog", slug, fm.tags ?? [], 4, locale);
   const relatedPosts = relatedItems.map(serialize);
 
-  // Related Topics:
-  //   • If `relatedTopics` is explicitly set in frontmatter, use it verbatim
-  //     (author-controlled, no sorting — respect the order they wrote).
-  //   • Otherwise, auto-aggregate from current post tags + related posts' tags.
   const relatedTags =
     fm.relatedTopics && fm.relatedTopics.length > 0
       ? fm.relatedTopics
@@ -88,22 +106,21 @@ export default async function BlogPostPage({ params }: Props) {
         ).sort();
 
   const author = fm.authors?.[0];
+  const hasOverride = hasLocaleOverride(locale, "blog", slug) !== null;
+  const shouldTranslate = locale !== routing.defaultLocale && !hasOverride;
 
   return (
     <>
-      {/* Reading progress bar */}
       <ReadingProgress />
 
       <div className="mx-auto w-[90vw] max-w-[1200px] px-4 py-8">
-        {/* Back link */}
         <Link
-          href="/blog/"
+          href={`/${locale}/blog/`}
           className="mb-6 inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-primary"
         >
-          &larr; Back to Blog
+          &larr; {t("backToBlog")}
         </Link>
 
-        {/* Hero image */}
         {fm.image && (
           <div className="mb-6 overflow-hidden rounded-xl">
             <img
@@ -114,9 +131,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        {/* Post header */}
         <header className="mb-8">
-          {/* Categories */}
           {fm.categories && fm.categories.length > 0 && (
             <div className="mb-3 flex flex-wrap gap-2">
               {fm.categories.map((cat) => (
@@ -127,19 +142,16 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
 
-          {/* Title */}
           <h1 className="mb-4 text-3xl font-bold font-heading leading-tight sm:text-4xl">
             {fm.title}
           </h1>
 
-          {/* Description */}
           {fm.description && (
             <p className="mb-4 text-lg text-muted-foreground leading-relaxed">
               {fm.description}
             </p>
           )}
 
-          {/* Meta row: author, date, reading time */}
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             {author && (
               <div className="flex items-center gap-2">
@@ -172,15 +184,14 @@ export default async function BlogPostPage({ params }: Props) {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
-                  })}
+                  }, toBcp47(locale))}
                 </time>
               </>
             )}
             <span>&middot;</span>
-            <span>{readingTime} min read</span>
+            <span>{t("minRead", { minutes: readingTime })}</span>
           </div>
 
-          {/* Tags */}
           {fm.tags && fm.tags.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
               {fm.tags.map((tag) => (
@@ -192,21 +203,24 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </header>
 
-        {/* Two-column layout: content + sidebar */}
         <div className="flex flex-col gap-8 lg:flex-row">
-          {/* Main content */}
           <article className="w-full min-w-0 lg:w-[70%]">
             <ProseImageLightbox>
               <div
                 data-prose-content
                 className="prose prose-neutral max-w-none dark:prose-invert"
               >
-                <Content />
+                <DynamicTranslator
+                  enabled={shouldTranslate}
+                  targetLocale={locale}
+                  contentKey={`blog/${slug}`}
+                >
+                  <Content />
+                </DynamicTranslator>
               </div>
             </ProseImageLightbox>
           </article>
 
-          {/* Right sidebar */}
           <aside className="w-full lg:w-[30%]">
             <div className="lg:sticky lg:top-20">
               <PostSidebar
@@ -218,7 +232,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Scroll to top button */}
       <ScrollToTop />
     </>
   );

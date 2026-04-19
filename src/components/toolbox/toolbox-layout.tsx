@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { TOOLBOX_DATA, type Tool, type ToolCategory } from "@/data/toolbox";
 
@@ -97,6 +98,7 @@ function SubcategorySection({
 /* ── Main Layout ──────────────────────────────────────────────── */
 
 export function ToolboxLayout() {
+  const t = useTranslations("toolbox");
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [search, setSearch] = useState("");
 
@@ -153,7 +155,7 @@ export function ToolboxLayout() {
           </svg>
           <input
             type="text"
-            placeholder="Search tools..."
+            placeholder={t("searchPlaceholder")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="h-10 w-full rounded-lg border border-border bg-card pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"

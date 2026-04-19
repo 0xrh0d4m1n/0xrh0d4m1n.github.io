@@ -10,6 +10,7 @@ import {
   ZoomOut,
   X,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -34,6 +35,7 @@ interface ImageLightboxProps {
 }
 
 export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
+  const t = useTranslations("lightbox");
   const [zoom, setZoom] = useState(1);
   const [fullscreen, setFullscreen] = useState(false);
 
@@ -95,7 +97,7 @@ export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
               variant="ghost"
               size="icon"
               onClick={() => setZoom((z) => clamp(z - 0.25, 0.5, 4))}
-              aria-label="Zoom out"
+              aria-label={t("zoomOut")}
               disabled={zoom <= 0.5}
               className="h-8 w-8"
             >
@@ -108,7 +110,7 @@ export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
               variant="ghost"
               size="icon"
               onClick={() => setZoom((z) => clamp(z + 0.25, 0.5, 4))}
-              aria-label="Zoom in"
+              aria-label={t("zoomIn")}
               disabled={zoom >= 4}
               className="h-8 w-8"
             >
@@ -118,7 +120,7 @@ export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
               variant="ghost"
               size="icon"
               onClick={() => setZoom(1)}
-              aria-label="Reset zoom"
+              aria-label={t("resetZoom")}
               disabled={zoom === 1}
               className="h-8 w-8"
             >
@@ -131,7 +133,7 @@ export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
                 setFullscreen((f) => !f);
                 setZoom(1);
               }}
-              aria-label={fullscreen ? "Exit fullscreen" : "Fullscreen"}
+              aria-label={fullscreen ? t("exitFullscreen") : t("fullscreen")}
               className="h-8 w-8"
             >
               {fullscreen ? (
@@ -144,7 +146,7 @@ export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
               variant="ghost"
               size="icon"
               asChild
-              aria-label="Download image"
+              aria-label={t("download")}
               className="h-8 w-8"
             >
               <a href={src} download={getDownloadName(src)}>
@@ -155,7 +157,7 @@ export function ImageLightbox({ open, onClose, src, alt }: ImageLightboxProps) {
               variant="ghost"
               size="icon"
               onClick={onClose}
-              aria-label="Close"
+              aria-label={t("close")}
               className="h-8 w-8"
             >
               <X className="h-4 w-4" />
