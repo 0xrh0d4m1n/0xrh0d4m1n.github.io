@@ -47,8 +47,8 @@ export function Spoiler({
       ref={wrapperRef}
       className="group/spoiler relative my-4 overflow-hidden rounded-lg border border-border"
     >
-      {/* Floating action buttons (top-right) */}
-      <div className="absolute right-2 top-2 z-20 flex gap-1">
+      {/* Floating action buttons — vertically centered at the right edge */}
+      <div className="absolute right-3 top-1/2 z-20 flex -translate-y-1/2 gap-1">
         <button
           type="button"
           onClick={() => setRevealed((v) => !v)}
@@ -73,13 +73,13 @@ export function Spoiler({
         </button>
       </div>
 
-      {/* Code content — blurred until revealed */}
+      {/* Content — padded so text/code doesn't touch the border; blurred until revealed */}
       <div
         className={cn(
-          "transition-[filter] duration-200",
+          "px-4 py-3 pr-20 transition-[filter] duration-200",
           !revealed && "pointer-events-none select-none blur-md",
-          // Strip the inner code block's default margin so it sits flush inside the wrapper
-          "[&>figure]:my-0 [&>pre]:my-0"
+          // Strip the inner code block's default margin so the outer padding drives spacing.
+          "[&>figure]:my-0 [&>pre]:my-0 [&_p]:my-0 [&_p+p]:mt-2"
         )}
         aria-hidden={!revealed}
       >
