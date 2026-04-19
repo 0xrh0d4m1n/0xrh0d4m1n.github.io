@@ -28,7 +28,7 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 
 ## Questions 6/6
 
-### Q1
+### Question 1
 
 > Identifying the geographical origin of the attack facilitates the implementation of geo-blocking measures and the analysis of threat intelligence. From which city did the attack originate?
 
@@ -54,7 +54,7 @@ With the origin identified, a perimeter defender can decide whether blanket geo-
 Tianjin
 </spoiler>
 
-### Q2
+### Question 2
 
 > Knowing the attacker's User-Agent assists in creating robust filtering rules. What's the attacker's Full User-Agent?
 
@@ -78,7 +78,7 @@ The attacker is presenting as Firefox 115 on 64-bit Linux. It is a plausible str
 Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
 </spoiler>
 
-### Q3
+### Question 3
 
 > We need to determine if any vulnerabilities were exploited. What is the name of the malicious web shell that was successfully uploaded?
 
@@ -108,7 +108,7 @@ The bypass is classic: when extension filtering is implemented as a substring ch
 image.jpg.php
 </spoiler>
 
-### Q4
+### Question 4
 
 > Identifying the directory where uploaded files are stored is crucial for locating the vulnerable page and removing any malicious files. Which directory is used by the website to store the uploaded files?
 
@@ -126,7 +126,7 @@ That redirect is the confirmation we need. Anything pushed through `upload.php`,
 /reviews/uploads/
 </spoiler>
 
-### Q5
+### Question 5
 
 > Which port, opened on the attacker's machine, was targeted by the malicious web shell for establishing unauthorized outbound communication?
 
@@ -146,7 +146,7 @@ This is a textbook netcat reverse shell built on a named pipe. The FIFO at `/tmp
 8080
 </spoiler>
 
-### Q6
+### Question 6
 
 > Recognizing the significance of compromised data helps prioritize incident response actions. Which file was the attacker attempting to exfiltrate?
 
