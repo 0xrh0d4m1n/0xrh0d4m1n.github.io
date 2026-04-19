@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -8,9 +11,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
+import { toBcp47 } from "@/i18n/routing";
 import type { SerializedPost } from "./types";
 
 export function FeaturedPostCard({ post }: { post: SerializedPost }) {
+  const t = useTranslations("blog");
+  const locale = useLocale();
   return (
     <Link href={post.href} className="group block">
       <Card className="overflow-hidden transition-colors hover:border-primary/40">
@@ -26,7 +32,7 @@ export function FeaturedPostCard({ post }: { post: SerializedPost }) {
         <CardHeader className="pb-2">
           <div className="mb-2 flex items-center gap-2">
             <Badge variant="default" className="text-[10px]">
-              Featured
+              {t("featured")}
             </Badge>
             {post.categories?.[0] &&
               post.categories[0].toLowerCase() !== "featured" && (
@@ -49,15 +55,15 @@ export function FeaturedPostCard({ post }: { post: SerializedPost }) {
         <CardFooter className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           {post.date && (
             <time>
-              {formatDate(post.date, {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
+              {formatDate(
+                post.date,
+                { month: "long", day: "numeric", year: "numeric" },
+                toBcp47(locale),
+              )}
             </time>
           )}
           <span>&middot;</span>
-          <span>{post.readingTime} min read</span>
+          <span>{t("minRead", { minutes: post.readingTime })}</span>
           {post.tags && post.tags.length > 0 && (
             <>
               <span>&middot;</span>

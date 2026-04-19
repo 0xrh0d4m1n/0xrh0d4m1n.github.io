@@ -131,105 +131,108 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        <header className="mb-8">
-          {fm.categories && fm.categories.length > 0 && (
-            <div className="mb-3 flex flex-wrap gap-2">
-              {fm.categories.map((cat) => (
-                <Badge key={cat} variant="default" className="text-xs">
-                  {cat}
-                </Badge>
-              ))}
-            </div>
-          )}
-
-          <h1 className="mb-4 text-3xl font-bold font-heading leading-tight sm:text-4xl">
-            {fm.title}
-          </h1>
-
-          {fm.description && (
-            <p className="mb-4 text-lg text-muted-foreground leading-relaxed">
-              {fm.description}
-            </p>
-          )}
-
-          <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            {author && (
-              <div className="flex items-center gap-2">
-                {author.image && (
-                  <img
-                    src={author.image}
-                    alt=""
-                    className="h-8 w-8 rounded-full object-cover"
-                  />
-                )}
-                {author.link ? (
-                  <a
-                    href={author.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-foreground hover:text-primary transition-colors"
-                  >
-                    {author.name}
-                  </a>
-                ) : (
-                  <span className="font-medium text-foreground">{author.name}</span>
-                )}
+        <DynamicTranslator
+          enabled={shouldTranslate}
+          targetLocale={locale}
+          contentKey={`blog/${slug}`}
+        >
+          <header className="mb-8">
+            {fm.categories && fm.categories.length > 0 && (
+              <div className="mb-3 flex flex-wrap gap-2">
+                {fm.categories.map((cat) => (
+                  <Badge key={cat} variant="default" className="text-xs">
+                    {cat}
+                  </Badge>
+                ))}
               </div>
             )}
-            {fm.date && (
-              <>
-                <span>&middot;</span>
-                <time>
-                  {formatDate(fm.date, {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  }, toBcp47(locale))}
-                </time>
-              </>
+
+            <h1 className="mb-4 text-3xl font-bold font-heading leading-tight sm:text-4xl">
+              {fm.title}
+            </h1>
+
+            {fm.description && (
+              <p className="mb-4 text-lg text-muted-foreground leading-relaxed">
+                {fm.description}
+              </p>
             )}
-            <span>&middot;</span>
-            <span>{t("minRead", { minutes: readingTime })}</span>
-          </div>
 
-          {fm.tags && fm.tags.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {fm.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="text-xs">
-                  {tag}
-                </Badge>
-              ))}
+            <div
+              data-notranslate
+              className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground"
+            >
+              {author && (
+                <div className="flex items-center gap-2">
+                  {author.image && (
+                    <img
+                      src={author.image}
+                      alt=""
+                      className="h-8 w-8 rounded-full object-cover"
+                    />
+                  )}
+                  {author.link ? (
+                    <a
+                      href={author.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {author.name}
+                    </a>
+                  ) : (
+                    <span className="font-medium text-foreground">{author.name}</span>
+                  )}
+                </div>
+              )}
+              {fm.date && (
+                <>
+                  <span>&middot;</span>
+                  <time>
+                    {formatDate(fm.date, {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }, toBcp47(locale))}
+                  </time>
+                </>
+              )}
+              <span>&middot;</span>
+              <span>{t("minRead", { minutes: readingTime })}</span>
             </div>
-          )}
-        </header>
 
-        <div className="flex flex-col gap-8 lg:flex-row">
-          <article className="w-full min-w-0 lg:w-[70%]">
-            <ProseImageLightbox>
-              <div
-                data-prose-content
-                className="prose prose-neutral max-w-none dark:prose-invert"
-              >
-                <DynamicTranslator
-                  enabled={shouldTranslate}
-                  targetLocale={locale}
-                  contentKey={`blog/${slug}`}
+            {fm.tags && fm.tags.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {fm.tags.map((tag) => (
+                  <Badge key={tag} variant="outline" className="text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </header>
+
+          <div className="flex flex-col gap-8 lg:flex-row">
+            <article className="w-full min-w-0 lg:w-[70%]">
+              <ProseImageLightbox>
+                <div
+                  data-prose-content
+                  className="prose prose-neutral max-w-none dark:prose-invert"
                 >
                   <Content />
-                </DynamicTranslator>
-              </div>
-            </ProseImageLightbox>
-          </article>
+                </div>
+              </ProseImageLightbox>
+            </article>
 
-          <aside className="w-full lg:w-[30%]">
-            <div className="lg:sticky lg:top-20">
-              <PostSidebar
-                relatedPosts={relatedPosts}
-                relatedTags={relatedTags}
-              />
-            </div>
-          </aside>
-        </div>
+            <aside data-notranslate className="w-full lg:w-[30%]">
+              <div className="lg:sticky lg:top-20">
+                <PostSidebar
+                  relatedPosts={relatedPosts}
+                  relatedTags={relatedTags}
+                />
+              </div>
+            </aside>
+          </div>
+        </DynamicTranslator>
       </div>
 
       <ScrollToTop />

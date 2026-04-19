@@ -226,7 +226,7 @@ export function BlogSearchLayout({
       <div className="relative">
         <Input
           type="search"
-          placeholder="Search posts by title, tag, or category..."
+          placeholder={t("searchPlaceholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="h-11 pl-4 text-sm"

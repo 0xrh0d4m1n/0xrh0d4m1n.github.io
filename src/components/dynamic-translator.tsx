@@ -185,7 +185,9 @@ export function DynamicTranslator({
           {t("translationFailed")}
         </div>
       )}
-      <div ref={containerRef}>{children}</div>
+      <div ref={containerRef} style={{ display: "contents" }}>
+        {children}
+      </div>
     </>
   );
 }
