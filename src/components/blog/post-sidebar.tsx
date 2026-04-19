@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -17,6 +18,8 @@ interface PostSidebarProps {
 }
 
 export function PostSidebar({ relatedPosts, relatedTags }: PostSidebarProps) {
+  const t = useTranslations("sidebar");
+  const locale = useLocale();
   return (
     <div className="space-y-4">
       {/* ── Table of Contents ──────────────────────────────────── */}
@@ -27,7 +30,7 @@ export function PostSidebar({ relatedPosts, relatedTags }: PostSidebarProps) {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold">
-              Related Posts
+              {t("relatedPosts")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -69,14 +72,14 @@ export function PostSidebar({ relatedPosts, relatedTags }: PostSidebarProps) {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold">
-              Related Topics
+              {t("relatedTopics")}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <Separator className="mb-3" />
             <div className="flex flex-wrap gap-2">
               {relatedTags.map((tag) => (
-                <Link key={tag} href="/blog/">
+                <Link key={tag} href={`/${locale}/blog/`}>
                   <Badge
                     variant="secondary"
                     className="cursor-pointer text-[11px] transition-all hover:bg-primary/20 hover:text-primary"

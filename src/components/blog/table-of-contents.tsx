@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,7 @@ interface TocItem {
 }
 
 export function TableOfContents() {
+  const t = useTranslations("sidebar");
   const [headings, setHeadings] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState("");
 
@@ -76,7 +78,7 @@ export function TableOfContents() {
     <Card>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-semibold">
-          Table of Contents
+          {t("tableOfContents")}
         </CardTitle>
       </CardHeader>
       <CardContent>

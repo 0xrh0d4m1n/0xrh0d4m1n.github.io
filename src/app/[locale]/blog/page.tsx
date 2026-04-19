@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getContentList, getSectionIndex } from "@/lib/content";
 import { BlogPageLayout } from "@/components/blog/blog-page-layout";
 import type { SerializedPost } from "@/components/blog/types";
 
-export const metadata: Metadata = { title: "Blog" };
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+  return { title: t("title") };
+}
 
 function serialize(item: ReturnType<typeof getContentList>[number]): SerializedPost {
   return {
@@ -19,9 +28,13 @@ function serialize(item: ReturnType<typeof getContentList>[number]): SerializedP
   };
 }
 
-export default function BlogPage() {
+export default async function BlogPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "blog" });
+
   const section = getSectionIndex("blog");
-  const posts = getContentList("blog");
+  const posts = getContentList("blog", locale);
 
   const featuredPost = posts.length > 0 ? serialize(posts[0]) : null;
   const remainingPosts = posts.slice(1).map(serialize);
@@ -39,7 +52,7 @@ export default function BlogPage() {
   return (
     <div className="mx-auto w-[90vw] max-w-[1200px] px-4 py-8">
       <h1 className="mb-8 text-3xl font-bold font-heading">
-        {section?.meta.title ?? "Blog"}
+        {section?.meta.title ?? t("title")}
       </h1>
 
       <BlogPageLayout

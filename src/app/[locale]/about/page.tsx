@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { MapPin, Link2, Users, ShieldCheck } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { icons } from "@/lib/icons";
 
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,15 @@ import type {
   ResumeLink,
 } from "@/types/profile";
 
-export const metadata: Metadata = { title: "About" };
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about" });
+  return { title: t("title") };
+}
 
 /* ────────────────────────────────────────────────────────────────── */
 /*  Static profile data                                              */
@@ -425,7 +434,10 @@ const RESUME_LINKS: ResumeLink[] = [
 /*  Page component                                                   */
 /* ────────────────────────────────────────────────────────────────── */
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "about" });
   return (
     <div className="mx-auto w-[90vw] max-w-[900px] py-6">
       {/* ── Profile Header ──────────────────────────────────────── */}
@@ -481,13 +493,13 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-1 text-primary hover:underline"
                 >
                   <Link2 className="h-3.5 w-3.5" />
-                  Contact info
+                  {t("contactInfo")}
                 </a>
               </div>
 
               <div className="mt-1 flex items-center gap-1 text-sm text-primary">
                 <Users className="h-3.5 w-3.5" />
-                {PROFILE.connections} connections
+                {t("connections", { count: PROFILE.connections })}
               </div>
             </div>
 
@@ -508,7 +520,7 @@ export default function AboutPage() {
       {/* ── About ───────────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">About</CardTitle>
+          <CardTitle className="text-xl">{t("sectionAbout")}</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -520,7 +532,7 @@ export default function AboutPage() {
       {/* ── Experience ──────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Experience</CardTitle>
+          <CardTitle className="text-xl">{t("sectionExperience")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
@@ -570,7 +582,7 @@ export default function AboutPage() {
       {/* ── Education ───────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Education</CardTitle>
+          <CardTitle className="text-xl">{t("sectionEducation")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -606,7 +618,7 @@ export default function AboutPage() {
       {/* ── Licenses & Certifications ───────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Licenses & Certifications</CardTitle>
+          <CardTitle className="text-xl">{t("sectionCertifications")}</CardTitle>
         </CardHeader>
         <CardContent>
           <CertificationsSection groups={CERTIFICATIONS} />
@@ -616,7 +628,7 @@ export default function AboutPage() {
       {/* ── Skills ──────────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Skills</CardTitle>
+          <CardTitle className="text-xl">{t("sectionSkills")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
@@ -649,7 +661,7 @@ export default function AboutPage() {
       {/* ── Achievements ──────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Achievements</CardTitle>
+          <CardTitle className="text-xl">{t("sectionAchievements")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -681,7 +693,7 @@ export default function AboutPage() {
       {/* ── Projects ────────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Projects</CardTitle>
+          <CardTitle className="text-xl">{t("sectionProjects")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
@@ -717,7 +729,7 @@ export default function AboutPage() {
       {/* ── Languages ───────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Languages</CardTitle>
+          <CardTitle className="text-xl">{t("sectionLanguages")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -749,7 +761,7 @@ export default function AboutPage() {
       {/* ── Resume ──────────────────────────────────────────────── */}
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="text-xl">Resume</CardTitle>
+          <CardTitle className="text-xl">{t("sectionResume")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -771,7 +783,7 @@ export default function AboutPage() {
                 <div className="flex-1">
                   <div className="text-sm font-semibold">{r.label}</div>
                   <div className="text-xs text-muted-foreground">
-                    Download PDF
+                    {t("downloadPdf")}
                   </div>
                 </div>
                 <FontAwesomeIcon

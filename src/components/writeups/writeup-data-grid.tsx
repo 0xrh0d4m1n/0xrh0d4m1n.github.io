@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { cn, formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 
@@ -109,6 +110,7 @@ export function WriteupDataGrid({
   writeups: WriteupEntry[];
 }) {
   const router = useRouter();
+  const t = useTranslations("writeups");
   const [search, setSearch] = useState("");
   const [sortField, setSortField] = useState<SortField>("date");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
@@ -213,17 +215,14 @@ export function WriteupDataGrid({
           </svg>
           <input
             type="text"
-            placeholder="Search by name, source, category, difficulty, or tag..."
+            placeholder={t("searchPlaceholder")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="h-10 w-full rounded-lg border border-border bg-card pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
           />
         </div>
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <span className="font-mono text-primary font-semibold">
-            {rows.length}
-          </span>
-          <span>writeup{rows.length !== 1 ? "s" : ""} found</span>
+          <span>{t("foundCount", { count: rows.length })}</span>
         </div>
       </div>
 
@@ -266,10 +265,7 @@ export function WriteupDataGrid({
                         />
                       </svg>
                       <p className="text-base font-medium">
-                        No writeups found
-                      </p>
-                      <p className="text-sm">
-                        Try adjusting your search query
+                        {t("notFound")}
                       </p>
                     </div>
                   </td>

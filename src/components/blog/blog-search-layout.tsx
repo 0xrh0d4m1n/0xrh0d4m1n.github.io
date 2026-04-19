@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/input";
 import { FeaturedPostCard } from "./featured-post-card";
 import { PostCard } from "./post-card";
@@ -120,6 +121,7 @@ export function BlogSearchLayout({
   posts,
   externalQuery = "",
 }: BlogSearchLayoutProps) {
+  const t = useTranslations("blog");
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -178,7 +180,7 @@ export function BlogSearchLayout({
         <div className="relative">
           <Input
             type="search"
-            placeholder="Search posts by title, tag, or category..."
+            placeholder={t("searchPlaceholder")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="h-11 pl-4 text-sm"
@@ -191,7 +193,7 @@ export function BlogSearchLayout({
         </p>
         {filtered.length === 0 ? (
           <p className="py-8 text-center text-muted-foreground">
-            No posts found.
+            {t("noResults")}
           </p>
         ) : (
           <>
@@ -246,7 +248,7 @@ export function BlogSearchLayout({
 
       {!featuredPost && posts.length === 0 && (
         <p className="py-8 text-center text-muted-foreground">
-          No posts yet.
+          {t("noPosts")}
         </p>
       )}
 

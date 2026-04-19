@@ -2,6 +2,7 @@
 
 import { useRef, useState, type ReactNode } from "react";
 import { Check, Copy, Eye, EyeOff } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 /**
@@ -20,11 +21,13 @@ import { cn } from "@/lib/utils";
  */
 export function Spoiler({
   children,
-  label = "Click to reveal",
+  label,
 }: {
   children: ReactNode;
   label?: string;
 }) {
+  const t = useTranslations("spoiler");
+  const promptLabel = label ?? t("clickToReveal");
   const [revealed, setRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -45,6 +48,7 @@ export function Spoiler({
   return (
     <div
       ref={wrapperRef}
+      data-notranslate
       className="group/spoiler relative my-4 overflow-hidden rounded-lg border border-border"
     >
       {/* Floating action buttons — vertically centered at the right edge */}
@@ -52,8 +56,8 @@ export function Spoiler({
         <button
           type="button"
           onClick={() => setRevealed((v) => !v)}
-          aria-label={revealed ? "Hide answer" : "Reveal answer"}
-          title={revealed ? "Hide" : "Reveal"}
+          aria-label={revealed ? t("hide") : t("reveal")}
+          title={revealed ? t("hide") : t("reveal")}
           className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-border/60 bg-background/80 text-muted-foreground backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary"
         >
           {revealed ? <EyeOff size={14} /> : <Eye size={14} />}
@@ -61,8 +65,8 @@ export function Spoiler({
         <button
           type="button"
           onClick={handleCopy}
-          aria-label="Copy to clipboard"
-          title={copied ? "Copied!" : "Copy"}
+          aria-label={t("copy")}
+          title={copied ? t("copied") : t("copy")}
           className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-border/60 bg-background/80 text-muted-foreground backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary"
         >
           {copied ? (
@@ -95,7 +99,7 @@ export function Spoiler({
         >
           <span className="inline-flex items-center gap-2 rounded-md border border-border bg-background/90 px-3 py-1.5 shadow-sm backdrop-blur-sm">
             <Eye size={14} className="text-primary" />
-            {label}
+            {promptLabel}
           </span>
         </button>
       )}

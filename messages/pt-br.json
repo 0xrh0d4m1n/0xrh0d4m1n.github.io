@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "blog": "Blog",
+    "writeups": "Writeups",
+    "toolbox": "Ferramentas",
+    "toggleMenu": "Alternar menu",
+    "menu": "Menu",
+    "language": "Idioma"
+  },
+  "home": {
+    "title": "0xrh0d4m1n",
+    "description": "Pesquisa em segurança e hacking defensivo. Notas, writeups e ferramentas para red team, blue team, e para construir sistemas mais seguros.",
+    "goToBlog": "Ir para o Blog",
+    "sections": {
+      "blog": {
+        "label": "Blog",
+        "description": "Artigos e notas sobre pentesting, DFIR e engenharia de segurança."
+      },
+      "writeups": {
+        "label": "Writeups",
+        "description": "Walkthroughs do HackTheBox, CyberDefenders e PortSwigger."
+      },
+      "toolbox": {
+        "label": "Ferramentas",
+        "description": "Ferramentas selecionadas para segurança ofensiva e defensiva."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "backToBlog": "Voltar para o Blog",
+    "searchPlaceholder": "Buscar posts por título, tag ou categoria...",
+    "minRead": "{minutes} min de leitura",
+    "noPosts": "Nenhum post ainda.",
+    "noResults": "Nenhum post encontrado.",
+    "recentPosts": "Posts Recentes"
+  },
+  "writeups": {
+    "title": "Writeups",
+    "subtitle": "Crônicas das minhas batalhas cibernéticas \u2014 arquivo ordenável e pesquisável de writeups de CTF e labs.",
+    "backToWriteups": "Voltar para Writeups",
+    "searchPlaceholder": "Buscar por nome, fonte, categoria, dificuldade ou tag...",
+    "unknownDifficulty": "Desconhecida",
+    "tags": "Tags",
+    "foundCount": "{count, plural, one {# writeup encontrado} other {# writeups encontrados}}",
+    "notFound": "Nenhum writeup encontrado"
+  },
+  "toolbox": {
+    "title": "Ferramentas",
+    "subtitle": "Coleção selecionada de ferramentas, recursos e referências de cibersegurança.",
+    "searchPlaceholder": "Buscar ferramentas..."
+  },
+  "about": {
+    "title": "Sobre",
+    "sectionAbout": "Sobre",
+    "sectionExperience": "Experiência",
+    "sectionEducation": "Formação",
+    "sectionCertifications": "Licenças e Certificações",
+    "sectionSkills": "Habilidades",
+    "sectionAchievements": "Conquistas",
+    "sectionProjects": "Projetos",
+    "sectionLanguages": "Idiomas",
+    "sectionResume": "Currículo",
+    "contactInfo": "Contato",
+    "connections": "{count} conexões",
+    "downloadPdf": "Baixar PDF"
+  },
+  "sidebar": {
+    "relatedPosts": "Posts Relacionados",
+    "relatedTopics": "Tópicos Relacionados",
+    "tableOfContents": "Sumário",
+    "topics": "Tópicos",
+    "readMore": "Leia mais"
+  },
+  "lightbox": {
+    "zoomIn": "Aumentar zoom",
+    "zoomOut": "Diminuir zoom",
+    "resetZoom": "Resetar zoom",
+    "fullscreen": "Tela cheia",
+    "exitFullscreen": "Sair da tela cheia",
+    "download": "Baixar imagem",
+    "close": "Fechar"
+  },
+  "spoiler": {
+    "reveal": "Revelar resposta",
+    "hide": "Ocultar resposta",
+    "copy": "Copiar para a área de transferência",
+    "copied": "Copiado!",
+    "clickToReveal": "Clique para revelar"
+  },
+  "footer": {
+    "copyright": "© {year} 0xrh0d4m1n"
+  },
+  "translator": {
+    "detected": "Idioma {locale} detectado!",
+    "translating": "Traduzindo conteúdo...",
+    "translationFailed": "Tradução indisponível \u2014 exibindo original",
+    "poweredBy": "Tradução via Lingva"
+  }
+}

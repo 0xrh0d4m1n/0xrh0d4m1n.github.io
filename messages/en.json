@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "writeups": "Writeups",
+    "toolbox": "Toolbox",
+    "toggleMenu": "Toggle menu",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "home": {
+    "title": "0xrh0d4m1n",
+    "description": "Security research & defensive hacking. Notes, writeups, and tools for red team, blue team, and building safer systems.",
+    "goToBlog": "Go to Blog",
+    "sections": {
+      "blog": {
+        "label": "Blog",
+        "description": "Articles and notes on pentesting, DFIR, and security engineering."
+      },
+      "writeups": {
+        "label": "Writeups",
+        "description": "HackTheBox, CyberDefenders, and PortSwigger walkthroughs."
+      },
+      "toolbox": {
+        "label": "Toolbox",
+        "description": "Curated tools for offensive and defensive security."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "backToBlog": "Back to Blog",
+    "searchPlaceholder": "Search posts by title, tag, or category...",
+    "minRead": "{minutes} min read",
+    "noPosts": "No posts yet.",
+    "noResults": "No posts found.",
+    "recentPosts": "Recent Posts"
+  },
+  "writeups": {
+    "title": "Writeups",
+    "subtitle": "Chronicles of my Cyber Battles \u2014 sortable & searchable archive of CTF and lab writeups.",
+    "backToWriteups": "Back to Writeups",
+    "searchPlaceholder": "Search by name, source, category, difficulty, or tag...",
+    "unknownDifficulty": "Unknown",
+    "tags": "Tags",
+    "foundCount": "{count, plural, one {# writeup found} other {# writeups found}}",
+    "notFound": "No writeups found"
+  },
+  "toolbox": {
+    "title": "Toolbox",
+    "subtitle": "Curated collection of cybersecurity tools, resources & references.",
+    "searchPlaceholder": "Search tools..."
+  },
+  "about": {
+    "title": "About",
+    "sectionAbout": "About",
+    "sectionExperience": "Experience",
+    "sectionEducation": "Education",
+    "sectionCertifications": "Licenses & Certifications",
+    "sectionSkills": "Skills",
+    "sectionAchievements": "Achievements",
+    "sectionProjects": "Projects",
+    "sectionLanguages": "Languages",
+    "sectionResume": "Resume",
+    "contactInfo": "Contact info",
+    "connections": "{count} connections",
+    "downloadPdf": "Download PDF"
+  },
+  "sidebar": {
+    "relatedPosts": "Related Posts",
+    "relatedTopics": "Related Topics",
+    "tableOfContents": "Table of Contents",
+    "topics": "Topics",
+    "readMore": "Read more"
+  },
+  "lightbox": {
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "resetZoom": "Reset zoom",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen",
+    "download": "Download image",
+    "close": "Close"
+  },
+  "spoiler": {
+    "reveal": "Reveal answer",
+    "hide": "Hide answer",
+    "copy": "Copy to clipboard",
+    "copied": "Copied!",
+    "clickToReveal": "Click to reveal"
+  },
+  "footer": {
+    "copyright": "© {year} 0xrh0d4m1n"
+  },
+  "translator": {
+    "detected": "{locale} language detected!",
+    "translating": "Translating content...",
+    "translationFailed": "Translation unavailable \u2014 showing original",
+    "poweredBy": "Translation by Lingva"
+  }
+}

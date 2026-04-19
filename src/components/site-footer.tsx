@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/tooltip";
 import { icons } from "@/lib/icons";
 import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
 
 /**
  * Social links shown in the footer.
@@ -39,7 +41,13 @@ const SOCIAL: Array<{
  */
 export function SiteFooter() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const locale = useLocale();
+  const t = useTranslations("footer");
+  const isHome =
+    pathname === `/${locale}` ||
+    pathname === `/${locale}/` ||
+    pathname === "/" ||
+    (routing.locales as readonly string[]).some((l) => pathname === `/${l}/`);
 
   return (
     <footer className="border-t border-border bg-background">
@@ -49,7 +57,7 @@ export function SiteFooter() {
         }`}
       >
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} 0xrh0d4m1n
+          {t("copyright", { year: new Date().getFullYear() })}
         </p>
         <nav
           className="flex items-center gap-1"
