@@ -35,7 +35,8 @@
     "minRead": "{minutes} min de leitura",
     "noPosts": "Nenhum post ainda.",
     "noResults": "Nenhum post encontrado.",
-    "recentPosts": "Posts Recentes"
+    "recentPosts": "Posts Recentes",
+    "featured": "Destaque"
   },
   "writeups": {
     "title": "Writeups",

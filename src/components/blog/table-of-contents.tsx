@@ -16,37 +16,51 @@ export function TableOfContents() {
   const [headings, setHeadings] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState("");
 
-  // Extract headings from the article on mount
   useEffect(() => {
     const article = document.querySelector("[data-prose-content]");
     if (!article) return;
 
-    const elements = article.querySelectorAll("h1, h2, h3");
-    const items: TocItem[] = [];
-
-    elements.forEach((el) => {
-      // Skip auto-generated footnotes heading
-      if (el.closest(".footnotes")) return;
-
-      // Generate an ID if the heading doesn't have one
-      if (!el.id) {
-        el.id = el.textContent
-          ?.toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/(^-|-$)/g, "") ?? "";
-      }
-
-      const tag = el.tagName;
-      const level = tag === "H1" ? 1 : tag === "H2" ? 2 : 3;
-
-      items.push({
-        id: el.id,
-        text: el.textContent ?? "",
-        level,
+    const scan = () => {
+      const elements = article.querySelectorAll("h1, h2, h3");
+      const items: TocItem[] = [];
+      elements.forEach((el) => {
+        if (el.closest(".footnotes")) return;
+        if (!el.id) {
+          el.id = el.textContent
+            ?.toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") ?? "";
+        }
+        const tag = el.tagName;
+        const level = tag === "H1" ? 1 : tag === "H2" ? 2 : 3;
+        items.push({
+          id: el.id,
+          text: el.textContent ?? "",
+          level,
+        });
       });
+      setHeadings(items);
+    };
+
+    scan();
+
+    // Re-scan when heading text nodes mutate (dynamic translation replaces
+    // heading text in place; this keeps ToC labels in sync with the article).
+    let rafId = 0;
+    const observer = new MutationObserver(() => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(scan);
+    });
+    observer.observe(article, {
+      characterData: true,
+      childList: true,
+      subtree: true,
     });
 
-    setHeadings(items);
+    return () => {
+      cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
   }, []);
 
   // Track which heading is currently in view

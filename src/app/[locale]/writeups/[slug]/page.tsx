@@ -93,105 +93,108 @@ export default async function WriteupPage({ params }: Props) {
           </div>
         )}
 
-        <header className="mb-8">
-          <div className="mb-3 flex flex-wrap gap-2">
-            {fm.platform && (
-              <Badge variant="default" className="text-xs uppercase">
-                {fm.platform}
-              </Badge>
-            )}
-            {fm.category && (
-              <Badge variant="secondary" className="text-xs capitalize">
-                {fm.category}
-              </Badge>
-            )}
-            {fm.difficulty && (
-              <Badge variant="outline" className="text-xs">
-                {fm.difficulty}
-              </Badge>
-            )}
-          </div>
-
-          <h1 className="mb-4 text-3xl font-bold font-heading leading-tight sm:text-4xl">
-            {fm.title}
-          </h1>
-
-          {fm.description && (
-            <p className="mb-4 text-lg text-muted-foreground leading-relaxed">
-              {fm.description}
-            </p>
-          )}
-
-          {fm.date && (
-            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-              <time>
-                {formatDate(fm.date, {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                }, toBcp47(locale))}
-              </time>
-            </div>
-          )}
-
-          {fm.tags && fm.tags.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {fm.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="text-xs">
-                  {tag}
+        <DynamicTranslator
+          enabled={shouldTranslate}
+          targetLocale={locale}
+          contentKey={`writeups/${slug}`}
+        >
+          <header className="mb-8">
+            <div className="mb-3 flex flex-wrap gap-2">
+              {fm.platform && (
+                <Badge variant="default" className="text-xs uppercase">
+                  {fm.platform}
                 </Badge>
-              ))}
-            </div>
-          )}
-        </header>
-
-        <div className="flex flex-col gap-8 lg:flex-row">
-          <article className="w-full min-w-0 lg:w-[70%]">
-            <ProseImageLightbox>
-              <div
-                data-prose-content
-                className="prose prose-neutral max-w-none dark:prose-invert"
-              >
-                <DynamicTranslator
-                  enabled={shouldTranslate}
-                  targetLocale={locale}
-                  contentKey={`writeups/${slug}`}
-                >
-                  <Content />
-                </DynamicTranslator>
-              </div>
-            </ProseImageLightbox>
-          </article>
-
-          <aside className="w-full lg:w-[30%]">
-            <div className="space-y-4 lg:sticky lg:top-20">
-              <TableOfContents />
-
-              {fm.tags && fm.tags.length > 0 && (
-                <Card>
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-sm font-semibold">
-                      {t("tags")}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {fm.tags.map((tag) => (
-                        <Badge
-                          key={tag}
-                          variant="secondary"
-                          className="text-[11px]"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+              )}
+              {fm.category && (
+                <Badge variant="secondary" className="text-xs capitalize">
+                  {fm.category}
+                </Badge>
+              )}
+              {fm.difficulty && (
+                <Badge variant="outline" className="text-xs">
+                  {fm.difficulty}
+                </Badge>
               )}
             </div>
-          </aside>
-        </div>
+
+            <h1 className="mb-4 text-3xl font-bold font-heading leading-tight sm:text-4xl">
+              {fm.title}
+            </h1>
+
+            {fm.description && (
+              <p className="mb-4 text-lg text-muted-foreground leading-relaxed">
+                {fm.description}
+              </p>
+            )}
+
+            {fm.date && (
+              <div
+                data-notranslate
+                className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground"
+              >
+                <time>
+                  {formatDate(fm.date, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }, toBcp47(locale))}
+                </time>
+              </div>
+            )}
+
+            {fm.tags && fm.tags.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {fm.tags.map((tag) => (
+                  <Badge key={tag} variant="outline" className="text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </header>
+
+          <div className="flex flex-col gap-8 lg:flex-row">
+            <article className="w-full min-w-0 lg:w-[70%]">
+              <ProseImageLightbox>
+                <div
+                  data-prose-content
+                  className="prose prose-neutral max-w-none dark:prose-invert"
+                >
+                  <Content />
+                </div>
+              </ProseImageLightbox>
+            </article>
+
+            <aside data-notranslate className="w-full lg:w-[30%]">
+              <div className="space-y-4 lg:sticky lg:top-20">
+                <TableOfContents />
+
+                {fm.tags && fm.tags.length > 0 && (
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm font-semibold">
+                        {t("tags")}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {fm.tags.map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="secondary"
+                            className="text-[11px]"
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+            </aside>
+          </div>
+        </DynamicTranslator>
       </div>
 
       <ScrollToTop />
