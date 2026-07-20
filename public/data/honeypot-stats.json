@@ -1,0 +1,537 @@
+{
+ "generated_at": "2026-07-20 04:59 UTC",
+ "window_days": 30,
+ "totals": {
+  "events": 42485,
+  "unique_ips": 667,
+  "countries": 57,
+  "asns": 203,
+  "malicious_pct": 74.2
+ },
+ "top_ips": [
+  {
+   "ip": "92.204.138.142",
+   "events": 3929,
+   "score": 100,
+   "country": "United States",
+   "actor": "malicious",
+   "service": "telnet"
+  },
+  {
+   "ip": "208.109.189.59",
+   "events": 3760,
+   "score": 100,
+   "country": "United States",
+   "actor": "malicious",
+   "service": "telnet"
+  },
+  {
+   "ip": "45.153.34.112",
+   "events": 2285,
+   "score": 75,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "45.156.87.216",
+   "events": 2285,
+   "score": 100,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "77.239.124.243",
+   "events": 2285,
+   "score": 25,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "77.239.124.247",
+   "events": 2285,
+   "score": 100,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "91.92.40.153",
+   "events": 2153,
+   "score": 25,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "107.6.151.170",
+   "events": 1331,
+   "score": 100,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "telnet"
+  },
+  {
+   "ip": "45.43.159.119",
+   "events": 1296,
+   "score": 100,
+   "country": "Kazakhstan",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "117.149.196.215",
+   "events": 1296,
+   "score": 0,
+   "country": "China",
+   "actor": "unknown",
+   "service": "ssh"
+  },
+  {
+   "ip": "91.92.42.34",
+   "events": 1238,
+   "score": 100,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "ssh"
+  },
+  {
+   "ip": "132.148.22.172",
+   "events": 1057,
+   "score": 100,
+   "country": "United States",
+   "actor": "malicious",
+   "service": "telnet"
+  },
+  {
+   "ip": "115.190.164.89",
+   "events": 1044,
+   "score": 49,
+   "country": "China",
+   "actor": "unknown",
+   "service": "rdp"
+  },
+  {
+   "ip": "167.88.164.122",
+   "events": 924,
+   "score": 0,
+   "country": "United States",
+   "actor": "unknown",
+   "service": "http"
+  },
+  {
+   "ip": "91.92.42.81",
+   "events": 910,
+   "score": 0,
+   "country": "The Netherlands",
+   "actor": "unknown",
+   "service": "ssh"
+  }
+ ],
+ "top_countries": [
+  {
+   "key": "The Netherlands",
+   "count": 17919
+  },
+  {
+   "key": "United States",
+   "count": 13574
+  },
+  {
+   "key": "China",
+   "count": 2842
+  },
+  {
+   "key": "Bulgaria",
+   "count": 1623
+  },
+  {
+   "key": "Kazakhstan",
+   "count": 1296
+  },
+  {
+   "key": "Pakistan",
+   "count": 741
+  },
+  {
+   "key": "Sweden",
+   "count": 709
+  },
+  {
+   "key": "Romania",
+   "count": 625
+  },
+  {
+   "key": "Iran",
+   "count": 353
+  },
+  {
+   "key": "Thailand",
+   "count": 323
+  }
+ ],
+ "top_asns": [
+  {
+   "key": "TechTies Inc.",
+   "count": 9579
+  },
+  {
+   "key": "GoDaddy.com, LLC",
+   "count": 8826
+  },
+  {
+   "key": "Ace Data Centers II, L.L.C.",
+   "count": 4570
+  },
+  {
+   "key": "RouterHosting LLC",
+   "count": 3320
+  },
+  {
+   "key": "Techoff Srv Limited",
+   "count": 3298
+  },
+  {
+   "key": "Internap Holding LLC",
+   "count": 1343
+  },
+  {
+   "key": "China Mobile communications corporation",
+   "count": 1297
+  },
+  {
+   "key": "Newserverlife LLC",
+   "count": 1296
+  },
+  {
+   "key": "Unmanaged Ltd",
+   "count": 1220
+  },
+  {
+   "key": "Beijing Volcano Engine Technology Co., Ltd.",
+   "count": 1046
+  }
+ ],
+ "services": [
+  {
+   "key": "ssh",
+   "count": 22766
+  },
+  {
+   "key": "telnet",
+   "count": 13609
+  },
+  {
+   "key": "rdp",
+   "count": 3164
+  },
+  {
+   "key": "http",
+   "count": 1376
+  },
+  {
+   "key": "mysql",
+   "count": 722
+  },
+  {
+   "key": "redis",
+   "count": 429
+  },
+  {
+   "key": "vnc",
+   "count": 402
+  },
+  {
+   "key": "sip",
+   "count": 49
+  },
+  {
+   "key": "ftp",
+   "count": 8
+  },
+  {
+   "key": "mssql",
+   "count": 4
+  }
+ ],
+ "actors": [
+  {
+   "key": "malicious",
+   "count": 31519
+  },
+  {
+   "key": "unknown",
+   "count": 4854
+  },
+  {
+   "key": "cloud",
+   "count": 767
+  },
+  {
+   "key": "tor",
+   "count": 12
+  }
+ ],
+ "top_usernames": [
+  {
+   "key": "root",
+   "count": 7351
+  },
+  {
+   "key": "admin",
+   "count": 1830
+  },
+  {
+   "key": "hello",
+   "count": 1110
+  },
+  {
+   "key": "user",
+   "count": 430
+  },
+  {
+   "key": "ubuntu",
+   "count": 286
+  },
+  {
+   "key": "debian",
+   "count": 261
+  },
+  {
+   "key": "support",
+   "count": 258
+  },
+  {
+   "key": "guest",
+   "count": 141
+  },
+  {
+   "key": "deploy",
+   "count": 117
+  },
+  {
+   "key": "test",
+   "count": 91
+  },
+  {
+   "key": "administrator",
+   "count": 69
+  },
+  {
+   "key": "Test",
+   "count": 61
+  }
+ ],
+ "top_passwords": [
+  {
+   "key": "admin",
+   "count": 733
+  },
+  {
+   "key": "123456",
+   "count": 650
+  },
+  {
+   "key": "password",
+   "count": 448
+  },
+  {
+   "key": "xc3511",
+   "count": 432
+  },
+  {
+   "key": "vizxv",
+   "count": 391
+  },
+  {
+   "key": "12345",
+   "count": 341
+  },
+  {
+   "key": "1234",
+   "count": 330
+  },
+  {
+   "key": "root",
+   "count": 321
+  },
+  {
+   "key": "888888",
+   "count": 265
+  },
+  {
+   "key": "default",
+   "count": 256
+  },
+  {
+   "key": "1111",
+   "count": 246
+  },
+  {
+   "key": "support",
+   "count": 237
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2026-07-18",
+   "count": 9847
+  },
+  {
+   "date": "2026-07-19",
+   "count": 26423
+  },
+  {
+   "date": "2026-07-20",
+   "count": 6215
+  }
+ ],
+ "mitre": {
+  "T1110": 40631,
+  "T1021.004": 22746,
+  "T1021.001": 3146,
+  "T1595": 1425,
+  "T1190": 1805,
+  "T1059": 429,
+  "T1021.005": 402
+ },
+ "top_cves": [
+  {
+   "cve": "CVE-2008-3844",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "high",
+   "score": 9.3,
+   "desc": "Certain Red Hat Enterprise Linux (RHEL) 4 and 5 packages for OpenSSH, as signed in August 2008 using a legitimate Red Hat GPG key, contain an external",
+   "cwe": "CWE-20"
+  },
+  {
+   "cve": "CVE-2026-35385",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "high",
+   "score": 7.5,
+   "desc": "In OpenSSH before 10.3, a file downloaded by scp may be installed setuid or setgid, an outcome contrary to some users' expectations, if the download i",
+   "cwe": "CWE-281"
+  },
+  {
+   "cve": "CVE-2023-51767",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "high",
+   "score": 7.0,
+   "desc": "OpenSSH through 10.0, when common types of DRAM are used, might allow row hammer attacks (for authentication bypass) because the integer value of auth",
+   "cwe": ""
+  },
+  {
+   "cve": "CVE-2007-2768",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "medium",
+   "score": 4.3,
+   "desc": "OpenSSH, when using OPIE (One-Time Passwords in Everything) for PAM, allows remote attackers to determine the existence of certain user accounts, whic",
+   "cwe": "CWE-200"
+  },
+  {
+   "cve": "CVE-2026-35414",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "medium",
+   "score": 4.2,
+   "desc": "OpenSSH before 10.3 mishandles the authorized_keys principals option in uncommon scenarios involving a principals list in conjunction with a Certifica",
+   "cwe": "CWE-670"
+  },
+  {
+   "cve": "CVE-2026-35387",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "low",
+   "score": 3.1,
+   "desc": "OpenSSH before 10.3 can use unintended ECDSA algorithms. Listing of any ECDSA algorithm in PubkeyAcceptedAlgorithms or HostbasedAcceptedAlgorithms is ",
+   "cwe": "CWE-670"
+  },
+  {
+   "cve": "CVE-2026-35388",
+   "hosts": 12,
+   "events": 6535,
+   "severity": "low",
+   "score": 2.5,
+   "desc": "OpenSSH before 10.3 omits connection multiplexing confirmation for proxy-mode multiplexing sessions.",
+   "cwe": "CWE-420"
+  },
+  {
+   "cve": "CVE-2023-38408",
+   "hosts": 10,
+   "events": 6398,
+   "severity": "critical",
+   "score": 9.8,
+   "desc": "The PKCS#11 feature in ssh-agent in OpenSSH before 9.3p2 has an insufficiently trustworthy search path, leading to remote code execution if an agent i",
+   "cwe": "CWE-428"
+  },
+  {
+   "cve": "CVE-2023-51385",
+   "hosts": 10,
+   "events": 6398,
+   "severity": "medium",
+   "score": 6.5,
+   "desc": "In ssh in OpenSSH before 9.6, OS command injection might occur if a user name or host name has shell metacharacters, and this name is referenced by an",
+   "cwe": "CWE-78"
+  },
+  {
+   "cve": "CVE-2023-48795",
+   "hosts": 10,
+   "events": 6398,
+   "severity": "medium",
+   "score": 5.9,
+   "desc": "The SSH transport protocol with certain OpenSSH extensions, found in OpenSSH before 9.6 and other products, allows remote attackers to bypass integrit",
+   "cwe": "CWE-354"
+  },
+  {
+   "cve": "CVE-2016-20012",
+   "hosts": 10,
+   "events": 6398,
+   "severity": "medium",
+   "score": 5.3,
+   "desc": "OpenSSH through 8.7 allows remote attackers, who have a suspicion that a certain combination of username and public key is known to an SSH server, to ",
+   "cwe": "CWE-203"
+  },
+  {
+   "cve": "CVE-2021-36368",
+   "hosts": 10,
+   "events": 6398,
+   "severity": "low",
+   "score": 3.7,
+   "desc": "An issue was discovered in OpenSSH before 8.9. If a client is using public-key authentication with agent forwarding but without -oLogLevel=verbose, an",
+   "cwe": "CWE-287"
+  },
+  {
+   "cve": "CVE-2020-15778",
+   "hosts": 9,
+   "events": 6310,
+   "severity": "high",
+   "score": 7.4,
+   "desc": "scp in OpenSSH through 8.3p1 allows command injection in the scp.c toremote function, as demonstrated by backtick characters in the destination argume",
+   "cwe": "CWE-78"
+  },
+  {
+   "cve": "CVE-2017-15906",
+   "hosts": 7,
+   "events": 6300,
+   "severity": "medium",
+   "score": 5.3,
+   "desc": "The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers t",
+   "cwe": "CWE-732"
+  },
+  {
+   "cve": "CVE-2018-15473",
+   "hosts": 7,
+   "events": 6300,
+   "severity": "medium",
+   "score": 5.3,
+   "desc": "OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet",
+   "cwe": "CWE-362"
+  }
+ ]
+}

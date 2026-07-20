@@ -5,6 +5,7 @@
     "blog": "Blog",
     "writeups": "Writeups",
     "toolbox": "Toolbox",
+    "honeypot": "Honeypot Network",
     "toggleMenu": "Toggle menu",
     "menu": "Menu",
     "language": "Language"
@@ -52,6 +53,59 @@
     "title": "Toolbox",
     "subtitle": "Curated collection of cybersecurity tools, resources & references.",
     "searchPlaceholder": "Search tools..."
+  },
+  "honeypot": {
+    "title": "Honeypot Network",
+    "subtitle": "Live threat telemetry from my honeypot sensor grid — who is knocking, from where, and how.",
+    "live": "Live",
+    "profiles": {
+      "label": "Findings published on"
+    },
+    "windowLabel": "Last {days} days",
+    "updated": "Updated {time}",
+    "events": "Events",
+    "error": "Could not load telemetry: {message}",
+    "kpi": {
+      "events": "Attack Events",
+      "attackers": "Unique Attackers",
+      "countries": "Countries",
+      "asns": "Networks (ASN)",
+      "malicious": "Malicious",
+      "maliciousHint": "of events flagged"
+    },
+    "sections": {
+      "timeline": "Attack Volume",
+      "topIps": "Top Attacking IPs",
+      "countries": "Top Origin Countries",
+      "services": "Targeted Services",
+      "actors": "Actor Classification",
+      "asns": "Top Networks (ASN)",
+      "usernames": "Most-Tried Usernames",
+      "passwords": "Most-Tried Passwords",
+      "mitre": "MITRE ATT&CK — Detected Techniques",
+      "cves": "Top Exposed CVEs"
+    },
+    "mitre": {
+      "summary": "{techniques} techniques · {tactics} tactics",
+      "legendDetected": "Detected",
+      "legendRef": "Not observed"
+    },
+    "cves": {
+      "empty": "No exposed CVEs found for the attacking infrastructure in this window.",
+      "emptyHint": "CVEs are sourced from Shodan InternetDB for each attacker IP.",
+      "summary": "{count} CVEs",
+      "hosts": "{count} hosts"
+    },
+    "table": {
+      "ip": "IP Address",
+      "score": "Score",
+      "actor": "Actor",
+      "country": "Country",
+      "service": "Service",
+      "events": "Events",
+      "reports": "Reports"
+    },
+    "footnote": "Aggregated from a low-interaction honeypot. Data is anonymized and updated periodically."
   },
   "about": {
     "title": "About",

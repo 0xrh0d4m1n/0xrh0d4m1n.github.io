@@ -1,0 +1,17 @@
+# Cloudflare Worker — Honeypot Network stats edge API.
+# Deploy:  wrangler deploy      (see README.md for the full runbook)
+
+name = "honeypot-stats"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+workers_dev = true
+
+# KV namespace that holds the latest snapshot. Create it with:
+#   wrangler kv namespace create HONEYPOT_STATS
+# then paste the returned id below.
+kv_namespaces = [
+  { binding = "HONEYPOT_STATS", id = "REPLACE_WITH_KV_ID" }
+]
+
+# INGEST_TOKEN is a SECRET — never put it here. Set it with:
+#   wrangler secret put INGEST_TOKEN

@@ -20,7 +20,14 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
-const NAV_KEYS = ["home", "about", "blog", "writeups", "toolbox"] as const;
+const NAV_KEYS = [
+  "home",
+  "about",
+  "blog",
+  "writeups",
+  "toolbox",
+  "honeypot",
+] as const;
 type NavKey = (typeof NAV_KEYS)[number];
 
 const NAV_PATHS: Record<NavKey, string> = {
@@ -29,6 +36,7 @@ const NAV_PATHS: Record<NavKey, string> = {
   blog: "blog/",
   writeups: "writeups/",
   toolbox: "toolbox/",
+  honeypot: "honeypot/",
 };
 
 function NavLink({

@@ -5,6 +5,7 @@
     "blog": "Blog",
     "writeups": "Writeups",
     "toolbox": "Herramientas",
+    "honeypot": "Honeypot Network",
     "toggleMenu": "Alternar menú",
     "menu": "Menú",
     "language": "Idioma"
@@ -52,6 +53,59 @@
     "title": "Herramientas",
     "subtitle": "Colección seleccionada de herramientas, recursos y referencias de ciberseguridad.",
     "searchPlaceholder": "Buscar herramientas..."
+  },
+  "honeypot": {
+    "title": "Honeypot Network",
+    "subtitle": "Telemetría de amenazas en vivo de mi red de sensores honeypot — quién llama a la puerta, desde dónde y cómo.",
+    "live": "En vivo",
+    "profiles": {
+      "label": "Hallazgos publicados en"
+    },
+    "windowLabel": "Últimos {days} días",
+    "updated": "Actualizado {time}",
+    "events": "Eventos",
+    "error": "No se pudo cargar la telemetría: {message}",
+    "kpi": {
+      "events": "Eventos de Ataque",
+      "attackers": "Atacantes Únicos",
+      "countries": "Países",
+      "asns": "Redes (ASN)",
+      "malicious": "Malicioso",
+      "maliciousHint": "de eventos marcados"
+    },
+    "sections": {
+      "timeline": "Volumen de Ataques",
+      "topIps": "Top IPs Atacantes",
+      "countries": "Países de Origen",
+      "services": "Servicios Atacados",
+      "actors": "Clasificación de Actores",
+      "asns": "Top Redes (ASN)",
+      "usernames": "Usuarios Más Probados",
+      "passwords": "Contraseñas Más Probadas",
+      "mitre": "MITRE ATT&CK — Técnicas Detectadas",
+      "cves": "Top CVEs Expuestos"
+    },
+    "mitre": {
+      "summary": "{techniques} técnicas · {tactics} tácticas",
+      "legendDetected": "Detectada",
+      "legendRef": "No observada"
+    },
+    "cves": {
+      "empty": "No se encontraron CVEs expuestos para la infraestructura atacante en esta ventana.",
+      "emptyHint": "Los CVEs provienen de Shodan InternetDB para cada IP atacante.",
+      "summary": "{count} CVEs",
+      "hosts": "{count} hosts"
+    },
+    "table": {
+      "ip": "Dirección IP",
+      "score": "Score",
+      "actor": "Actor",
+      "country": "País",
+      "service": "Servicio",
+      "events": "Eventos",
+      "reports": "Reports"
+    },
+    "footnote": "Agregado de un honeypot de baja interacción. Datos anonimizados y actualizados periódicamente."
   },
   "about": {
     "title": "Acerca",
