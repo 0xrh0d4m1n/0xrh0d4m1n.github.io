@@ -56,7 +56,7 @@
   },
   "honeypot": {
     "title": "Honeypot Network",
-    "subtitle": "Live threat telemetry from my honeypot sensor grid — who is knocking, from where, and how.",
+    "subtitle": "Live threat telemetry from my honeypot sensor grid.",
     "live": "Live",
     "profiles": {
       "label": "Findings published on"

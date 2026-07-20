@@ -390,13 +390,13 @@ const EDUCATION: EducationRow[] = [
 
 const PROJECTS: ProjectItem[] = [
   {
-    title: "0xh3x73rs Team",
-    meta: "Founding Member (2023 — 2024)",
+    title: "Honeypot Network — Threat Sighting",
+    meta: "Personal Project (2026 — Present)",
     bullets: [
-      "Co-founded a bug bounty team, demonstrating leadership and initiative in the cybersecurity field.",
-      "Collaborated with team members to identify and report vulnerabilities in various web applications.",
-      "Contributed to the successful identification of significant security flaws.",
-      "Developed expertise in vulnerability research and reporting methodologies.",
+      "Designed and deployed a low-interaction honeypot network with real-time threat-intelligence telemetry, built on OpenCanary, Filebeat, Logstash, and Elasticsearch/Kibana.",
+      "Enriched every attacker IP with 5+ intelligence sources (VirusTotal, AbuseIPDB, GreyNoise, AlienVault OTX, Shodan) and public blocklists, classifying activity against the MITRE ATT&CK framework.",
+      "Automated daily community reporting of malicious infrastructure to AbuseIPDB, AlienVault OTX, and VirusTotal.",
+      "Shipped a live public threat-intel dashboard (see the Honeypot Network tab).",
     ],
   },
 ];

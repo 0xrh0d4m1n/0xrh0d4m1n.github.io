@@ -56,7 +56,7 @@
   },
   "honeypot": {
     "title": "Honeypot Network",
-    "subtitle": "Telemetria de ameaças ao vivo da minha rede de sensores honeypot — quem está batendo na porta, de onde e como.",
+    "subtitle": "Telemetria de ameaças ao vivo da minha rede de sensores honeypot.",
     "live": "Ao vivo",
     "profiles": {
       "label": "Achados publicados em"
