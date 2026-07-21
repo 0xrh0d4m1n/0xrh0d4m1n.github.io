@@ -35,7 +35,10 @@ const TACTICS: Tactic[] = [
   },
   {
     name: "Execution",
-    techniques: [{ id: "T1059", name: "Command & Scripting Interpreter" }],
+    techniques: [
+      { id: "T1059", name: "Command & Scripting Interpreter" },
+      { id: "T1059.004", name: "Unix Shell" },
+    ],
   },
   {
     name: "Credential Access",
@@ -47,7 +50,10 @@ const TACTICS: Tactic[] = [
   },
   {
     name: "Discovery",
-    techniques: [{ id: "T1046", name: "Network Service Discovery" }],
+    techniques: [
+      { id: "T1046", name: "Network Service Discovery" },
+      { id: "T1082", name: "System Information Discovery" },
+    ],
   },
   {
     name: "Lateral Movement",
@@ -59,7 +65,14 @@ const TACTICS: Tactic[] = [
   },
   {
     name: "Command & Control",
-    techniques: [{ id: "T1090", name: "Proxy" }],
+    techniques: [
+      { id: "T1105", name: "Ingress Tool Transfer" },
+      { id: "T1090", name: "Proxy" },
+    ],
+  },
+  {
+    name: "Impact",
+    techniques: [{ id: "T1496", name: "Resource Hijacking" }],
   },
 ];
 

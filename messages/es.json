@@ -41,7 +41,7 @@
   },
   "writeups": {
     "title": "Writeups",
-    "subtitle": "Crónicas de mis batallas cibernéticas \u2014 archivo ordenable y buscable de writeups de CTF y labs.",
+    "subtitle": "Crónicas de mis batallas cibernéticas — archivo ordenable y buscable de writeups de CTF y labs.",
     "backToWriteups": "Volver a Writeups",
     "searchPlaceholder": "Buscar por nombre, fuente, categoría, dificultad o etiqueta...",
     "unknownDifficulty": "Desconocida",
@@ -96,6 +96,48 @@
       "summary": "{count} CVEs",
       "hosts": "{count} hosts"
     },
+    "malware": {
+      "title": "Inteligencia de Malware y Sesión",
+      "badge": "Interacción Media",
+      "kpi": {
+        "samples": "Muestras Capturadas",
+        "families": "Familias de Malware",
+        "c2": "Hosts C2 / Distribución",
+        "hassh": "Huellas de Cliente"
+      },
+      "families": "Familias de Malware Identificadas",
+      "familiesEmpty": "Aún no se han identificado familias de malware en esta ventana.",
+      "aka": "alias",
+      "samples": "muestras",
+      "behavior": "comportamiento",
+      "behaviorTitle": "Comportamiento en Sandbox",
+      "vendors": "veredictos de proveedores",
+      "actors": "Actores",
+      "commandsTitle": "Línea de Comandos del Atacante",
+      "noCommands": "sin comandos capturados",
+      "frameworks": "Frameworks de Cliente",
+      "payloads": "Payloads Capturados",
+      "infra": "Infraestructura C2 / Distribución",
+      "pivots": "objetivos de pivote",
+      "filenames": "Archivos Soltados",
+      "classified": "{n} clasificadas",
+      "unclassified": "{n} sin clasificar",
+      "unclassifiedTag": "sin clasificar",
+      "vendorsN": "{n} proveedores",
+      "payloadsNote": "La mayoría de las capturas son scripts de recon, sondas y archivos vacíos — no malware. Solo las muestras clasificadas aparecen en VirusTotal / MalwareBazaar.",
+      "kc": {
+        "title": "Cadena de Ataque (Kill Chain)",
+        "access": "Login por Fuerza Bruta",
+        "accessEv": "credential stuffing",
+        "shell": "Ejecución de Shell",
+        "shellEv": "{n} comandos ejecutados",
+        "recon": "Reconocimiento del Sistema",
+        "reconEv": "perfilado del host",
+        "transfer": "Transferencia de Herramienta",
+        "transferEv": "{n} payloads descargados",
+        "botnet": "Reclutamiento en Botnet"
+      }
+    },
     "table": {
       "ip": "Dirección IP",
       "score": "Score",
@@ -105,7 +147,7 @@
       "events": "Eventos",
       "reports": "Reports"
     },
-    "footnote": "Agregado de un honeypot de baja interacción. Datos anonimizados y actualizados periódicamente."
+    "footnote": "Agregado de un honeypot de baja y media interacción. Los datos se anonimizan y actualizan periódicamente."
   },
   "about": {
     "title": "Acerca",
@@ -151,7 +193,7 @@
   "translator": {
     "detected": "¡Idioma {locale} detectado!",
     "translating": "Traduciendo contenido...",
-    "translationFailed": "Traducción no disponible \u2014 mostrando original",
+    "translationFailed": "Traducción no disponible — mostrando original",
     "poweredBy": "Traducción por Lingva"
   }
 }

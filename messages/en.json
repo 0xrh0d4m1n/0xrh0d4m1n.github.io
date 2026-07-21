@@ -96,6 +96,48 @@
       "summary": "{count} CVEs",
       "hosts": "{count} hosts"
     },
+    "malware": {
+      "title": "Malware & Session Intelligence",
+      "badge": "Medium Interaction",
+      "kpi": {
+        "samples": "Captured Samples",
+        "families": "Malware Families",
+        "c2": "C2 / Distribution Hosts",
+        "hassh": "Client Fingerprints"
+      },
+      "families": "Identified Malware Families",
+      "familiesEmpty": "No malware families identified in this window yet.",
+      "aka": "aka",
+      "samples": "samples",
+      "behavior": "behavior",
+      "behaviorTitle": "Sandbox Behavior",
+      "vendors": "vendor verdicts",
+      "actors": "Actors",
+      "commandsTitle": "Attacker Command-Line",
+      "noCommands": "no commands captured",
+      "frameworks": "Client Frameworks",
+      "payloads": "Captured Payloads",
+      "infra": "C2 / Distribution Infrastructure",
+      "pivots": "pivot targets",
+      "filenames": "Dropped Filenames",
+      "classified": "{n} classified",
+      "unclassified": "{n} unclassified",
+      "unclassifiedTag": "unclassified",
+      "vendorsN": "{n} vendors",
+      "payloadsNote": "Most captures are recon scripts, probes and empty files — not malware. Only classified samples appear on VirusTotal / MalwareBazaar.",
+      "kc": {
+        "title": "Attack Kill Chain",
+        "access": "Brute-Force Login",
+        "accessEv": "credential stuffing",
+        "shell": "Shell Execution",
+        "shellEv": "{n} commands run",
+        "recon": "System Recon",
+        "reconEv": "host profiling",
+        "transfer": "Ingress Tool Transfer",
+        "transferEv": "{n} payloads pulled",
+        "botnet": "Botnet Enlistment"
+      }
+    },
     "table": {
       "ip": "IP Address",
       "score": "Score",
@@ -105,7 +147,7 @@
       "events": "Events",
       "reports": "Reports"
     },
-    "footnote": "Aggregated from a low-interaction honeypot. Data is anonymized and updated periodically."
+    "footnote": "Aggregated from a low- and medium-interaction honeypot sensor grid. Data is anonymized and updated periodically."
   },
   "about": {
     "title": "About",

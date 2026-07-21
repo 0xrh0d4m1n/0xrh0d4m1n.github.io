@@ -41,6 +41,7 @@ import { THREAT_PLATFORMS, faviconFor } from "@/lib/threat-platforms";
 import { ProfileBadges } from "@/components/honeypot/profile-badges";
 import { MitreMatrix } from "@/components/honeypot/mitre-matrix";
 import { TopCves } from "@/components/honeypot/top-cves";
+import { MalwareIntel } from "@/components/honeypot/malware-intel";
 import type { Count, HoneypotStats, TopIp } from "@/types/honeypot";
 
 const STATS_URL =
@@ -684,6 +685,9 @@ export function HoneypotDashboard() {
 
           {/* ── top CVE exploit probes ───────────────────────────── */}
           <TopCves cves={data.top_cves} />
+
+          {/* ── malware & session intelligence (Cowrie) ──────────── */}
+          <MalwareIntel data={data.malware} />
 
           {/* ── credentials ──────────────────────────────────────── */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">

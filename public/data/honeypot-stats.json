@@ -1,14 +1,22 @@
 {
- "generated_at": "2026-07-20 04:59 UTC",
+ "generated_at": "2026-07-21 06:04 UTC",
  "window_days": 30,
  "totals": {
-  "events": 42485,
-  "unique_ips": 667,
-  "countries": 57,
-  "asns": 203,
-  "malicious_pct": 74.2
+  "events": 71125,
+  "unique_ips": 991,
+  "countries": 63,
+  "asns": 258,
+  "malicious_pct": 75.4
  },
  "top_ips": [
+  {
+   "ip": "202.169.44.105",
+   "events": 4300,
+   "score": 100,
+   "country": "Indonesia",
+   "actor": "malicious",
+   "service": "telnet"
+  },
   {
    "ip": "92.204.138.142",
    "events": 3929,
@@ -26,9 +34,41 @@
    "service": "telnet"
   },
   {
+   "ip": "95.135.49.204",
+   "events": 3251,
+   "score": 21,
+   "country": "The Netherlands",
+   "actor": "unknown",
+   "service": "rdp"
+  },
+  {
+   "ip": "107.6.151.170",
+   "events": 2701,
+   "score": 100,
+   "country": "The Netherlands",
+   "actor": "malicious",
+   "service": "telnet"
+  },
+  {
+   "ip": "92.204.138.58",
+   "events": 2493,
+   "score": 100,
+   "country": "United States",
+   "actor": "malicious",
+   "service": "telnet"
+  },
+  {
+   "ip": "115.190.164.89",
+   "events": 2322,
+   "score": 49,
+   "country": "China",
+   "actor": "unknown",
+   "service": "rdp"
+  },
+  {
    "ip": "45.153.34.112",
    "events": 2285,
-   "score": 75,
+   "score": 100,
    "country": "The Netherlands",
    "actor": "malicious",
    "service": "ssh"
@@ -44,7 +84,7 @@
   {
    "ip": "77.239.124.243",
    "events": 2285,
-   "score": 25,
+   "score": 100,
    "country": "The Netherlands",
    "actor": "malicious",
    "service": "ssh"
@@ -60,214 +100,174 @@
   {
    "ip": "91.92.40.153",
    "events": 2153,
-   "score": 25,
-   "country": "The Netherlands",
-   "actor": "malicious",
-   "service": "ssh"
-  },
-  {
-   "ip": "107.6.151.170",
-   "events": 1331,
-   "score": 100,
-   "country": "The Netherlands",
-   "actor": "malicious",
-   "service": "telnet"
-  },
-  {
-   "ip": "45.43.159.119",
-   "events": 1296,
-   "score": 100,
-   "country": "Kazakhstan",
-   "actor": "malicious",
-   "service": "ssh"
-  },
-  {
-   "ip": "117.149.196.215",
-   "events": 1296,
-   "score": 0,
-   "country": "China",
-   "actor": "unknown",
-   "service": "ssh"
-  },
-  {
-   "ip": "91.92.42.34",
-   "events": 1238,
    "score": 100,
    "country": "The Netherlands",
    "actor": "malicious",
    "service": "ssh"
+  },
+  {
+   "ip": "202.162.79.165",
+   "events": 1860,
+   "score": 75,
+   "country": "Thailand",
+   "actor": "malicious",
+   "service": "ftp"
   },
   {
    "ip": "132.148.22.172",
-   "events": 1057,
+   "events": 1544,
    "score": 100,
    "country": "United States",
    "actor": "malicious",
    "service": "telnet"
   },
   {
-   "ip": "115.190.164.89",
-   "events": 1044,
-   "score": 49,
-   "country": "China",
-   "actor": "unknown",
-   "service": "rdp"
-  },
-  {
-   "ip": "167.88.164.122",
-   "events": 924,
-   "score": 0,
-   "country": "United States",
-   "actor": "unknown",
-   "service": "http"
-  },
-  {
-   "ip": "91.92.42.81",
-   "events": 910,
-   "score": 0,
+   "ip": "91.92.40.24",
+   "events": 1465,
+   "score": 100,
    "country": "The Netherlands",
-   "actor": "unknown",
+   "actor": "malicious",
    "service": "ssh"
   }
  ],
  "top_countries": [
   {
    "key": "The Netherlands",
-   "count": 17919
+   "count": 23961
   },
   {
    "key": "United States",
-   "count": 13574
+   "count": 20581
   },
   {
    "key": "China",
-   "count": 2842
+   "count": 5297
+  },
+  {
+   "key": "Indonesia",
+   "count": 4406
+  },
+  {
+   "key": "Thailand",
+   "count": 2224
+  },
+  {
+   "key": "Romania",
+   "count": 1848
   },
   {
    "key": "Bulgaria",
-   "count": 1623
+   "count": 1766
+  },
+  {
+   "key": "Brazil",
+   "count": 1462
+  },
+  {
+   "key": "France",
+   "count": 1365
   },
   {
    "key": "Kazakhstan",
    "count": 1296
-  },
-  {
-   "key": "Pakistan",
-   "count": 741
-  },
-  {
-   "key": "Sweden",
-   "count": 709
-  },
-  {
-   "key": "Romania",
-   "count": 625
-  },
-  {
-   "key": "Iran",
-   "count": 353
-  },
-  {
-   "key": "Thailand",
-   "count": 323
   }
  ],
  "top_asns": [
   {
-   "key": "TechTies Inc.",
-   "count": 9579
+   "key": "GoDaddy.com, LLC",
+   "count": 12508
   },
   {
-   "key": "GoDaddy.com, LLC",
-   "count": 8826
+   "key": "TechTies Inc.",
+   "count": 10765
+  },
+  {
+   "key": "RouterHosting LLC",
+   "count": 5455
   },
   {
    "key": "Ace Data Centers II, L.L.C.",
    "count": 4570
   },
   {
-   "key": "RouterHosting LLC",
-   "count": 3320
+   "key": "BIZNET NETWORKS",
+   "count": 4300
   },
   {
    "key": "Techoff Srv Limited",
-   "count": 3298
+   "count": 3776
+  },
+  {
+   "key": "RoyaleHosting BV",
+   "count": 3251
   },
   {
    "key": "Internap Holding LLC",
-   "count": 1343
-  },
-  {
-   "key": "China Mobile communications corporation",
-   "count": 1297
-  },
-  {
-   "key": "Newserverlife LLC",
-   "count": 1296
-  },
-  {
-   "key": "Unmanaged Ltd",
-   "count": 1220
+   "count": 2720
   },
   {
    "key": "Beijing Volcano Engine Technology Co., Ltd.",
-   "count": 1046
+   "count": 2322
+  },
+  {
+   "key": "Unmanaged Ltd",
+   "count": 2227
   }
  ],
  "services": [
   {
    "key": "ssh",
-   "count": 22766
+   "count": 29267
   },
   {
    "key": "telnet",
-   "count": 13609
+   "count": 26053
   },
   {
    "key": "rdp",
-   "count": 3164
+   "count": 8901
   },
   {
    "key": "http",
-   "count": 1376
-  },
-  {
-   "key": "mysql",
-   "count": 722
-  },
-  {
-   "key": "redis",
-   "count": 429
-  },
-  {
-   "key": "vnc",
-   "count": 402
-  },
-  {
-   "key": "sip",
-   "count": 49
+   "count": 2165
   },
   {
    "key": "ftp",
-   "count": 8
+   "count": 1882
+  },
+  {
+   "key": "mysql",
+   "count": 1278
+  },
+  {
+   "key": "redis",
+   "count": 831
+  },
+  {
+   "key": "vnc",
+   "count": 657
+  },
+  {
+   "key": "sip",
+   "count": 86
   },
   {
    "key": "mssql",
-   "count": 4
+   "count": 5
   }
  ],
  "actors": [
   {
    "key": "malicious",
-   "count": 31519
+   "count": 53595
   },
   {
    "key": "unknown",
-   "count": 4854
+   "count": 13295
   },
   {
    "key": "cloud",
-   "count": 767
+   "count": 208
   },
   {
    "key": "tor",
@@ -277,101 +277,101 @@
  "top_usernames": [
   {
    "key": "root",
-   "count": 7351
-  },
-  {
-   "key": "admin",
-   "count": 1830
+   "count": 10218
   },
   {
    "key": "hello",
-   "count": 1110
+   "count": 3689
+  },
+  {
+   "key": "admin",
+   "count": 2834
   },
   {
    "key": "user",
-   "count": 430
+   "count": 799
   },
   {
    "key": "ubuntu",
-   "count": 286
+   "count": 469
   },
   {
    "key": "debian",
-   "count": 261
+   "count": 433
   },
   {
    "key": "support",
-   "count": 258
+   "count": 386
   },
   {
    "key": "guest",
-   "count": 141
-  },
-  {
-   "key": "deploy",
-   "count": 117
+   "count": 191
   },
   {
    "key": "test",
-   "count": 91
+   "count": 166
   },
   {
    "key": "administrator",
-   "count": 69
+   "count": 134
+  },
+  {
+   "key": "deploy",
+   "count": 120
   },
   {
    "key": "Test",
-   "count": 61
+   "count": 103
   }
  ],
  "top_passwords": [
   {
    "key": "admin",
-   "count": 733
+   "count": 1119
   },
   {
    "key": "123456",
-   "count": 650
+   "count": 831
   },
   {
    "key": "password",
-   "count": 448
+   "count": 650
   },
   {
    "key": "xc3511",
-   "count": 432
+   "count": 627
   },
   {
    "key": "vizxv",
-   "count": 391
+   "count": 560
   },
   {
    "key": "12345",
-   "count": 341
-  },
-  {
-   "key": "1234",
-   "count": 330
+   "count": 491
   },
   {
    "key": "root",
-   "count": 321
+   "count": 451
+  },
+  {
+   "key": "1234",
+   "count": 423
   },
   {
    "key": "888888",
-   "count": 265
+   "count": 398
   },
   {
    "key": "default",
-   "count": 256
-  },
-  {
-   "key": "1111",
-   "count": 246
+   "count": 369
   },
   {
    "key": "support",
-   "count": 237
+   "count": 356
+  },
+  {
+   "key": "1111",
+   "count": 354
   }
  ],
  "timeline": [
@@ -385,23 +385,32 @@
   },
   {
    "date": "2026-07-20",
-   "count": 6215
+   "count": 22881
+  },
+  {
+   "date": "2026-07-21",
+   "count": 11974
   }
  ],
  "mitre": {
-  "T1110": 40631,
-  "T1021.004": 22746,
-  "T1021.001": 3146,
-  "T1595": 1425,
-  "T1190": 1805,
-  "T1059": 429,
-  "T1021.005": 402
+  "T1110": 68043,
+  "T1021.004": 29267,
+  "T1021.001": 8901,
+  "T1595": 2251,
+  "T1190": 2996,
+  "T1059": 2436,
+  "T1021.005": 657,
+  "T1059.004": 1605,
+  "T1082": 1605,
+  "T1105": 444,
+  "T1090": 12,
+  "T1496": 8
  },
  "top_cves": [
   {
    "cve": "CVE-2008-3844",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "high",
    "score": 9.3,
    "desc": "Certain Red Hat Enterprise Linux (RHEL) 4 and 5 packages for OpenSSH, as signed in August 2008 using a legitimate Red Hat GPG key, contain an external",
@@ -409,8 +418,8 @@
   },
   {
    "cve": "CVE-2026-35385",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "high",
    "score": 7.5,
    "desc": "In OpenSSH before 10.3, a file downloaded by scp may be installed setuid or setgid, an outcome contrary to some users' expectations, if the download i",
@@ -418,8 +427,8 @@
   },
   {
    "cve": "CVE-2023-51767",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "high",
    "score": 7.0,
    "desc": "OpenSSH through 10.0, when common types of DRAM are used, might allow row hammer attacks (for authentication bypass) because the integer value of auth",
@@ -427,8 +436,8 @@
   },
   {
    "cve": "CVE-2007-2768",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "medium",
    "score": 4.3,
    "desc": "OpenSSH, when using OPIE (One-Time Passwords in Everything) for PAM, allows remote attackers to determine the existence of certain user accounts, whic",
@@ -436,8 +445,8 @@
   },
   {
    "cve": "CVE-2026-35414",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "medium",
    "score": 4.2,
    "desc": "OpenSSH before 10.3 mishandles the authorized_keys principals option in uncommon scenarios involving a principals list in conjunction with a Certifica",
@@ -445,8 +454,8 @@
   },
   {
    "cve": "CVE-2026-35387",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "low",
    "score": 3.1,
    "desc": "OpenSSH before 10.3 can use unintended ECDSA algorithms. Listing of any ECDSA algorithm in PubkeyAcceptedAlgorithms or HostbasedAcceptedAlgorithms is ",
@@ -454,8 +463,8 @@
   },
   {
    "cve": "CVE-2026-35388",
-   "hosts": 12,
-   "events": 6535,
+   "hosts": 25,
+   "events": 7992,
    "severity": "low",
    "score": 2.5,
    "desc": "OpenSSH before 10.3 omits connection multiplexing confirmation for proxy-mode multiplexing sessions.",
@@ -463,8 +472,8 @@
   },
   {
    "cve": "CVE-2023-38408",
-   "hosts": 10,
-   "events": 6398,
+   "hosts": 18,
+   "events": 7734,
    "severity": "critical",
    "score": 9.8,
    "desc": "The PKCS#11 feature in ssh-agent in OpenSSH before 9.3p2 has an insufficiently trustworthy search path, leading to remote code execution if an agent i",
@@ -472,8 +481,8 @@
   },
   {
    "cve": "CVE-2023-51385",
-   "hosts": 10,
-   "events": 6398,
+   "hosts": 18,
+   "events": 7734,
    "severity": "medium",
    "score": 6.5,
    "desc": "In ssh in OpenSSH before 9.6, OS command injection might occur if a user name or host name has shell metacharacters, and this name is referenced by an",
@@ -481,8 +490,8 @@
   },
   {
    "cve": "CVE-2023-48795",
-   "hosts": 10,
-   "events": 6398,
+   "hosts": 18,
+   "events": 7734,
    "severity": "medium",
    "score": 5.9,
    "desc": "The SSH transport protocol with certain OpenSSH extensions, found in OpenSSH before 9.6 and other products, allows remote attackers to bypass integrit",
@@ -490,8 +499,8 @@
   },
   {
    "cve": "CVE-2016-20012",
-   "hosts": 10,
-   "events": 6398,
+   "hosts": 18,
+   "events": 7734,
    "severity": "medium",
    "score": 5.3,
    "desc": "OpenSSH through 8.7 allows remote attackers, who have a suspicion that a certain combination of username and public key is known to an SSH server, to ",
@@ -499,8 +508,8 @@
   },
   {
    "cve": "CVE-2021-36368",
-   "hosts": 10,
-   "events": 6398,
+   "hosts": 18,
+   "events": 7734,
    "severity": "low",
    "score": 3.7,
    "desc": "An issue was discovered in OpenSSH before 8.9. If a client is using public-key authentication with agent forwarding but without -oLogLevel=verbose, an",
@@ -508,8 +517,8 @@
   },
   {
    "cve": "CVE-2020-15778",
-   "hosts": 9,
-   "events": 6310,
+   "hosts": 17,
+   "events": 7290,
    "severity": "high",
    "score": 7.4,
    "desc": "scp in OpenSSH through 8.3p1 allows command injection in the scp.c toremote function, as demonstrated by backtick characters in the destination argume",
@@ -517,8 +526,8 @@
   },
   {
    "cve": "CVE-2017-15906",
-   "hosts": 7,
-   "events": 6300,
+   "hosts": 12,
+   "events": 7274,
    "severity": "medium",
    "score": 5.3,
    "desc": "The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers t",
@@ -526,12 +535,331 @@
   },
   {
    "cve": "CVE-2018-15473",
-   "hosts": 7,
-   "events": 6300,
+   "hosts": 12,
+   "events": 7274,
    "severity": "medium",
    "score": 5.3,
    "desc": "OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet",
    "cwe": "CWE-362"
   }
- ]
+ ],
+ "malware": {
+  "captured_samples": 33,
+  "sample_counts": {
+   "total": 33,
+   "classified": 2,
+   "unclassified": 31
+  },
+  "hassh_count": 11,
+  "families": [
+   {
+    "family": "Mirai",
+    "samples": 7,
+    "aliases": [
+     "Katana"
+    ],
+    "actors": [],
+    "description": "Mirai is one of the first significant botnets targeting exposed networking devices running Linux. Found in August 2016 by MalwareMustDie, its name means \"future\" in Japanese. Nowadays it targets a wide range of networked embedded devices such as IP cameras, home routers (many vendors involved), and ",
+    "malpedia_url": "https://malpedia.caad.fkie.fraunhofer.de/details/elf.mirai",
+    "behavior": [
+     "antivm",
+     "defense_evasion",
+     "discovery",
+     "linux"
+    ],
+    "sandbox_score": "7",
+    "sandbox_url": "https://tria.ge/reports/260717-a8k5facs8v/",
+    "vendors": [
+     "ReversingLabs:Win32.Trojan.Malgent",
+     "Kaspersky:Malware",
+     "FileScan-IO:MALICIOUS",
+     "YOROI_YOMI:Legit File"
+    ],
+    "sample_sha256": "e1568cae97252fa9350ef2d2d381975c8bd29e11f126fb06bd64e92a73d7beb9"
+   },
+   {
+    "family": "Prometei",
+    "samples": 1,
+    "aliases": [],
+    "actors": [],
+    "description": "",
+    "malpedia_url": "https://malpedia.caad.fkie.fraunhofer.de/details/elf.prometei",
+    "behavior": [],
+    "sandbox_score": "",
+    "sandbox_url": "",
+    "vendors": [
+     "Kaspersky:NotCategorized",
+     "FileScan-IO:NO_THREAT",
+     "YOROI_YOMI:Legit File"
+    ],
+    "sample_sha256": "0dc95fb4077cce0bff19aa1a77109d059dff6503bbf6c1b0dd2f41fc0a4c88e7"
+   }
+  ],
+  "top_commands": [
+   {
+    "key": "enable",
+    "count": 578
+   },
+   {
+    "key": "linuxshell",
+    "count": 498
+   },
+   {
+    "key": "system",
+    "count": 462
+   },
+   {
+    "key": "shell",
+    "count": 370
+   },
+   {
+    "key": "sh",
+    "count": 159
+   },
+   {
+    "key": "/bin/busybox UNSTABLE",
+    "count": 107
+   },
+   {
+    "key": "echo",
+    "count": 77
+   },
+   {
+    "key": "/bin/busybox",
+    "count": 35
+   },
+   {
+    "key": "for pid in /proc/[0-9]*; do pid_num=${pid##*/}; if [ -r \"$pid/maps\" ]; then while IFS= read -r line; do case \"$line\" in *'(deleted)'*) kill -9 \"$pid_num\"; break;; esac; done < \"$pid/maps\"; fi; done",
+    "count": 35
+   },
+   {
+    "key": "/bin/busybox ANDROMEDA",
+    "count": 7
+   },
+   {
+    "key": "/bin/busybox cat /bin/busybox || while read i; do echo $i; done < /bin/busybox",
+    "count": 7
+   },
+   {
+    "key": "/bin/busybox cp /bin/busybox .ffaaxx; >.ffaaxx; /bin/busybox chmod 777 .ffaaxx; /bin/busybox ANDROMEDA",
+    "count": 7
+   }
+  ],
+  "top_hashes": [
+   {
+    "sha256": "e1568cae97252fa9350ef2d2d381975c8bd29e11f126fb06bd64e92a73d7beb9",
+    "count": 7,
+    "family": "Mirai",
+    "known": true,
+    "vendors": 4,
+    "size": 0
+   },
+   {
+    "sha256": "1b160c2a72b76aa2b1e8cf1e2a2bca6dd2bd9d2de5df20f94577c138d6cc85b9",
+    "count": 102,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 639
+   },
+   {
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "count": 77,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 0
+   },
+   {
+    "sha256": "ac2ee9d0909ef2b557cae14e886d443c249423e82800da1a22c6da12964aa433",
+    "count": 46,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 486
+   },
+   {
+    "sha256": "6f9b8d7976df774ab85a42a9070e04333b2e54d1d641937b0d4b7ad5fb87386c",
+    "count": 36,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 429
+   },
+   {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "count": 32,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 307
+   },
+   {
+    "sha256": "12b0f3e5d424143e37058730683814564699b29b048402950833e931bc24afe7",
+    "count": 31,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 366
+   },
+   {
+    "sha256": "b698833f5769c9648e239aa863731179032490f87710eb3fceafba6f51989264",
+    "count": 31,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 565
+   },
+   {
+    "sha256": "6d4fb1786e332a10b8626f679868231de782da927fe8bac47db03d1d59dbf797",
+    "count": 22,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 541
+   },
+   {
+    "sha256": "9dc0f0fe6a402818d0335f679d265004acff9194dd2b7e846fa757fbc4b48ddc",
+    "count": 16,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 130
+   },
+   {
+    "sha256": "013bb9c113a0692503a66bc75cbcfe3cdbf7a52e46ace93e689809addf5e6dce",
+    "count": 7,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 2338
+   },
+   {
+    "sha256": "daac797ec9e0357e65645fd48aad696c2fc54e4ff6f137f2c924ca4d15304e79",
+    "count": 7,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 15761
+   }
+  ],
+  "distribution_hosts": [
+   {
+    "host": "205.237.110.232",
+    "count": 14,
+    "threat_type": "payload_delivery",
+    "malware": "Mirai",
+    "confidence": 75,
+    "first_seen": "2026-07-16",
+    "threatfox_id": "1851438",
+    "tags": [
+     "andromeda",
+     "cowrie",
+     "elf",
+     "honeypot",
+     "Mirai",
+     "ssh"
+    ],
+    "reference": "https://sigsec.tech",
+    "country": "Germany",
+    "city": "Frankfurt am Main",
+    "isp": "Interkvm Host SRL",
+    "asn": "AS25198 ZetServers",
+    "hosting": false,
+    "proxy": false
+   }
+  ],
+  "pivot_targets": [
+   {
+    "key": "0.0.0.0",
+    "count": 12
+   }
+  ],
+  "filenames": [
+   {
+    "key": "/boot/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/dev/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/dev/shm/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/etc/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/home/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/mnt/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/tmp/.fxcat",
+    "count": 7
+   },
+   {
+    "key": "/usr/.fxcat",
+    "count": 7
+   }
+  ],
+  "ssh_clients": [
+   {
+    "key": "SSH-2.0-AsyncSSH_2.1.0",
+    "count": 33
+   },
+   {
+    "key": "SSH-2.0-Go",
+    "count": 19
+   },
+   {
+    "key": "SSH-2.0-PuTTY_Release_0.84",
+    "count": 11
+   },
+   {
+    "key": "SSH-2.0-russh_0.45.0",
+    "count": 3
+   },
+   {
+    "key": "SSH-2.0-OpenSSH_for_Windows_10.0 Win32-OpenSSH-GitHub",
+    "count": 2
+   },
+   {
+    "key": "GET / HTTP/1.1",
+    "count": 1
+   },
+   {
+    "key": "SSH-2.0-PUTTY",
+    "count": 1
+   },
+   {
+    "key": "SSH-2.0-ZGrab ZGrab SSH Survey",
+    "count": 1
+   }
+  ],
+  "behavior": [
+   {
+    "key": "antivm",
+    "count": 7
+   },
+   {
+    "key": "defense_evasion",
+    "count": 7
+   },
+   {
+    "key": "discovery",
+    "count": 7
+   },
+   {
+    "key": "linux",
+    "count": 7
+   }
+  ]
+ }
 }
