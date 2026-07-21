@@ -100,7 +100,7 @@ export function TopCves({ cves }: { cves: Cve[] }) {
                   />
                   {/* body */}
                   <span className="relative flex min-w-0 flex-1 flex-col gap-1">
-                    <span className="flex items-center justify-between gap-3">
+                    <span className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                       <span className="flex min-w-0 flex-wrap items-center gap-2">
                         <span className="font-mono text-sm font-semibold text-foreground">
                           {c.cve}
