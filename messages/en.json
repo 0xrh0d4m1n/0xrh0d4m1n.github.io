@@ -125,6 +125,12 @@
       "unclassifiedTag": "unclassified",
       "vendorsN": "{n} vendors",
       "payloadsNote": "Most captures are recon scripts, probes and empty files — not malware. Only classified samples appear on VirusTotal / MalwareBazaar.",
+      "c2": {
+        "exposedSurface": "Exposed Surface",
+        "openPorts": "Open Ports",
+        "exposedCves": "Exposed CVEs",
+        "noCves": "No known CVEs exposed"
+      },
       "kc": {
         "title": "Attack Kill Chain",
         "access": "Brute-Force Login",

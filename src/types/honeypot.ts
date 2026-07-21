@@ -104,6 +104,10 @@ export interface C2Host {
   asn?: string;
   hosting?: boolean;
   proxy?: boolean;
+  /** open ports on the host (Shodan InternetDB) */
+  ports?: number[];
+  /** exposed CVEs on the host (Shodan InternetDB) */
+  vulns?: string[];
 }
 
 export interface MalwareHash {

@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-21 06:33 UTC",
+ "generated_at": "2026-07-21 06:42 UTC",
  "window_days": 30,
  "totals": {
-  "events": 71726,
+  "events": 71904,
   "unique_ips": 998,
   "countries": 63,
   "asns": 258,
@@ -11,7 +11,7 @@
  "top_ips": [
   {
    "ip": "202.169.44.105",
-   "events": 4374,
+   "events": 4443,
    "score": 100,
    "country": "Indonesia",
    "actor": "malicious",
@@ -35,7 +35,7 @@
   },
   {
    "ip": "95.135.49.204",
-   "events": 3319,
+   "events": 3339,
    "score": 21,
    "country": "The Netherlands",
    "actor": "unknown",
@@ -43,7 +43,7 @@
   },
   {
    "ip": "107.6.151.170",
-   "events": 2778,
+   "events": 2800,
    "score": 100,
    "country": "The Netherlands",
    "actor": "malicious",
@@ -59,7 +59,7 @@
   },
   {
    "ip": "115.190.164.89",
-   "events": 2346,
+   "events": 2354,
    "score": 49,
    "country": "China",
    "actor": "unknown",
@@ -133,19 +133,19 @@
  "top_countries": [
   {
    "key": "The Netherlands",
-   "count": 24106
+   "count": 24159
   },
   {
    "key": "United States",
-   "count": 20830
+   "count": 20859
   },
   {
    "key": "China",
-   "count": 5321
+   "count": 5329
   },
   {
    "key": "Indonesia",
-   "count": 4480
+   "count": 4549
   },
   {
    "key": "Thailand",
@@ -191,7 +191,7 @@
   },
   {
    "key": "BIZNET NETWORKS",
-   "count": 4374
+   "count": 4443
   },
   {
    "key": "Techoff Srv Limited",
@@ -199,33 +199,33 @@
   },
   {
    "key": "RoyaleHosting BV",
-   "count": 3319
+   "count": 3339
   },
   {
    "key": "Internap Holding LLC",
-   "count": 2797
+   "count": 2819
   },
   {
    "key": "Beijing Volcano Engine Technology Co., Ltd.",
-   "count": 2346
+   "count": 2354
   },
   {
    "key": "Unmanaged Ltd",
-   "count": 2239
+   "count": 2259
   }
  ],
  "services": [
   {
    "key": "ssh",
-   "count": 29308
+   "count": 29328
   },
   {
    "key": "telnet",
-   "count": 26462
+   "count": 26565
   },
   {
    "key": "rdp",
-   "count": 9049
+   "count": 9093
   },
   {
    "key": "http",
@@ -245,7 +245,7 @@
   },
   {
    "key": "vnc",
-   "count": 657
+   "count": 668
   },
   {
    "key": "sip",
@@ -259,11 +259,11 @@
  "actors": [
   {
    "key": "malicious",
-   "count": 55216
+   "count": 55356
   },
   {
    "key": "unknown",
-   "count": 13500
+   "count": 13538
   },
   {
    "key": "cloud",
@@ -277,15 +277,15 @@
  "top_usernames": [
   {
    "key": "root",
-   "count": 10230
+   "count": 10238
   },
   {
    "key": "hello",
-   "count": 3761
+   "count": 3783
   },
   {
    "key": "admin",
-   "count": 2843
+   "count": 2845
   },
   {
    "key": "user",
@@ -327,7 +327,7 @@
  "top_passwords": [
   {
    "key": "admin",
-   "count": 1123
+   "count": 1126
   },
   {
    "key": "123456",
@@ -347,7 +347,7 @@
   },
   {
    "key": "12345",
-   "count": 492
+   "count": 494
   },
   {
    "key": "root",
@@ -389,20 +389,20 @@
   },
   {
    "date": "2026-07-21",
-   "count": 12575
+   "count": 12753
   }
  ],
  "mitre": {
-  "T1110": 68641,
-  "T1021.004": 29308,
-  "T1021.001": 9049,
+  "T1110": 68819,
+  "T1021.004": 29328,
+  "T1021.001": 9093,
   "T1595": 2254,
   "T1190": 2999,
-  "T1059": 2551,
-  "T1021.005": 657,
-  "T1059.004": 1720,
-  "T1082": 1720,
-  "T1105": 478,
+  "T1059": 2568,
+  "T1021.005": 668,
+  "T1059.004": 1737,
+  "T1082": 1737,
+  "T1105": 483,
   "T1090": 14,
   "T1496": 8
  },
@@ -598,27 +598,27 @@
   "top_commands": [
    {
     "key": "enable",
-    "count": 624
+    "count": 636
    },
    {
     "key": "linuxshell",
-    "count": 544
+    "count": 552
    },
    {
     "key": "system",
-    "count": 510
+    "count": 514
    },
    {
     "key": "shell",
-    "count": 408
+    "count": 410
    },
    {
     "key": "sh",
-    "count": 176
+    "count": 177
    },
    {
     "key": "/bin/busybox UNSTABLE",
-    "count": 112
+    "count": 113
    },
    {
     "key": "echo",
@@ -656,7 +656,7 @@
    },
    {
     "sha256": "1b160c2a72b76aa2b1e8cf1e2a2bca6dd2bd9d2de5df20f94577c138d6cc85b9",
-    "count": 106,
+    "count": 107,
     "family": "",
     "known": false,
     "vendors": 0,
@@ -687,20 +687,20 @@
     "size": 565
    },
    {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "count": 38,
+    "family": "",
+    "known": false,
+    "vendors": 0,
+    "size": 307
+   },
+   {
     "sha256": "6f9b8d7976df774ab85a42a9070e04333b2e54d1d641937b0d4b7ad5fb87386c",
     "count": 37,
     "family": "",
     "known": false,
     "vendors": 0,
     "size": 429
-   },
-   {
-    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "count": 36,
-    "family": "",
-    "known": false,
-    "vendors": 0,
-    "size": 307
    },
    {
     "sha256": "12b0f3e5d424143e37058730683814564699b29b048402950833e931bc24afe7",
@@ -720,7 +720,7 @@
    },
    {
     "sha256": "9dc0f0fe6a402818d0335f679d265004acff9194dd2b7e846fa757fbc4b48ddc",
-    "count": 16,
+    "count": 18,
     "family": "",
     "known": false,
     "vendors": 0,
@@ -766,7 +766,12 @@
     "isp": "Interkvm Host SRL",
     "asn": "AS25198 ZetServers",
     "hosting": false,
-    "proxy": false
+    "proxy": false,
+    "ports": [
+     21,
+     443,
+     12345
+    ]
    }
   ],
   "pivot_targets": [
@@ -816,7 +821,7 @@
    },
    {
     "key": "SSH-2.0-Go",
-    "count": 23
+    "count": 25
    },
    {
     "key": "SSH-2.0-PuTTY_Release_0.84",

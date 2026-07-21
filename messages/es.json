@@ -125,6 +125,12 @@
       "unclassifiedTag": "sin clasificar",
       "vendorsN": "{n} proveedores",
       "payloadsNote": "La mayoría de las capturas son scripts de recon, sondas y archivos vacíos — no malware. Solo las muestras clasificadas aparecen en VirusTotal / MalwareBazaar.",
+      "c2": {
+        "exposedSurface": "Superficie Expuesta",
+        "openPorts": "Puertos Abiertos",
+        "exposedCves": "CVEs Expuestas",
+        "noCves": "Ninguna CVE conocida expuesta"
+      },
       "kc": {
         "title": "Cadena de Ataque (Kill Chain)",
         "access": "Login por Fuerza Bruta",
