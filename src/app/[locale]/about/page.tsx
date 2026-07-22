@@ -77,7 +77,7 @@ const EXPERIENCE: ExperienceItem[] = [
     company: "Nexusguard",
     logo: "https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380655/Website/Logos/nexusguard_anm0er.jpg",
     location: "Singapore — Remote",
-    dates: "2024 — Present",
+    dates: "2024 — 2025",
     bullets: [
       "Monitor and analyze security events using SIEM tools to detect, investigate, and respond to threats.",
       "Collaborate with incident response teams to mitigate risks and contain security incidents.",
@@ -91,7 +91,7 @@ const EXPERIENCE: ExperienceItem[] = [
     company: "HackerOne",
     logo: "https://res.cloudinary.com/a88188f90768a608fc75048188ef19e7/image/upload/q_auto/f_auto/v1776380656/Website/Logos/hackerone_tbhrhc.jpg",
     location: "San Francisco, California, United States — Remote",
-    dates: "2023 — Present",
+    dates: "2023 — 2024",
     bullets: [
       "Successfully identified and reported a significant security vulnerability through HackerOne's Bug Bounty Program.",
       "Utilized advanced security testing platforms to perform comprehensive vulnerability assessments.",
