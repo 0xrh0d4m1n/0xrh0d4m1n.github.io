@@ -33,10 +33,27 @@ AGENTS.md
 .ai/
 tasks/
 
-# Env
+# Env — .env.production é intencional (só NEXT_PUBLIC, URL pública)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.production
+
+# Secrets / chaves — rede de segurança para `git add .` (NUNCA versionar)
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+*.kdbx
+*.keystore
+id_rsa*
+id_ed25519*
+*_rsa
+*.ovpn
+secrets.*
+service-account*.json
+credentials*.json
 
 # Playwright
 tests/.output/
