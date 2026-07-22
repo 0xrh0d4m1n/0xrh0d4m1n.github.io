@@ -55,6 +55,8 @@ export interface MalwareIntel {
 export interface MalwareFamily {
   family: string;
   samples: number;
+  /** last time a sample of this family was seen (UTC "YYYY-MM-DDTHH:mm"), for recency */
+  last_seen?: string;
   /** alternative names (Malpedia alt_names) */
   aliases: string[];
   /** attributed threat actors/groups (Malpedia) */
@@ -85,6 +87,8 @@ export interface SampleCounts {
 export interface C2Host {
   host: string;
   count: number;
+  /** last time this host was contacted (UTC "YYYY-MM-DDTHH:mm"), for recency */
+  last_seen?: string;
   /** ThreatFox threat type, e.g. "payload_delivery" */
   threat_type?: string;
   /** associated malware family, e.g. "Mirai" */

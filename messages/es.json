@@ -102,9 +102,11 @@
       "kpi": {
         "samples": "Muestras Capturadas",
         "families": "Familias de Malware",
-        "c2": "Hosts C2 / Distribución",
+        "c2": "Hosts de Distribución",
         "hassh": "Huellas de Cliente"
       },
+      "lastSeen": "visto {date}",
+      "pager": { "more": "Ver todos ({n})", "less": "Ver menos" },
       "families": "Familias de Malware Identificadas",
       "familiesEmpty": "Aún no se han identificado familias de malware en esta ventana.",
       "aka": "alias",
@@ -117,7 +119,7 @@
       "noCommands": "sin comandos capturados",
       "frameworks": "Frameworks de Cliente",
       "payloads": "Payloads Capturados",
-      "infra": "Infraestructura C2 / Distribución",
+      "infra": "Infraestructura de Payload / Distribución",
       "pivots": "objetivos de pivote",
       "filenames": "Archivos Soltados",
       "classified": "{n} clasificadas",

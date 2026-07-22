@@ -102,9 +102,11 @@
       "kpi": {
         "samples": "Captured Samples",
         "families": "Malware Families",
-        "c2": "C2 / Distribution Hosts",
+        "c2": "Distribution Hosts",
         "hassh": "Client Fingerprints"
       },
+      "lastSeen": "last seen {date}",
+      "pager": { "more": "Show all ({n})", "less": "Show less" },
       "families": "Identified Malware Families",
       "familiesEmpty": "No malware families identified in this window yet.",
       "aka": "aka",
@@ -117,7 +119,7 @@
       "noCommands": "no commands captured",
       "frameworks": "Client Frameworks",
       "payloads": "Captured Payloads",
-      "infra": "C2 / Distribution Infrastructure",
+      "infra": "Payload / Distribution Infrastructure",
       "pivots": "pivot targets",
       "filenames": "Dropped Filenames",
       "classified": "{n} classified",

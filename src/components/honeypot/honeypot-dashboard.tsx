@@ -26,6 +26,7 @@ import {
   YAxis,
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { usePaged, Pager } from "./pager";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
@@ -290,6 +291,7 @@ export function HoneypotDashboard() {
   const locale = useLocale();
   const [data, setData] = useState<HoneypotStats | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const topIps = usePaged(data?.top_ips ?? [], 8);
 
   useEffect(() => {
     let alive = true;
@@ -487,10 +489,10 @@ export function HoneypotDashboard() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {data.top_ips.map((ip: TopIp, i) => (
+                    {topIps.slice.map((ip: TopIp, i) => (
                       <TableRow key={ip.ip}>
                         <TableCell className="text-right font-mono text-xs text-muted-foreground">
-                          {i + 1}
+                          {topIps.page * 8 + i + 1}
                         </TableCell>
                         <TableCell className="font-mono text-sm">
                           {ip.ip}
@@ -528,6 +530,7 @@ export function HoneypotDashboard() {
                   </TableBody>
                 </Table>
               </div>
+              <Pager page={topIps.page} pages={topIps.pages} setPage={topIps.setPage} />
             </CardContent>
           </Card>
 
