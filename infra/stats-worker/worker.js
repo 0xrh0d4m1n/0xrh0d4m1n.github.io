@@ -2,7 +2,7 @@
  * Honeypot Network — stats edge API (push model).
  *
  * Routes:
- *   POST /ingest  — Mirage pushes the latest aggregated snapshot.
+ *   POST /ingest  — the analysis host pushes the latest aggregated snapshot.
  *                   Requires  Authorization: Bearer <INGEST_TOKEN>.
  *                   Stores the body in KV under "latest".
  *   GET  /stats   — public, read-only. Serves the latest snapshot from KV,
@@ -12,7 +12,7 @@
  *   HONEYPOT_STATS  — KV namespace
  *   INGEST_TOKEN    — secret (Bearer token for /ingest)
  *
- * The Mirage host is never reached by public traffic — it only pushes
+ * The the analysis host host is never reached by public traffic — it only pushes
  * outbound to /ingest. /stats is served entirely from KV + the CF edge cache.
  */
 

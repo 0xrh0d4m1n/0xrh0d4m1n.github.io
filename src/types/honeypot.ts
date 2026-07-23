@@ -1,6 +1,6 @@
 /**
  * Shape of the aggregated honeypot telemetry snapshot.
- * Produced by `export-stats.py` on the Mirage analysis host and served as a
+ * Produced by `export-stats.py` on the analysis host and served as a
  * static JSON (mock now; Cloudflare edge cache later). Contains only
  * AGGREGATED data — never the honeypot's own IP/hostname or raw secrets.
  */

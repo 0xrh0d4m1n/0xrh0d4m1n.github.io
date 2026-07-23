@@ -1,12 +1,12 @@
 # Honeypot Network — stats edge API
 
 Cloudflare Worker that serves the honeypot dashboard data (push model).
-The Mirage analysis host pushes an aggregated snapshot hourly; the Worker
-serves it publicly from KV with a 1-hour edge cache. **Mirage is never
+The analysis host pushes an aggregated snapshot hourly; the Worker
+serves it publicly from KV with a 1-hour edge cache. **the analysis host is never
 reached by public traffic.**
 
 ```
-Mirage  ──POST /ingest (Bearer secret)──►  Worker ──put──►  KV
+the analysis host  ──POST /ingest (Bearer secret)──►  Worker ──put──►  KV
                                               ▲
 Browser ──GET /stats──────────────────────────┘  (cached 1h at the edge)
 ```
@@ -26,7 +26,7 @@ wrangler login
 wrangler kv namespace create HONEYPOT_STATS
 
 # 2. generate a strong ingest token and store it as a Worker secret
-#    (keep a copy — you'll paste the SAME value on Mirage below)
+#    (keep a copy — you'll paste the SAME value on the analysis host below)
 openssl rand -hex 32          # copy the output
 wrangler secret put INGEST_TOKEN   # paste it when prompted
 
@@ -45,13 +45,13 @@ Deploy prints the public URL, e.g. `https://honeypot-stats.<you>.workers.dev`.
 3. **Settings → Variables and Secrets → Add → Secret**: name `INGEST_TOKEN`,
    value = a strong random token (`openssl rand -hex 32`). Keep a copy.
 
-## Wire up Mirage (push side)
+## Wire up the analysis host (push side)
 
-On Mirage, in the enrich toolset, create `.stats.env` (owner `claudio`) with
+On the analysis host, in the enrich toolset, create `.stats.env` with
 the **same** token and the Worker's `/ingest` URL:
 
 ```bash
-cd ~/projects/elk-lab/enrich
+cd <enrich-dir>
 cat > .stats.env <<'EOF'
 STATS_INGEST_URL=https://honeypot-stats.<you>.workers.dev/ingest
 STATS_INGEST_TOKEN=<the-same-token>
@@ -83,7 +83,7 @@ Then redeploy the site. Until then it falls back to the bundled mock at
 
 ## Security properties
 
-- Mirage has **zero inbound exposure** — outbound push only.
+- the analysis host has **zero inbound exposure** — outbound push only.
 - `/ingest` is gated by a Bearer secret (constant-time compared); body is
   size-limited and JSON-validated before storage.
 - `/stats` is read-only, public, edge-cached 1h — CF absorbs all read
