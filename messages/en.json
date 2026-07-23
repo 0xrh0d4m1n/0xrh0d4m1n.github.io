@@ -41,7 +41,7 @@
   },
   "writeups": {
     "title": "Writeups",
-    "subtitle": "Chronicles of my Cyber Battles \u2014 sortable & searchable archive of CTF and lab writeups.",
+    "subtitle": "Chronicles of my Cyber Battles — sortable & searchable archive of CTF and lab writeups.",
     "backToWriteups": "Back to Writeups",
     "searchPlaceholder": "Search by name, source, category, difficulty, or tag...",
     "unknownDifficulty": "Unknown",
@@ -83,7 +83,9 @@
       "usernames": "Most-Tried Usernames",
       "passwords": "Most-Tried Passwords",
       "mitre": "MITRE ATT&CK — Detected Techniques",
-      "cves": "Top Exposed CVEs"
+      "cves": "Top Exposed CVEs",
+      "heatmap": "24h intensity",
+      "honeypots": "Honeypot Performance"
     },
     "mitre": {
       "summary": "{techniques} techniques · {tactics} tactics",
@@ -106,7 +108,10 @@
         "hassh": "Client Fingerprints"
       },
       "lastSeen": "last seen {date}",
-      "pager": { "more": "Show all ({n})", "less": "Show less" },
+      "pager": {
+        "more": "Show all ({n})",
+        "less": "Show less"
+      },
       "families": "Identified Malware Families",
       "familiesEmpty": "No malware families identified in this window yet.",
       "aka": "aka",
@@ -149,13 +154,20 @@
     "table": {
       "ip": "IP Address",
       "score": "Score",
+      "ds": "DS Fusion Engine",
       "actor": "Actor",
       "country": "Country",
+      "asn": "Network (ASN)",
       "service": "Service",
       "events": "Events",
       "reports": "Reports"
     },
-    "footnote": "Aggregated from a low- and medium-interaction honeypot sensor grid. Data is anonymized and updated periodically."
+    "footnote": "Aggregated from a low- and medium-interaction honeypot sensor grid. Data is anonymized and updated periodically.",
+    "window": {
+      "h1": "Last 1h",
+      "h12": "Last 12h",
+      "h24": "Last 24h"
+    }
   },
   "about": {
     "title": "About",
@@ -201,7 +213,7 @@
   "translator": {
     "detected": "{locale} language detected!",
     "translating": "Translating content...",
-    "translationFailed": "Translation unavailable \u2014 showing original",
+    "translationFailed": "Translation unavailable — showing original",
     "poweredBy": "Translation by Lingva"
   }
 }

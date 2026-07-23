@@ -102,14 +102,14 @@ export function MitreMatrix({ mitre }: { mitre: Record<string, number> }) {
         </span>
       </CardHeader>
       <CardContent>
-        <div className="overflow-x-auto pb-1">
-          <div className="flex gap-2">
+        <div className="pb-1">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-8">
             {TACTICS.map((tac) => {
               const hits = tac.techniques.filter((te) =>
                 detectedIds.has(te.id),
               ).length;
               return (
-                <div key={tac.name} className="flex min-w-40 flex-1 flex-col gap-1.5">
+                <div key={tac.name} className="flex min-w-0 flex-col gap-1.5">
                   <div className="flex items-center justify-between gap-1 border-b border-border pb-1.5">
                     <span className="text-[11px] font-semibold uppercase leading-tight tracking-wide text-foreground/80">
                       {tac.name}

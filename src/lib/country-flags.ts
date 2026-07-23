@@ -87,7 +87,11 @@ const NAME_TO_ISO2: Record<string, string> = {
 };
 
 export function iso2ForCountry(name: string): string | null {
-  return NAME_TO_ISO2[name.trim().toLowerCase()] ?? null;
+  const key = name.trim().toLowerCase();
+  // A bare 2-letter ISO-3166 alpha-2 code (e.g. "bg") is already usable and
+  // more reliable than the name map — accept it directly.
+  if (/^[a-z]{2}$/.test(key)) return key;
+  return NAME_TO_ISO2[key] ?? null;
 }
 
 export function flagUrl(name: string, size: 24 | 48 = 24): string | null {

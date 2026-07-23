@@ -22,6 +22,59 @@ export interface HoneypotStats {
   /** Medium-interaction (Cowrie) malware & session intelligence. Optional:
    *  older snapshots predate it. */
   malware?: MalwareIntel;
+
+  /* ── live-grid extensions (optional; older snapshots predate them) ── */
+  /** live attack-rate counters (last 1m / 1h / 24h) */
+  counters?: Counters;
+  /** attack-volume series at 3 granularities (raw T-Pot, full volume) */
+  activity?: Activity;
+  /** 24h hourly intensity, for the heatmap stripe */
+  heatmap_hourly?: ActivityPoint[];
+  /** real honeypots (T-Pot sensors) event counts, for the performance chart */
+  honeypots?: HoneypotCount[];
+  /** per-window volume slices, driven by the global time-window selector.
+   *  Volume-based sections read from here; malware/CVEs stay global. */
+  windows?: Record<Win, WindowSlice>;
+}
+
+/** The global time-window selector's three positions. */
+export type Win = "h1" | "h12" | "h24";
+
+/**
+ * A per-window slice of the volume-based sections. Every field here responds
+ * to the global window selector; sections absent from this type (malware,
+ * CVEs, heatmap, counters) are window-independent and read from the root.
+ */
+export interface WindowSlice {
+  totals: HoneypotTotals;
+  top_ips: TopIp[];
+  top_countries: Count[];
+  top_asns: Count[];
+  services: Count[];
+  actors: Count[];
+  top_usernames: Count[];
+  top_passwords: Count[];
+  mitre: Record<string, number>;
+  honeypots?: HoneypotCount[];
+}
+
+export interface Counters {
+  m1: number;
+  h1: number;
+  h24: number;
+}
+export interface ActivityPoint {
+  t: string;
+  count: number;
+}
+export interface Activity {
+  h1: ActivityPoint[];
+  h12: ActivityPoint[];
+  h24: ActivityPoint[];
+}
+export interface HoneypotCount {
+  name: string;
+  count: number;
 }
 
 /**
@@ -162,6 +215,14 @@ export interface TopIp {
   country: string;
   actor: string;
   service: string;
+  /** origin network / ASN owner (ip-api), e.g. "Dm Auto Eood" */
+  asn?: string;
+  /** ISO-3166 alpha-2 country code, for the flag */
+  cc?: string;
+  /** DS Fusion Engine confidence 0–100 (Dempster-Shafer belief) */
+  confidence?: number;
+  /** DS Fusion Engine verdict (malicious/suspicious/…), drives the meter color */
+  verdict?: string;
 }
 
 export interface TimelinePoint {

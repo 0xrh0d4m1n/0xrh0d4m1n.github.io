@@ -20,6 +20,10 @@ import {
   Cell,
   Pie,
   PieChart,
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
   ResponsiveContainer,
   Tooltip as RTooltip,
   XAxis,
@@ -43,17 +47,29 @@ import { ProfileBadges } from "@/components/honeypot/profile-badges";
 import { MitreMatrix } from "@/components/honeypot/mitre-matrix";
 import { TopCves } from "@/components/honeypot/top-cves";
 import { MalwareIntel } from "@/components/honeypot/malware-intel";
-import type { Count, HoneypotStats, TopIp } from "@/types/honeypot";
+import type {
+  ActivityPoint,
+  Count,
+  HoneypotStats,
+  TopIp,
+  Win,
+  WindowSlice,
+} from "@/types/honeypot";
 
 const STATS_URL =
   process.env.NEXT_PUBLIC_HONEYPOT_STATS_URL ?? "/data/honeypot-stats.json";
 
 /* Actor colors — GitHub-ish palette that reads on both light and dark. */
+/* Actor palette follows a TLP-ish scheme:
+ * malicious=red · suspicious=yellow · cloud/research (not malicious)=green ·
+ * anonymity (tor/anonymizer)=purple · unknown=gray. */
 const ACTOR_COLOR: Record<string, string> = {
   malicious: "#f85149",
-  tor: "#bc8cff",
+  suspicious: "#d29922",
+  cloud: "#3fb950",
   research: "#3fb950",
-  cloud: "#58a6ff",
+  tor: "#bc8cff",
+  anonymizer: "#bc8cff",
   unknown: "#8b949e",
 };
 
@@ -98,25 +114,6 @@ function Flag({ name }: { name: string }) {
   );
 }
 
-function ScoreBadge({ score }: { score: number }) {
-  const tone =
-    score >= 75
-      ? "border-[#f85149]/40 bg-[#f85149]/10 text-[#f85149]"
-      : score >= 40
-        ? "border-[#d29922]/40 bg-[#d29922]/10 text-[#d29922]"
-        : "border-border bg-muted/40 text-muted-foreground";
-  return (
-    <span
-      className={cn(
-        "inline-flex min-w-9 justify-center rounded-md border px-1.5 py-0.5 font-mono text-xs font-semibold tabular-nums",
-        tone,
-      )}
-    >
-      {score}
-    </span>
-  );
-}
-
 function ActorChip({ actor }: { actor: string }) {
   const color = actorColor(actor);
   return (
@@ -127,6 +124,47 @@ function ActorChip({ actor }: { actor: string }) {
       />
       <span className="capitalize text-foreground/80">{actor}</span>
     </span>
+  );
+}
+
+/* ── DS Fusion Engine confidence meter ────────────────────────────── */
+/* Color-graded belief bar — hue = TLP verdict, length = fused confidence.
+ * The public label is "DS Fusion Engine"; the method stays unnamed. */
+function DsMeter({
+  confidence,
+  verdict,
+}: {
+  confidence: number;
+  verdict: string;
+}) {
+  const color = actorColor(verdict);
+  const pct = Math.max(2, Math.min(100, confidence));
+  return (
+    <div className="flex items-center gap-2" title={`${verdict} · confidence ${confidence}`}>
+      <div className="relative h-2 w-20 shrink-0 overflow-hidden rounded-full bg-muted">
+        {/* faint full-width graticule so the scale reads even at low values */}
+        <div
+          className="absolute inset-0 opacity-[0.12]"
+          style={{
+            background: `repeating-linear-gradient(90deg, ${color} 0 1px, transparent 1px 25%)`,
+          }}
+        />
+        <div
+          className="relative h-full rounded-full"
+          style={{
+            width: `${pct}%`,
+            background: `linear-gradient(90deg, ${color}66, ${color})`,
+            boxShadow: `0 0 8px -2px ${color}`,
+          }}
+        />
+      </div>
+      <span
+        className="font-mono text-xs font-semibold tabular-nums"
+        style={{ color }}
+      >
+        {confidence}
+      </span>
+    </div>
   );
 }
 
@@ -265,6 +303,83 @@ function IpReports({ ip }: { ip: string }) {
   );
 }
 
+/* ── T-Pot-style 24h heat stripe ──────────────────────────────────── */
+
+function HeatStripe({
+  cells,
+  label,
+}: {
+  cells?: ActivityPoint[];
+  label: string;
+}) {
+  if (!cells?.length) return null;
+  const max = Math.max(1, ...cells.map((c) => c.count));
+  return (
+    <div className="mt-4">
+      <div className="mb-1.5 flex items-center justify-between text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+        <span>{label}</span>
+        <span className="flex items-center gap-1.5">
+          low
+          <span className="h-2 w-16 rounded-full bg-gradient-to-r from-muted to-primary" />
+          high
+        </span>
+      </div>
+      <div className="flex gap-[3px]">
+        {cells.map((c) => {
+          const v = c.count / max;
+          return (
+            <div
+              key={c.t}
+              title={`${c.t} · ${c.count}`}
+              className="h-6 flex-1 overflow-hidden rounded-[3px] bg-muted"
+            >
+              <div
+                className="h-full w-full bg-primary"
+                style={{ opacity: 0.08 + v * 0.92 }}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ── global activity window selector (1h / 12h / 24h) ─────────────── */
+/* Lives in the header (top-right); every volume-based section reads the
+ * matching per-window slice, so the whole page reacts to it at once. */
+
+function WindowSelector({
+  win,
+  setWin,
+  labels,
+}: {
+  win: Win;
+  setWin: (w: Win) => void;
+  labels: Record<Win, string>;
+}) {
+  return (
+    <div className="inline-flex rounded-lg border border-border bg-muted/30 p-0.5">
+      {(["h1", "h12", "h24"] as Win[]).map((k) => (
+        <button
+          key={k}
+          type="button"
+          onClick={() => setWin(k)}
+          aria-pressed={win === k}
+          className={cn(
+            "rounded-md px-3 py-1 font-mono text-xs font-medium transition-colors",
+            win === k
+              ? "bg-primary/15 text-primary shadow-sm"
+              : "text-muted-foreground hover:text-foreground",
+          )}
+        >
+          {labels[k]}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 /* ── loading skeleton ─────────────────────────────────────────────── */
 
 function DashboardSkeleton() {
@@ -291,7 +406,12 @@ export function HoneypotDashboard() {
   const locale = useLocale();
   const [data, setData] = useState<HoneypotStats | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const topIps = usePaged(data?.top_ips ?? [], 8);
+  const [win, setWin] = useState<Win>("h24");
+  /* Volume-based sections read this per-window slice; when a snapshot predates
+   * the windows field, fall back to the root document. Cast away null: it is
+   * only ever read in the data-present render branch (and the hook guards it). */
+  const w = (data?.windows?.[win] ?? data) as WindowSlice & HoneypotStats;
+  const topIps = usePaged(w?.top_ips ?? [], 8);
 
   useEffect(() => {
     let alive = true;
@@ -332,9 +452,19 @@ export function HoneypotDashboard() {
           </p>
         </div>
         {data ? (
-          <div className="shrink-0 font-mono text-xs text-muted-foreground">
-            <div>{t("windowLabel", { days: data.window_days })}</div>
-            <div>{t("updated", { time: data.generated_at })}</div>
+          <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+            <WindowSelector
+              win={win}
+              setWin={setWin}
+              labels={{
+                h1: t("window.h1"),
+                h12: t("window.h12"),
+                h24: t("window.h24"),
+              }}
+            />
+            <div className="font-mono text-xs text-muted-foreground">
+              {t("updated", { time: data.generated_at })}
+            </div>
           </div>
         ) : null}
       </div>
@@ -358,28 +488,28 @@ export function HoneypotDashboard() {
             <StatCard
               icon={<Activity className="h-4 w-4" />}
               label={t("kpi.events")}
-              value={nf.format(data.totals.events)}
+              value={nf.format(w.totals.events)}
               accent
             />
             <StatCard
               icon={<Users className="h-4 w-4" />}
               label={t("kpi.attackers")}
-              value={nf.format(data.totals.unique_ips)}
+              value={nf.format(w.totals.unique_ips)}
             />
             <StatCard
               icon={<Globe2 className="h-4 w-4" />}
               label={t("kpi.countries")}
-              value={nf.format(data.totals.countries)}
+              value={nf.format(w.totals.countries)}
             />
             <StatCard
               icon={<Network className="h-4 w-4" />}
               label={t("kpi.asns")}
-              value={nf.format(data.totals.asns)}
+              value={nf.format(w.totals.asns)}
             />
             <StatCard
               icon={<ShieldAlert className="h-4 w-4" />}
               label={t("kpi.malicious")}
-              value={`${data.totals.malicious_pct}%`}
+              value={`${w.totals.malicious_pct}%`}
               hint={t("kpi.maliciousHint")}
             />
           </div>
@@ -395,7 +525,10 @@ export function HoneypotDashboard() {
               <div className="h-56 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart
-                    data={data.timeline}
+                    data={
+                      data.activity?.[win] ??
+                      data.timeline.map((p) => ({ t: p.date, count: p.count }))
+                    }
                     margin={{ top: 4, right: 8, left: -16, bottom: 0 }}
                   >
                     <defs>
@@ -418,11 +551,14 @@ export function HoneypotDashboard() {
                       vertical={false}
                     />
                     <XAxis
-                      dataKey="date"
+                      dataKey="t"
                       tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
                       tickLine={false}
                       axisLine={{ stroke: "var(--border)" }}
-                      tickFormatter={(d: string) => d.slice(5)}
+                      minTickGap={24}
+                      tickFormatter={(d: string) =>
+                        String(d).includes(" ") ? String(d).split(" ")[1] : String(d)
+                      }
                     />
                     <YAxis
                       tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
@@ -457,6 +593,10 @@ export function HoneypotDashboard() {
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
+              <HeatStripe
+                cells={data.heatmap_hourly}
+                label={t("sections.heatmap")}
+              />
             </CardContent>
           </Card>
 
@@ -474,11 +614,10 @@ export function HoneypotDashboard() {
                     <TableRow>
                       <TableHead className="w-8 text-right">#</TableHead>
                       <TableHead>{t("table.ip")}</TableHead>
-                      <TableHead className="text-center">
-                        {t("table.score")}
-                      </TableHead>
+                      <TableHead>{t("table.ds")}</TableHead>
                       <TableHead>{t("table.actor")}</TableHead>
                       <TableHead>{t("table.country")}</TableHead>
+                      <TableHead>{t("table.asn")}</TableHead>
                       <TableHead>{t("table.service")}</TableHead>
                       <TableHead className="text-right">
                         {t("table.events")}
@@ -497,18 +636,29 @@ export function HoneypotDashboard() {
                         <TableCell className="font-mono text-sm">
                           {ip.ip}
                         </TableCell>
-                        <TableCell className="text-center">
-                          <ScoreBadge score={ip.score} />
+                        <TableCell>
+                          <DsMeter
+                            confidence={ip.confidence ?? ip.score}
+                            verdict={ip.verdict ?? ip.actor}
+                          />
                         </TableCell>
                         <TableCell>
                           <ActorChip actor={ip.actor} />
                         </TableCell>
                         <TableCell>
                           <span className="flex items-center gap-2 text-sm">
-                            <Flag name={ip.country} />
+                            <Flag name={ip.cc ?? ip.country} />
                             <span className="truncate text-foreground/80">
                               {ip.country}
                             </span>
+                          </span>
+                        </TableCell>
+                        <TableCell>
+                          <span
+                            className="block max-w-[190px] truncate text-xs text-foreground/70"
+                            title={ip.asn}
+                          >
+                            {ip.asn ?? "—"}
                           </span>
                         </TableCell>
                         <TableCell>
@@ -544,7 +694,7 @@ export function HoneypotDashboard() {
               </CardHeader>
               <CardContent>
                 <BarList
-                  items={data.top_countries}
+                  items={w.top_countries}
                   renderLabel={(item) => (
                     <>
                       <Flag name={item.key} />
@@ -565,7 +715,7 @@ export function HoneypotDashboard() {
               </CardHeader>
               <CardContent>
                 <BarList
-                  items={data.services}
+                  items={w.services}
                   colorFor={(item) => serviceColor(item.key)}
                   renderLabel={(item) => (
                     <span
@@ -579,6 +729,71 @@ export function HoneypotDashboard() {
               </CardContent>
             </Card>
           </div>
+
+          {/* ── honeypot performance (radar) ─────────────────────── */}
+          {w.honeypots?.length ? (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">
+                  {t("sections.honeypots")}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+                  <div className="h-80 w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <RadarChart
+                        data={w.honeypots.slice(0, 8)}
+                        outerRadius="95%"
+                        margin={{ top: 8, right: 44, bottom: 8, left: 44 }}
+                      >
+                      <PolarGrid
+                        stroke="var(--muted-foreground)"
+                        strokeOpacity={0.4}
+                      />
+                      <PolarAngleAxis
+                        dataKey="name"
+                        tick={{
+                          fill: "var(--foreground)",
+                          fontSize: 11,
+                          fontWeight: 500,
+                        }}
+                      />
+                      <Radar
+                        dataKey="count"
+                        stroke="var(--primary)"
+                        fill="var(--primary)"
+                        fillOpacity={0.35}
+                        strokeWidth={2}
+                      />
+                      <RTooltip
+                        contentStyle={{
+                          background: "var(--popover)",
+                          border: "1px solid var(--border)",
+                          borderRadius: 8,
+                          fontSize: 12,
+                        }}
+                        labelStyle={{ color: "var(--foreground)" }}
+                        formatter={(v: number) => [nf.format(v), t("events")]}
+                      />
+                      </RadarChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <BarList
+                    items={w.honeypots.map((h) => ({
+                      key: h.name,
+                      count: h.count,
+                    }))}
+                    renderLabel={(item) => (
+                      <span className="truncate font-mono text-sm text-foreground/90">
+                        {item.key}
+                      </span>
+                    )}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          ) : null}
 
           {/* ── actors donut / ASNs ──────────────────────────────── */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -594,7 +809,7 @@ export function HoneypotDashboard() {
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
-                          data={data.actors}
+                          data={w.actors}
                           dataKey="count"
                           nameKey="key"
                           innerRadius={54}
@@ -602,7 +817,7 @@ export function HoneypotDashboard() {
                           paddingAngle={2}
                           strokeWidth={0}
                         >
-                          {data.actors.map((a) => (
+                          {w.actors.map((a) => (
                             <Cell key={a.key} fill={actorColor(a.key)} />
                           ))}
                         </Pie>
@@ -623,9 +838,9 @@ export function HoneypotDashboard() {
                     </ResponsiveContainer>
                   </div>
                   <div className="flex w-full flex-1 flex-col gap-3.5">
-                    {data.actors.map((a) => {
+                    {w.actors.map((a) => {
                       const total =
-                        data.actors.reduce((s, x) => s + x.count, 0) || 1;
+                        w.actors.reduce((s, x) => s + x.count, 0) || 1;
                       const pct = (a.count / total) * 100;
                       return (
                         <div key={a.key} className="flex flex-col gap-1.5">
@@ -672,7 +887,7 @@ export function HoneypotDashboard() {
               </CardHeader>
               <CardContent>
                 <BarList
-                  items={data.top_asns.slice(0, 8)}
+                  items={w.top_asns.slice(0, 8)}
                   renderLabel={(item) => (
                     <span className="truncate text-foreground/90">
                       {item.key}
@@ -684,7 +899,7 @@ export function HoneypotDashboard() {
           </div>
 
           {/* ── MITRE ATT&CK matrix ──────────────────────────────── */}
-          <MitreMatrix mitre={data.mitre} />
+          <MitreMatrix mitre={w.mitre} />
 
           {/* ── top CVE exploit probes ───────────────────────────── */}
           <TopCves cves={data.top_cves} />
@@ -702,7 +917,7 @@ export function HoneypotDashboard() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CredList items={data.top_usernames} />
+                <CredList items={w.top_usernames} />
               </CardContent>
             </Card>
 
@@ -714,7 +929,7 @@ export function HoneypotDashboard() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CredList items={data.top_passwords} />
+                <CredList items={w.top_passwords} />
               </CardContent>
             </Card>
           </div>

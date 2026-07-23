@@ -83,7 +83,9 @@
       "usernames": "Usuários Mais Tentados",
       "passwords": "Senhas Mais Tentadas",
       "mitre": "MITRE ATT&CK — Técnicas Detectadas",
-      "cves": "Top CVEs Expostos"
+      "cves": "Top CVEs Expostos",
+      "heatmap": "Intensidade 24h",
+      "honeypots": "Desempenho dos Honeypots"
     },
     "mitre": {
       "summary": "{techniques} técnicas · {tactics} táticas",
@@ -106,7 +108,10 @@
         "hassh": "Fingerprints de Cliente"
       },
       "lastSeen": "visto {date}",
-      "pager": { "more": "Ver todos ({n})", "less": "Ver menos" },
+      "pager": {
+        "more": "Ver todos ({n})",
+        "less": "Ver menos"
+      },
       "families": "Famílias de Malware Identificadas",
       "familiesEmpty": "Nenhuma família de malware identificada nesta janela ainda.",
       "aka": "também",
@@ -149,13 +154,20 @@
     "table": {
       "ip": "Endereço IP",
       "score": "Score",
+      "ds": "DS Fusion Engine",
       "actor": "Ator",
       "country": "País",
+      "asn": "Rede (ASN)",
       "service": "Serviço",
       "events": "Eventos",
       "reports": "Reports"
     },
-    "footnote": "Agregado de um honeypot de baixa e média interação. Os dados são anonimizados e atualizados periodicamente."
+    "footnote": "Agregado de um honeypot de baixa e média interação. Os dados são anonimizados e atualizados periodicamente.",
+    "window": {
+      "h1": "Última 1h",
+      "h12": "Últimas 12h",
+      "h24": "Últimas 24h"
+    }
   },
   "about": {
     "title": "Sobre",

@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { RadarIcon, ExternalLink, Bug, Server } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Pager, usePaged } from "./pager";
 import type { Cve } from "@/types/honeypot";
 
 /* CVSS severity palette — reads on both light and dark grounds. */
@@ -42,6 +43,7 @@ export function TopCves({ cves }: { cves: Cve[] }) {
   const t = useTranslations("honeypot");
   const locale = useLocale();
   const nf = new Intl.NumberFormat(locale);
+  const paged = usePaged(cves, 5);
 
   return (
     <Card>
@@ -72,7 +74,7 @@ export function TopCves({ cves }: { cves: Cve[] }) {
           </div>
         ) : (
           <div className="flex flex-col gap-2">
-            {cves.map((c, i) => {
+            {paged.slice.map((c, i) => {
               const color = sevColor(c.severity);
               const cweName = c.cwe ? CWE_NAME[c.cwe] : undefined;
               return (
@@ -91,7 +93,7 @@ export function TopCves({ cves }: { cves: Cve[] }) {
                   />
                   {/* rank */}
                   <span className="w-7 shrink-0 text-right font-mono text-sm font-bold tabular-nums text-muted-foreground">
-                    {String(i + 1).padStart(2, "0")}
+                    {String(paged.page * 5 + i + 1).padStart(2, "0")}
                   </span>
                   {/* severity accent */}
                   <span
@@ -145,6 +147,11 @@ export function TopCves({ cves }: { cves: Cve[] }) {
                 </a>
               );
             })}
+            <Pager
+              page={paged.page}
+              pages={paged.pages}
+              setPage={paged.setPage}
+            />
           </div>
         )}
       </CardContent>
