@@ -85,7 +85,8 @@
       "mitre": "MITRE ATT&CK — Técnicas Detectadas",
       "cves": "Top CVEs Expostos",
       "heatmap": "Intensidade 24h",
-      "honeypots": "Desempenho dos Honeypots"
+      "honeypots": "Desempenho dos Honeypots",
+      "map": "Origens de Ataque ao Vivo"
     },
     "mitre": {
       "summary": "{techniques} técnicas · {tactics} táticas",
@@ -167,6 +168,20 @@
       "h1": "Última 1h",
       "h12": "Últimas 12h",
       "h24": "Últimas 24h"
+    },
+    "map": {
+      "summary": "{markers} clusters ativos",
+      "serviceTypes": "Tipos de Serviço",
+      "multipleAttackers": "Múltiplos Atacantes",
+      "attacker": "Atacante",
+      "totalIps": "Total de IPs",
+      "totalAttacks": "Total de Ataques",
+      "topProtocol": "Protocolo Principal",
+      "topSourceIps": "Principais IPs de Origem",
+      "nAttacks": "{n} ataques",
+      "andMore": "… e mais {n}",
+      "firstSeen": "Visto Primeiro",
+      "lastSeen": "Visto por Último"
     }
   },
   "about": {

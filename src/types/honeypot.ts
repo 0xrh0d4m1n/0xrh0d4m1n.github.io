@@ -32,6 +32,8 @@ export interface HoneypotStats {
   heatmap_hourly?: ActivityPoint[];
   /** real honeypots (T-Pot sensors) event counts, for the performance chart */
   honeypots?: HoneypotCount[];
+  /** attack-origin map: per-window clustered markers (hero map). */
+  map?: HoneypotMap;
   /** per-window volume slices, driven by the global time-window selector.
    *  Volume-based sections read from here; malware/CVEs stay global. */
   windows?: Record<Win, WindowSlice>;
@@ -75,6 +77,33 @@ export interface Activity {
 export interface HoneypotCount {
   name: string;
   count: number;
+}
+
+/** A geo-clustered attacker marker for the hero map. Never a home/sensor point. */
+export interface MapMarker {
+  lat: number;
+  lon: number;
+  /** ISO-3166 alpha-2 country code */
+  cc: string;
+  /** dominant service/protocol at this cluster (drives the marker color) */
+  proto: string;
+  /** distinct attacker IPs in this cluster */
+  ips: number;
+  /** total attack events in this cluster */
+  attacks: number;
+  /** top source IPs with per-IP attack counts */
+  top_ips: { ip: string; attacks: number }[];
+  /** first event seen (ISO UTC) */
+  first: string;
+  /** last event seen (ISO UTC) */
+  last: string;
+}
+
+export interface HoneypotMap {
+  /** raw recent points (legacy; unused by the hero map) */
+  recent?: { lat: number; lon: number; cc: string; proto: string }[];
+  /** clustered markers per time-window, driven by the global selector */
+  markers?: Record<Win, MapMarker[]>;
 }
 
 /**

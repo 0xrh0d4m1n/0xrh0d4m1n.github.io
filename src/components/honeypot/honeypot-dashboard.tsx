@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Activity,
@@ -58,6 +59,12 @@ import type {
 
 const STATS_URL =
   process.env.NEXT_PUBLIC_HONEYPOT_STATS_URL ?? "/data/honeypot-stats.json";
+
+/* Leaflet touches `window`, so the map is client-only (never SSR/prerendered). */
+const AttackMap = dynamic(() => import("./attack-map"), {
+  ssr: false,
+  loading: () => <Skeleton className="h-[560px] w-full rounded-xl" />,
+});
 
 /* Actor colors — GitHub-ish palette that reads on both light and dark. */
 /* Actor palette follows a TLP-ish scheme:
@@ -185,23 +192,23 @@ function StatCard({
 }) {
   return (
     <Card className="gap-0 p-0">
-      <CardContent className="flex flex-col gap-1 p-4">
-        <div className="flex items-center gap-2 text-muted-foreground">
+      <CardContent className="flex flex-col gap-0.5 px-3.5 py-2.5">
+        <div className="flex items-center gap-1.5 text-muted-foreground">
           {icon}
-          <span className="text-xs font-medium uppercase tracking-wide">
+          <span className="text-[11px] font-medium uppercase tracking-wide">
             {label}
           </span>
         </div>
         <div
           className={cn(
-            "font-heading text-2xl font-bold tabular-nums sm:text-3xl",
+            "font-heading text-2xl font-bold leading-tight tabular-nums sm:text-3xl",
             accent && "text-primary",
           )}
         >
           {value}
         </div>
         {hint ? (
-          <div className="text-xs text-muted-foreground">{hint}</div>
+          <div className="text-[11px] leading-tight text-muted-foreground">{hint}</div>
         ) : null}
       </CardContent>
     </Card>
@@ -453,24 +460,24 @@ export function HoneypotDashboard() {
         </div>
         {data ? (
           <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
-            <WindowSelector
-              win={win}
-              setWin={setWin}
-              labels={{
-                h1: t("window.h1"),
-                h12: t("window.h12"),
-                h24: t("window.h24"),
-              }}
-            />
+            <div className="flex items-center gap-3">
+              <ProfileBadges compact />
+              <WindowSelector
+                win={win}
+                setWin={setWin}
+                labels={{
+                  h1: t("window.h1"),
+                  h12: t("window.h12"),
+                  h24: t("window.h24"),
+                }}
+              />
+            </div>
             <div className="font-mono text-xs text-muted-foreground">
               {t("updated", { time: data.generated_at })}
             </div>
           </div>
         ) : null}
       </div>
-
-      {/* ── profile badges (stacked above the metrics) ───────────── */}
-      <ProfileBadges />
 
       {error ? (
         <Card className="border-destructive/40">
@@ -514,7 +521,25 @@ export function HoneypotDashboard() {
             />
           </div>
 
-          {/* ── timeline ─────────────────────────────────────────── */}
+          {/* ── attack-origin map (hero) ─────────────────────────── */}
+          <Card className="gap-0 overflow-hidden p-0">
+            <CardHeader className="flex-row items-center justify-between gap-2 space-y-0 px-4 py-3">
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Globe2 className="h-4 w-4 text-primary" />
+                {t("sections.map")}
+              </CardTitle>
+              <span className="font-mono text-xs text-muted-foreground">
+                {t("map.summary", {
+                  markers: (data.map?.markers?.[win] ?? []).length,
+                })}
+              </span>
+            </CardHeader>
+            <CardContent className="p-0">
+              <AttackMap markers={data.map?.markers?.[win] ?? []} height={580} />
+            </CardContent>
+          </Card>
+
+          {/* ── attack-volume stripe ─────────────────────────────── */}
           <Card>
             <CardHeader>
               <CardTitle className="text-base">
@@ -522,7 +547,7 @@ export function HoneypotDashboard() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-56 w-full">
+              <div className="h-24 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart
                     data={

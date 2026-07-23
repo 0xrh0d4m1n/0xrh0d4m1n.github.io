@@ -716,3 +716,37 @@
 .prose .table-wrapper {
   overflow-x: auto;
 }
+
+/* ── Leaflet attack map (dark, chrome-stripped hover tooltip) ───────── */
+.leaflet-container {
+  background: #0b0e14;
+  font-family: inherit;
+  z-index: 0;
+}
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(13, 17, 23, 0.7);
+  color: #7d8590;
+}
+.leaflet-container .leaflet-control-attribution a {
+  color: #9fef00;
+}
+.leaflet-bar,
+.leaflet-bar a {
+  background: #161b22;
+  color: #e6edf3;
+  border-color: #30363d;
+}
+.leaflet-bar a:hover {
+  background: #21262d;
+}
+/* our custom hover tooltip: strip Leaflet's white box/arrow, we draw our own */
+.leaflet-tooltip.hp-tt {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  white-space: normal;
+}
+.leaflet-tooltip.hp-tt::before {
+  display: none;
+}

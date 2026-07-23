@@ -4,8 +4,43 @@ import { useTranslations } from "next-intl";
 import { BadgeCheck, ExternalLink } from "lucide-react";
 import { HANDLE, THREAT_PLATFORMS, faviconFor } from "@/lib/threat-platforms";
 
-export function ProfileBadges() {
+export function ProfileBadges({ compact = false }: { compact?: boolean } = {}) {
   const t = useTranslations("honeypot");
+
+  /* compact = icon row for the header (saves vertical space for the map). */
+  if (compact) {
+    return (
+      <div className="flex items-center gap-1.5" aria-label={t("profiles.label")}>
+        {THREAT_PLATFORMS.map((p) => (
+          <a
+            key={p.name}
+            href={p.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`${p.name} — ${HANDLE}`}
+            aria-label={`${p.name} — ${HANDLE}`}
+            className="group relative flex h-7 w-7 items-center justify-center rounded-md border border-border bg-card/70 transition-colors hover:border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-md opacity-0 transition-opacity group-hover:opacity-100"
+              style={{ boxShadow: `inset 0 0 0 1px ${p.color}, 0 0 16px -6px ${p.color}` }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={faviconFor(p.domain)}
+              alt=""
+              width={16}
+              height={16}
+              className="relative h-4 w-4 rounded-sm"
+              loading="lazy"
+            />
+          </a>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="mb-4 flex flex-col gap-2">
       <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
