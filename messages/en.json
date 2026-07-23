@@ -84,7 +84,7 @@
       "passwords": "Most-Tried Passwords",
       "mitre": "MITRE ATT&CK — Detected Techniques",
       "cves": "Top Exposed CVEs",
-      "heatmap": "24h intensity",
+      "heatmap": "Attack Intensity",
       "honeypots": "Honeypot Performance",
       "map": "Live Attack Origins"
     },

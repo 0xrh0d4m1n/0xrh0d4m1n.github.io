@@ -310,21 +310,36 @@ function IpReports({ ip }: { ip: string }) {
   );
 }
 
-/* ── T-Pot-style 24h heat stripe ──────────────────────────────────── */
+/* ── T-Pot-style heat stripe — a heat-encoded view of the SAME series the
+ * Attack Volume chart plots for the selected window, so it reads as part of it.
+ * Granularity follows the window: 1h → 60×1min, 12h → 12×1h, 24h → 24×1h. ─── */
+
+const HEAT_UNIT: Record<Win, string> = { h1: "1 min", h12: "1 h", h24: "1 h" };
 
 function HeatStripe({
   cells,
-  label,
+  win,
+  title,
+  nf,
 }: {
   cells?: ActivityPoint[];
-  label: string;
+  win: Win;
+  title: string;
+  nf: Intl.NumberFormat;
 }) {
   if (!cells?.length) return null;
   const max = Math.max(1, ...cells.map((c) => c.count));
+  const peak = cells.reduce((a, c) => (c.count > a.count ? c : a), cells[0]);
+
   return (
     <div className="mt-4">
       <div className="mb-1.5 flex items-center justify-between text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-        <span>{label}</span>
+        <span>
+          {title}
+          <span className="ml-1.5 font-mono normal-case text-foreground/45">
+            {cells.length} × {HEAT_UNIT[win]}
+          </span>
+        </span>
         <span className="flex items-center gap-1.5">
           low
           <span className="h-2 w-16 rounded-full bg-gradient-to-r from-muted to-primary" />
@@ -337,8 +352,8 @@ function HeatStripe({
           return (
             <div
               key={c.t}
-              title={`${c.t} · ${c.count}`}
-              className="h-6 flex-1 overflow-hidden rounded-[3px] bg-muted"
+              title={`${c.t} — ${nf.format(c.count)} events · ${Math.round(v * 100)}% of peak`}
+              className="h-7 flex-1 overflow-hidden rounded-[3px] bg-muted transition-transform hover:scale-y-125"
             >
               <div
                 className="h-full w-full bg-primary"
@@ -347,6 +362,13 @@ function HeatStripe({
             </div>
           );
         })}
+      </div>
+      <div className="mt-1 flex justify-between font-mono text-[10px] text-muted-foreground/55">
+        <span>{cells[0]?.t}</span>
+        <span className="text-primary/70">
+          peak {peak.t} · {nf.format(peak.count)}
+        </span>
+        <span>{cells[cells.length - 1]?.t}</span>
       </div>
     </div>
   );
@@ -619,8 +641,10 @@ export function HoneypotDashboard() {
                 </ResponsiveContainer>
               </div>
               <HeatStripe
-                cells={data.heatmap_hourly}
-                label={t("sections.heatmap")}
+                cells={data.activity?.[win]}
+                win={win}
+                title={t("sections.heatmap")}
+                nf={nf}
               />
             </CardContent>
           </Card>

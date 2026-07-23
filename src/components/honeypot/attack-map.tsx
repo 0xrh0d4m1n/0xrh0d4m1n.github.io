@@ -185,7 +185,7 @@ export default function AttackMap({
   }, [markers]);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-xl border border-border" style={{ height }}>
+    <div className="relative isolate w-full overflow-hidden rounded-xl border border-border" style={{ height }}>
       <MapContainer
         center={[25, 8]}
         zoom={2}
