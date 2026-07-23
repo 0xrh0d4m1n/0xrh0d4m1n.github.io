@@ -413,7 +413,7 @@ export function HoneypotDashboard() {
   const locale = useLocale();
   const [data, setData] = useState<HoneypotStats | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [win, setWin] = useState<Win>("h24");
+  const [win, setWin] = useState<Win>("h1");
   /* Volume-based sections read this per-window slice; when a snapshot predates
    * the windows field, fall back to the root document. Cast away null: it is
    * only ever read in the data-present render branch (and the hook guards it). */
