@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "@/styles/globals.css";
@@ -35,6 +36,12 @@ export default function RootLayout({
         >
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
+        {/* Cloudflare Web Analytics — privacy-first, sem cookies (token é público) */}
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "37b1237d22b541b0b5c229c2f94b1fb6"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
