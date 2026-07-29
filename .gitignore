@@ -60,3 +60,9 @@ tests/.output/
 tests/playwright-report/
 .playwright/
 /tasks/
+
+# Estado local do Cloudflare Wrangler. Ele NASCE no primeiro `wrangler dev`/`deploy` e
+# guarda cache e estado de sessao — nada disso pertence a um repo PUBLICO.
+# ⚠️ Entra aqui ANTES de existir, de proposito: o habito da casa e `git add .`, e a regra
+# que so e escrita depois do arquivo aparecer chega tarde por definicao.
+.wrangler/
