@@ -57,6 +57,11 @@
   "honeypot": {
     "title": "Honeypot Network",
     "subtitle": "Live threat telemetry from my honeypot sensor grid.",
+    "maintenance": {
+      "title": "Temporary Maintenance",
+      "body": "We will be back soon with some news!",
+      "collecting": "Sensors still collecting"
+    },
     "live": "Live",
     "profiles": {
       "label": "Findings published on"

@@ -750,3 +750,55 @@
 .leaflet-tooltip.hp-tt::before {
   display: none;
 }
+
+/* ── Honeypot · página de manutenção ────────────────────────────────────────
+ * Animações da tela em `src/components/honeypot/maintenance.tsx`.
+ *
+ * 🔑 CSS puro, de propósito. A página que elas decoram é um SERVER component e
+ * não embarca uma linha de JavaScript de cliente — usar uma biblioteca de
+ * animação aqui derrubaria justamente a propriedade que a torna barata.
+ *
+ * O tema é radar: a rede continua varrendo enquanto o painel é reconstruído.
+ * ------------------------------------------------------------------------ */
+
+@keyframes hpn-sweep {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hpn-ping-ring {
+  0%        { transform: scale(0.55); opacity: 0.5; }
+  80%, 100% { transform: scale(2.1);  opacity: 0;   }
+}
+
+@keyframes hpn-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+/* Um "pacote" atravessando a tela: a telemetria que continua chegando. */
+@keyframes hpn-drift {
+  0%        { transform: translateX(-8%);  opacity: 0;   }
+  12%, 88%  { opacity: 0.55; }
+  100%      { transform: translateX(108%); opacity: 0;   }
+}
+
+@keyframes hpn-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+.hpn-sweep     { animation: hpn-sweep 4s linear infinite; }
+.hpn-ring      { animation: hpn-ping-ring 3.2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.hpn-float     { animation: hpn-float 4.5s ease-in-out infinite; }
+.hpn-drift     { animation: hpn-drift 7s linear infinite; }
+.hpn-blink     { animation: hpn-blink 1.6s ease-in-out infinite; }
+
+/* ⚠️ Não é opcional: quem pede menos movimento no sistema operacional está
+ * pedindo por um motivo — enjoo, vertigem, distração. A página tem de continuar
+ * legível e completa sem uma única animação. */
+@media (prefers-reduced-motion: reduce) {
+  .hpn-sweep, .hpn-ring, .hpn-float, .hpn-drift, .hpn-blink {
+    animation: none !important;
+  }
+  .hpn-ring { opacity: 0.18; }
+}

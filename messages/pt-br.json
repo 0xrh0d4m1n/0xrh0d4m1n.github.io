@@ -57,6 +57,11 @@
   "honeypot": {
     "title": "Honeypot Network",
     "subtitle": "Telemetria de ameaças ao vivo da minha rede de sensores honeypot.",
+    "maintenance": {
+      "title": "Manutenção Temporária",
+      "body": "Voltamos em breve com novidades!",
+      "collecting": "Sensores continuam coletando"
+    },
     "live": "Ao vivo",
     "profiles": {
       "label": "Achados publicados em"
