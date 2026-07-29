@@ -137,6 +137,26 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  /**
+   * Public build-time values, inlined into the client bundle.
+   *
+   * 🔑 This lives here and NOT in a committed `.env.production` on purpose. That file was
+   * harmless — it held one `NEXT_PUBLIC_*` URL — but it was a TRAP for later: an env file
+   * tracked in a PUBLIC repo is the obvious place someone drops the next variable, and the
+   * next variable is the one with a secret in it. `next.config.ts` is code; nobody pastes a
+   * token into a config object by reflex.
+   *
+   * ⚠️ Everything here is PUBLIC by construction — `NEXT_PUBLIC_*` is inlined into the
+   * JavaScript the browser downloads. A secret placed here is a secret published, and no
+   * amount of "it's just a build variable" changes that. Secrets belong in
+   * `.env.local` (gitignored) or in the deploy environment.
+   */
+  env: {
+    // Live honeypot stats API — Cloudflare Worker, public read-only.
+    // Unset (e.g. a fork with no worker), the dashboard falls back to the bundled mock at
+    // /data/honeypot-stats.json — see honeypot-dashboard.tsx:61.
+    NEXT_PUBLIC_HONEYPOT_STATS_URL: "https://honeypot-stats.valdeniomarinho.workers.dev/stats",
+  },
 };
 
 const withMDX = createMDX({

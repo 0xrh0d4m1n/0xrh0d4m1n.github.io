@@ -33,11 +33,16 @@ AGENTS.md
 .ai/
 tasks/
 
-# Env — .env.production é intencional (só NEXT_PUBLIC, URL pública)
+# Env — NENHUM arquivo .env entra no repo. Sem excecao.
+#
+# 🔑 Havia um `!.env.production` aqui, e ele era a armadilha de verdade — mais que o
+# arquivo. O `.env.production` que existia era inofensivo (uma URL publica de
+# `NEXT_PUBLIC_*`), mas a EXCECAO fazia com que o PROXIMO arquivo com esse nome, com o que
+# quer que tivesse dentro, entrasse no repo publico em silencio. A URL mudou-se para o
+# `next.config.ts`, onde ela e visivelmente codigo e ninguem cola token por reflexo.
 .env
 .env.*
 !.env.example
-!.env.production
 
 # Secrets / chaves — rede de segurança para `git add .` (NUNCA versionar)
 *.pem
